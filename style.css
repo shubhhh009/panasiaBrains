@@ -1,0 +1,989 @@
+:root {
+    --primary-color: #353535;
+    --text-color: #353535;
+    --bg-color: #FFFFFF;
+    --accent-color: #DC6061;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FFFFFF;
+    color: #353535;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    /* Perfectly matches User's 1200x503 bounding box */
+    /* Provides the exact 110px padding on 1440px wide screens */
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Top Indicator Line from Figma layout "TOP" */
+.top-indicator {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    background-color: #FFFFFF;
+}
+
+.top-indicator-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.top-text {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #999;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 200px;
+    /* Space to push buttons and text upwards and show the image */
+    min-height: 800px;
+    /* Using the exact image uploaded by user */
+    background: url('images/4483db7316da99989ee5a995421e03781f54b0ef.jpg') center/cover no-repeat;
+    color: #FFFFFF;
+    overflow: hidden;
+}
+
+/* Very subtle dark gradient overlay to ensure white text is perfectly legible on image */
+.hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%);
+    z-index: 1;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: none;
+    width: 100%;
+}
+
+.logo {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: #FFFFFF;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    /* Perfect constant gap like Figma overlay matches */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    /* Increased letter spacing to match 'track out' feel */
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+.caret {
+    margin-left: 6px;
+    font-size: 8px;
+}
+
+/* Dropdown Menu CSS */
+.dropdown {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: -10px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    list-style: none;
+    min-width: 180px;
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    padding: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 20px;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: none;
+    transition: background 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-contact {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 10px 28px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    background: transparent;
+}
+
+.btn-contact:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hero Content Flex Layout */
+.hero-content {
+    margin-top: 153px;
+    /* Precise top distance */
+    position: relative;
+    width: 100%;
+}
+
+.hero-text-block {
+    position: relative;
+    width: 1200px;
+    height: 252px;
+    /* Strict height from Figma */
+}
+
+/* Main Heading match Figma precisely */
+.hero-text-block h1 {
+    font-size: 78px;
+    line-height: 1.15;
+    font-weight: 400;
+    /* Revert to lighter weight seen in figma overlay */
+    letter-spacing: -1.5px;
+    margin: 0;
+}
+
+.hero-right-panel {
+    /* Kept relative to block */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    /* Spans full width for exact internal positioning */
+    pointer-events: none;
+    /* Allows text to be highlighted */
+}
+
+.subtitle {
+    position: absolute;
+    top: 24px;
+    /* Matches exact visual alignment in overlay */
+    left: 450px;
+    /* Positioned perfectly right of "30 Years of" text edge */
+    width: 527.83px;
+    /* Exact dimension from Figma inspector */
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 400;
+    opacity: 0.95;
+    letter-spacing: 0.2px;
+    margin: 0;
+    pointer-events: auto;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    position: absolute;
+    top: 280px;
+    /* Right exactly beneath the 252px text container */
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-end;
+    width: 355.56px;
+    margin: 0;
+    pointer-events: auto;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 0;
+    border-radius: 50px;
+    font-size: 18px;
+    /* Based tightly on 24px bounding height */
+    font-weight: 500;
+    letter-spacing: 2px;
+    /* Emulated letter spacing for correct font stretching */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: 355.56px;
+    height: 64px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.outline-btn {
+    background: rgba(40, 20, 20, 0.3);
+    /* Provides the dark brownish tint seen in transparent button overlay */
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+}
+
+.outline-btn:hover {
+    border-color: #fff;
+    background: rgba(40, 20, 20, 0.5);
+}
+
+.gradient-btn {
+    background: linear-gradient(90deg, #9C5DB2 0%, #DF6A63 100%);
+    /* Flipped gradient: Purple -> Pink mapping screenshot */
+    color: #fff;
+    border: none;
+}
+
+/* About Section */
+.about-section {
+    padding-top: 120px;
+    background-color: #F8F8F8;
+    /* Subtle light grey background */
+}
+
+.about-top-border {
+    width: 100%;
+    height: 1px;
+    background-color: #EAEAEA;
+    /* Slightly lighter border */
+    margin-bottom: 40px;
+    /* Added gap below horizontal line */
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 120px;
+}
+
+.about-left {
+    width: 100%;
+    margin-bottom: 0px;
+    /* Zero gap between heading box and paragraph box as shown in Figma blue boxes */
+}
+
+.about-right {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Ensure paragraphs stay left-aligned within this 520px box */
+    width: 520px;
+    /* Mathematically calculated to perfectly right-align the centered button with the text end */
+}
+
+.section-label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    color: #555;
+    margin-bottom: 50px;
+    /* Larger gap below label */
+    text-transform: uppercase;
+}
+
+.about-left h2 {
+    font-size: 40px;
+    /* Bigger font */
+    line-height: 1.6;
+    /* Massive, airy line-height */
+    font-weight: 500;
+    color: #353535;
+    margin: 0;
+}
+
+.about-text {
+    font-size: 15px;
+    line-height: 2;
+    font-weight: 500;
+    /* Looks slightly heavier than regular in the screenshot, maybe medium */
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.about-right p {
+    font-size: 16px;
+    line-height: 2.4;
+    color: #353535;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.view-all-btn {
+    align-self: center;
+    /* Centers within the 620px box, creating exactly 150px of visual offset */
+    margin-top: 10px;
+    width: 320px;
+    padding: 16px 0;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-dark {
+    background-color: #262626;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50px;
+}
+
+.btn-dark:hover {
+    background-color: #000;
+    color: #FFF;
+}
+
+.strengths-section {
+    background-color: #F8F8F8;
+    /* Continue the subtle light grey background */
+    padding: 20px 0 120px 0;
+}
+
+.strengths-header {
+    margin-bottom: 24px;
+    /* Tiny gap to the content below */
+}
+
+.strengths-line {
+    width: 100%;
+    height: 1px;
+    background-color: #EFEFEF;
+    margin-bottom: 20px;
+}
+
+.strengths-content {
+    display: flex;
+    justify-content: flex-start;
+    gap: 41px;
+    /* 1200 - 700 - 459 = 41px */
+    align-items: stretch;
+    /* ensures children can share heights */
+}
+
+.strengths-image-wrapper {
+    width: 700px;
+    height: 650px;
+    flex-shrink: 0;
+    /* strict sizing */
+    background: #f4f4f4;
+}
+
+.strengths-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Right Text Block */
+.strengths-text-wrapper {
+    width: 459px;
+    position: relative;
+    /* lock absolute children */
+    display: flex;
+    flex-direction: column;
+}
+
+.strengths-text-top {
+    margin-top: 0;
+    /* flush with image top */
+}
+
+.strength-number-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.strength-number {
+    font-size: 15px;
+    font-weight: 400;
+    /* Lighter numbers */
+    color: #888888;
+    /* Visually distinct grey */
+    margin: 0;
+}
+
+.strength-number-line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #E2E2E2;
+    /* Very light subtle grey */
+}
+
+.strength-heading {
+    width: 400px;
+    font-size: 34px;
+    /* Exactly matching 400px width ratio with ~11.7 chars per line */
+    line-height: 1.35;
+    font-weight: 500;
+    color: #2F2F2F;
+    /* Slightly softer than pitch black */
+    margin-bottom: 45px;
+    /* Pronounced vertical gap as in screenshot */
+    letter-spacing: -0.3px;
+}
+
+.strength-desc {
+    width: 459px;
+    font-size: 15px;
+    line-height: 2.4;
+    /* Perfect for 253px height over 7 lines */
+    font-weight: 400;
+    color: #353535;
+    letter-spacing: 0.1px;
+}
+
+.strength-nav-buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    gap: 16px;
+}
+
+.nav-arrow {
+    width: 64px;
+    /* Figma arrows are round but proportional */
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid #DEDEDE;
+    /* Super thin subtle border */
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+    border-color: #222;
+    background: #FAFAFA;
+}
+
+/* Mobile Responsiveness just in case */
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        margin-top: 80px;
+    }
+
+    .hero-text-block {
+        height: auto;
+    }
+
+    .hero-text-block h1 {
+        font-size: 48px;
+    }
+
+    .subtitle {
+        position: static;
+        margin-top: 20px;
+    }
+
+    .about-container {
+        margin-left: 0;
+    }
+
+    .nav-links {
+        display: none;
+        /* Hide on mobile for simplicity */
+    }
+}
+
+/* Services Section */
+.services-section {
+    padding: 120px 0;
+    background: #FFFFFF;
+}
+
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    /* Explicitly specified in Figma properties */
+    margin-top: 60px;
+    width: 100%;
+    /* Spans full width */
+}
+
+.service-item {
+    display: flex;
+    gap: 40px;
+    /* 1200px - 700px (IMG) - 459px (TEXT) = 41px native gap */
+    /* Gap between image and text visually matches vertical gap */
+    align-items: flex-start;
+}
+
+.service-img {
+    width: 700px;
+    /* Exact Figma dimension from user */
+    height: 435px;
+    flex-shrink: 0;
+}
+
+.service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    /* Fills remaining space */
+    padding-top: 0;
+}
+
+.service-text h3 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.35;
+    /* Matched 75px / 2 = ~37.5px line-height */
+    margin-bottom: 24px;
+    color: #353535;
+    width: 400px;
+    /* Explicit Figma boundary */
+}
+
+.service-text p {
+    font-size: 15px;
+    line-height: 2.2;
+    /* Matched 133px / 4 = ~33.25px line-height */
+    color: #444;
+    width: 459px;
+    /* Explicit Figma boundary */
+    margin-bottom: 40px;
+    /* Stronger gap to the button */
+}
+
+.btn-contact {
+    padding: 12px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-small {
+    padding: 12px 40px;
+    border: 1px solid #CCC;
+    border-radius: 50px;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    letter-spacing: 3px;
+    /* Strong text tracking as seen in screenshot */
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.btn-outline-small:hover {
+    background-color: #333;
+    color: #FFF;
+    border-color: #333;
+}
+
+
+
+/* Catalogs & Press */
+.catalogs-section {
+    padding: 120px 0;
+    /* Creates exact 743px height given a 503px inner bound */
+    background: #F8F8F8;
+}
+
+.catalogs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    width: 100%;
+    margin-top: 40px;
+    /* Perfectly fits the 503px container bounding box */
+}
+
+.catalog-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+}
+
+.catalog-img-wrapper {
+    width: 100%;
+    height: 180px;
+    /* Adjusted to hit 503px overall section height constraint */
+    /* Reduced slightly to match aspect ratio of product shots */
+    background-color: transparent;
+}
+
+.catalog-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* ensures complete product shows neatly like the screenshot */
+}
+
+.catalog-item p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #353535;
+    font-weight: 400;
+    /* Regular weight styling */
+}
+
+.catalogs-footer {
+    display: flex;
+    justify-content: flex-end;
+    /* Matches the right alignment shown in image */
+    margin-top: 60px;
+}
+
+.view-more-catalogs {
+    width: 280px;
+    /* Roughly exactly the width of one column beneath it */
+    display: flex;
+    justify-content: center;
+    padding: 14px 0;
+    /* Override generic pill to fit */
+}
+
+/* Proof Section */
+.proof-section {
+    padding: 120px 0;
+    background: #FDFDFA;
+    /* Matching Figma properties precisely */
+}
+
+.proof-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    /* Extremely tight gap matching Figma layout */
+    width: 100%;
+    margin-top: 40px;
+}
+
+.proof-item {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    /* Matches proportions shown in Figma container bounding box */
+    overflow: hidden;
+}
+
+.proof-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.proof-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 30px;
+}
+
+.proof-overlay p {
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0;
+}
+
+/* Contact Section */
+.contact-section {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    /* Exact Figma dimension */
+    background: url('https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=1440&h=240&auto=format&fit=crop') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Dark overlay to ensure button pops identically to screenshot */
+.contact-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.contact-button-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #D4667A 0%, #A95EB5 100%);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 18px 80px;
+    /* Creates wide pill identical to Figma image */
+    border-radius: 50px;
+    border: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+/* Footer Section */
+.footer-section {
+    width: 100%;
+    background-color: #262626;
+}
+
+.footer-top {
+    padding: 80px 0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-col-1 {
+    width: 25%;
+}
+
+.footer-col-2 {
+    width: 25%;
+}
+
+.footer-col-3 {
+    width: 50%;
+}
+
+.footer-heading {
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.footer-heading a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.footer-heading a:hover {
+    opacity: 0.7;
+}
+
+.footer-desc {
+    color: #DEDEDE;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.social-block {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.follow-text {
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.social-line {
+    width: 40px;
+    height: 1px;
+    background-color: #555;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.social-icons a {
+    color: #FFFFFF;
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+}
+
+.social-icons a:hover {
+    opacity: 0.7;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* Airy vertical spacing as shown */
+}
+
+.footer-list a {
+    color: #B0B0B0;
+    text-decoration: none;
+    font-size: 11px;
+    transition: color 0.3s ease;
+}
+
+.footer-list a:hover {
+    color: #FFFFFF;
+}
+
+.footer-nav-headers {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 24px;
+}
+
+.footer-nav-headers .footer-heading {
+    margin-bottom: 0;
+}
+
+/* Footer Bottom Strip */
+.footer-bottom {
+    background-color: #FFFFFF;
+    padding: 40px 0;
+}
+
+.footer-bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.footer-logo {
+    font-size: 24px;
+    color: #353535;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.footer-legal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.footer-legal a,
+.footer-legal p {
+    color: #666;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 0;
+    font-weight: 500;
+}
