@@ -84,6 +84,8 @@ body {
     align-items: center;
     border-bottom: none;
     width: 100%;
+    height: 48px;
+    /* Strict 48px bounding height matching UI properties */
 }
 
 .logo {
@@ -96,17 +98,21 @@ body {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 32px;
-    /* Perfect constant gap like Figma overlay matches */
+    gap: 40px;
+    /* Exactly expands flex width towards the 864px Figma bound */
 }
 
 .nav-link {
     text-decoration: none;
     color: #FFFFFF;
-    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    /* Exact typography size from properties */
     font-weight: 500;
-    letter-spacing: 1.5px;
-    /* Increased letter spacing to match 'track out' feel */
+    line-height: 1;
+    /* 100% line height */
+    letter-spacing: 0.08em;
+    /* 8% letter spacing */
     text-transform: uppercase;
     transition: opacity 0.3s ease;
     display: flex;
@@ -117,9 +123,41 @@ body {
     opacity: 0.7;
 }
 
+.btn-contact {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+    /* Matching the 18px nav-links */
+    font-weight: 500;
+    line-height: 1;
+    /* 100% line height */
+    letter-spacing: 0.08em;
+    /* 8% */
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    padding: 8px 30px;
+    height: 40px;
+    /* Constrained under 48px total navbar height */
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: #FFFFFF;
+    color: #353535;
+}
+
 .caret {
-    margin-left: 6px;
-    font-size: 8px;
+    margin-left: 8px;
+    font-size: 11px;
+    /* Scaled up to mirror the solid SVG triangle proportion */
+    vertical-align: middle;
+    display: inline-block;
+    transform: translateY(-1px);
+    /* Perfect optical vertical center matching 13px line height */
 }
 
 /* Dropdown Menu CSS */
@@ -336,13 +374,18 @@ body {
 }
 
 .section-label {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-    color: #555;
+    font-size: 24px;
+    /* Figma direct mapping */
+    font-weight: 500;
+    line-height: 1;
+    /* 100% line height */
+    letter-spacing: 0.08em;
+    /* 8% character tracking */
+    color: #353535;
     margin-bottom: 50px;
-    /* Larger gap below label */
     text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    /* Binding exact font family */
 }
 
 .about-left h2 {
@@ -986,4 +1029,209 @@ body {
     text-decoration: none;
     margin: 0;
     font-weight: 500;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+
+@media screen and (max-width: 1240px) {
+    .container {
+        padding: 0 40px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    /* Navbar Scaling */
+    .nav-right {
+        gap: 20px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+        letter-spacing: 0em;
+    }
+
+    .btn-contact {
+        font-size: 13px;
+        padding: 6px 16px;
+        height: 36px;
+    }
+
+    /* Hero Scaling */
+    .hero-text-block h1 {
+        font-size: 44px;
+        width: 100%;
+    }
+
+    .hero-right-panel {
+        top: 480px;
+    }
+
+    /* About Section */
+    .about-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .about-left,
+    .about-right {
+        width: 100%;
+        margin-bottom: 0px;
+    }
+
+    .about-right p {
+        width: 100%;
+    }
+
+    /* Services Section */
+    .service-item {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .service-img {
+        width: 100%;
+        height: auto;
+        max-height: 480px;
+    }
+
+    .service-text {
+        width: 100%;
+    }
+
+    .service-text h3,
+    .service-text p {
+        width: 100%;
+    }
+
+    /* Grids */
+    .catalogs-grid,
+    .proof-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .footer-col-1,
+    .footer-col-2,
+    .footer-col-3 {
+        width: 100%;
+    }
+
+    .footer-nav-headers {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Navbar Mobile Layout */
+    .navbar {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 20px;
+        padding: 20px 0;
+        justify-content: center;
+    }
+
+    .nav-right {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+
+    /* Hero Mobile Stacking */
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .hero-text-block {
+        position: relative;
+        top: 0;
+        margin-top: 60px;
+        text-align: center;
+    }
+
+    .hero-text-block h1 {
+        font-size: 32px;
+    }
+
+    .hero-right-panel {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-top: 40px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .cta-buttons {
+        position: relative;
+        top: 0;
+        width: 100%;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 350px;
+        font-size: 16px;
+        height: 50px;
+    }
+
+    /* Typography Overrides */
+    .section-heading {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    /* Slider Container Padding */
+    .strengths-container {
+        padding: 40px 20px;
+    }
+
+    /* Responsive Full Width Grids */
+    .catalogs-grid,
+    .proof-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Variable Heights Overrides */
+    .catalogs-section,
+    .proof-section {
+        padding: 60px 0;
+        height: auto;
+    }
+
+    /* Footer */
+    .footer-top {
+        padding: 60px 20px;
+    }
+
+    .footer-bottom-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-legal {
+        align-items: center;
+    }
 }
