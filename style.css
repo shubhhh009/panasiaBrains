@@ -56,12 +56,12 @@ body {
 .hero-section {
     position: relative;
     width: 100%;
-    padding-top: 40px;
-    padding-bottom: 200px;
-    /* Space to push buttons and text upwards and show the image */
-    min-height: 800px;
+    max-width: px;
+    height: 900px;
+    margin: 0 auto;
+    padding-top: 20px;
     /* Using the exact image uploaded by user */
-    background: url('images/4483db7316da99989ee5a995421e03781f54b0ef.jpg') center/cover no-repeat;
+    background: url('images/4483db7316da99989ee5a995421e03781f54b0ef.jpg') 55% 85%/110% no-repeat;
     color: #FFFFFF;
     overflow: hidden;
 }
@@ -147,7 +147,7 @@ body {
 
 .btn-contact:hover {
     background-color: #FFFFFF;
-    color: #353535;
+    color: #f5eaea;
 }
 
 .caret {
@@ -171,7 +171,7 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(254, 251, 251, 0.8);
     backdrop-filter: blur(10px);
     list-style: none;
     min-width: 180px;
@@ -202,7 +202,7 @@ body {
 }
 
 .dropdown-menu li a:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(78, 71, 71, 0.1);
 }
 
 .btn-contact {
@@ -225,7 +225,7 @@ body {
 
 /* Hero Content Flex Layout */
 .hero-content {
-    margin-top: 153px;
+    margin-top: 173px;
     /* Precise top distance */
     position: relative;
     width: 100%;
@@ -233,18 +233,21 @@ body {
 
 .hero-text-block {
     position: relative;
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     height: 252px;
-    /* Strict height from Figma */
+    /* Strict dimensions to match 1200x252 exact layout bounds */
 }
 
 /* Main Heading match Figma precisely */
 .hero-text-block h1 {
-    font-size: 78px;
-    line-height: 1.15;
-    font-weight: 400;
-    /* Revert to lighter weight seen in figma overlay */
-    letter-spacing: -1.5px;
+    font-size: 80px;
+    /* Adjusted to match visual weight */
+    line-height: 84px;
+    /* Exactly 252px divided by 3 lines = 84px */
+    font-weight: 500;
+    letter-spacing: 1px;
+    word-spacing: 12px;
     margin: 0;
 }
 
@@ -254,6 +257,7 @@ body {
     top: 0;
     right: 0;
     width: 100%;
+    max-width: 1200px;
     /* Spans full width for exact internal positioning */
     pointer-events: none;
     /* Allows text to be highlighted */
@@ -261,17 +265,18 @@ body {
 
 .subtitle {
     position: absolute;
-    top: 24px;
-    /* Matches exact visual alignment in overlay */
-    left: 450px;
-    /* Positioned perfectly right of "30 Years of" text edge */
-    width: 527.83px;
+    top: 16px;
+    /* left: 580px; */
+    left: 41%;
+    width: 727.83px;
+    height: auto;
     /* Exact dimension from Figma inspector */
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 22px;
+    line-height: 34px;
+    /* 44px height / 2 lines = exactly 22px */
     font-weight: 400;
     opacity: 0.95;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.5px;
     margin: 0;
     pointer-events: auto;
 }
@@ -338,7 +343,7 @@ body {
 /* About Section */
 .about-section {
     padding-top: 120px;
-    background-color: #F8F8F8;
+    background-color: #fdfcfc;
     /* Subtle light grey background */
 }
 
@@ -368,9 +373,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* Ensure paragraphs stay left-aligned within this 520px box */
-    width: 520px;
-    /* Mathematically calculated to perfectly right-align the centered button with the text end */
+    width: 780px;
+    margin-top: 16px;
+    margin-right: 20px;
+
 }
 
 .section-label {
@@ -408,20 +414,21 @@ body {
 }
 
 .about-right p {
-    font-size: 16px;
-    line-height: 2.4;
-    color: #353535;
-    margin-bottom: 30px;
+    font-size: 26px;
+    line-height: 2.0;
+    color: #201f1f;
+    font-weight: 450;
+    margin-bottom: 40px;
     text-align: left;
 }
 
 .view-all-btn {
-    align-self: center;
+    align-self: flex-end;
     /* Centers within the 620px box, creating exactly 150px of visual offset */
-    margin-top: 10px;
-    width: 320px;
+    margin-top: 18px;
+    width: 480px;
     padding: 16px 0;
-    font-size: 13px;
+    font-size: 22px;
     font-weight: 500;
     letter-spacing: 2px;
     display: flex;
@@ -443,12 +450,11 @@ body {
 
 .strengths-section {
     background-color: #F8F8F8;
-    /* Continue the subtle light grey background */
     padding: 20px 0 120px 0;
 }
 
 .strengths-header {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     /* Tiny gap to the content below */
 }
 
@@ -484,9 +490,8 @@ body {
 
 /* Right Text Block */
 .strengths-text-wrapper {
-    width: 459px;
+    width: 500px;
     position: relative;
-    /* lock absolute children */
     display: flex;
     flex-direction: column;
 }
@@ -499,8 +504,8 @@ body {
 .strength-number-container {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 24px;
+    gap: 25px;
+    margin-bottom: 18px;
     width: 100%;
 }
 
@@ -535,8 +540,8 @@ body {
 
 .strength-desc {
     width: 459px;
-    font-size: 15px;
-    line-height: 2.4;
+    font-size: 18px;
+    line-height: 2.2;
     /* Perfect for 253px height over 7 lines */
     font-weight: 400;
     color: #353535;
@@ -572,35 +577,7 @@ body {
     background: #FAFAFA;
 }
 
-/* Mobile Responsiveness just in case */
-@media (max-width: 1024px) {
-    .hero-content {
-        flex-direction: column;
-        margin-top: 80px;
-    }
 
-    .hero-text-block {
-        height: auto;
-    }
-
-    .hero-text-block h1 {
-        font-size: 48px;
-    }
-
-    .subtitle {
-        position: static;
-        margin-top: 20px;
-    }
-
-    .about-container {
-        margin-left: 0;
-    }
-
-    .nav-links {
-        display: none;
-        /* Hide on mobile for simplicity */
-    }
-}
 
 /* Services Section */
 .services-section {
@@ -612,7 +589,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 80px;
-    /* Explicitly specified in Figma properties */
     margin-top: 60px;
     width: 100%;
     /* Spans full width */
@@ -649,7 +625,7 @@ body {
 }
 
 .service-text h3 {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 500;
     line-height: 1.35;
     /* Matched 75px / 2 = ~37.5px line-height */
@@ -660,7 +636,7 @@ body {
 }
 
 .service-text p {
-    font-size: 15px;
+    font-size: 18px;
     line-height: 2.2;
     /* Matched 133px / 4 = ~33.25px line-height */
     color: #444;
@@ -686,7 +662,7 @@ body {
     padding: 12px 40px;
     border: 1px solid #CCC;
     border-radius: 50px;
-    font-size: 11px;
+    font-size: 15px;
     text-transform: uppercase;
     text-decoration: none;
     color: #333;
@@ -695,6 +671,7 @@ body {
     /* Strong text tracking as seen in screenshot */
     transition: all 0.3s ease;
     align-self: flex-start;
+    margin-top: 20px;
 }
 
 .btn-outline-small:hover {
@@ -1057,14 +1034,62 @@ body {
         height: 36px;
     }
 
-    /* Hero Scaling */
-    .hero-text-block h1 {
-        font-size: 44px;
+    /* Tablet and Small Desktop Fixes */
+    @media (max-width: 1024px) {
+        .container {
+            padding: 0 40px;
+        }
+
+        .hero-text-block {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .hero-text-block h1 {
+            font-size: 60px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            position: static;
+            width: 100%;
+            margin-top: 20px;
+            left: 0;
+        }
+
+        .about-content {
+            flex-direction: column;
+            padding-bottom: 60px;
+        }
+
+        .about-left,
+        .about-right {
+            width: 100% !important;
+            margin-top: 0 !important;
+        }
+
+        .about-right {
+            margin-top: 40px !important;
+        }
+    }
+
+    .cta-buttons {
+        position: static;
+        margin-top: 30px;
         width: 100%;
+        align-items: flex-start;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 355px;
     }
 
     .hero-right-panel {
-        top: 480px;
+        position: relative;
+        top: 0;
+        margin-top: 40px;
+        padding-bottom: 40px;
     }
 
     /* About Section */
@@ -1081,6 +1106,41 @@ body {
 
     .about-right p {
         width: 100%;
+    }
+
+    .about-left h2 {
+        font-size: 32px;
+    }
+
+    /* Strengths Section */
+    .strengths-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .strengths-image-wrapper {
+        width: 100%;
+        height: auto;
+        min-height: 300px;
+    }
+
+    .strengths-text-wrapper {
+        width: 100%;
+        background: transparent;
+    }
+
+    .strength-heading {
+        width: 100%;
+        font-size: 28px;
+    }
+
+    .strength-desc {
+        width: 100%;
+    }
+
+    .strength-nav-buttons {
+        position: relative;
+        margin-top: 20px;
     }
 
     /* Services Section */
@@ -1130,6 +1190,10 @@ body {
 
 @media screen and (max-width: 768px) {
 
+    .container {
+        padding: 0 20px;
+    }
+
     /* Navbar Mobile Layout */
     .navbar {
         flex-wrap: wrap;
@@ -1148,80 +1212,207 @@ body {
     .nav-link {
         font-size: 12px;
     }
+}
 
-    /* Hero Mobile Stacking */
-    .hero-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0 20px;
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablet and Small Desktop Fixes */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 40px;
     }
 
     .hero-text-block {
-        position: relative;
-        top: 0;
-        margin-top: 60px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .hero-text-block h1 {
+        font-size: 56px;
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+        left: 0;
+    }
+
+    .about-content {
+        flex-direction: column;
+        padding-bottom: 60px;
+    }
+
+    .about-left,
+    .about-right {
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+
+    .about-right {
+        margin-top: 40px !important;
+    }
+
+    .cta-buttons {
+        position: static;
+        margin-top: 30px;
+    }
+}
+
+/* Mobile Fine-tuning */
+@media (max-width: 768px) {
+    .hero-section {
+        height: auto;
+        min-height: 100vh;
+        padding: 60px 20px 80px 20px;
+        background-size: cover !important;
+        background-position: center !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .logo {
+        height: 32px;
+    }
+
+    .hero-content {
+        margin-top: 40px;
         text-align: center;
     }
 
     .hero-text-block h1 {
         font-size: 32px;
-    }
-
-    .hero-right-panel {
-        position: relative;
-        top: 0;
-        right: 0;
-        margin-top: 40px;
+        line-height: 1.3;
+        letter-spacing: 0.5px;
+        word-spacing: 2px;
         text-align: center;
         width: 100%;
     }
 
-    .cta-buttons {
-        position: relative;
-        top: 0;
+    .subtitle {
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: center;
+        margin: 30px auto 0 auto;
+        position: static;
         width: 100%;
+        left: auto;
+    }
+
+    .cta-buttons {
+        position: static;
+        width: 100%;
+        margin-top: 40px;
         align-items: center;
-        margin-top: 20px;
+        gap: 15px;
     }
 
     .btn {
         width: 100%;
-        max-width: 350px;
-        font-size: 16px;
-        height: 50px;
-    }
-
-    /* Typography Overrides */
-    .section-heading {
-        font-size: 24px;
-    }
-
-    .subtitle {
+        max-width: 320px;
+        height: 52px;
         font-size: 14px;
     }
 
-    /* Slider Container Padding */
-    .strengths-container {
-        padding: 40px 20px;
+    .about-left h2 {
+        font-size: 26px;
+        line-height: 1.4;
     }
 
-    /* Responsive Full Width Grids */
+    .about-right p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .view-all-btn {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    /* Strengths Section */
+    .strengths-container {
+        padding: 40px 20px;
+        /* Added side padding to stop text touching edges */
+    }
+
+    .strengths-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        width: 100%;
+    }
+
+    .strengths-text-wrapper,
+    .strength-desc {
+        width: 100% !important;
+        /* Forces fluid width on mobile */
+    }
+
+    .strength-heading {
+        font-size: 26px;
+        /* Slightly bigger for better impact */
+        line-height: 1.3;
+    }
+
+    .strength-desc {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    /* Grids */
     .catalogs-grid,
     .proof-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
 
-    /* Variable Heights Overrides */
+    .proof-item {
+        height: 250px;
+    }
+
+    /* Sections */
     .catalogs-section,
-    .proof-section {
-        padding: 60px 0;
+    .proof-section,
+    .about-section,
+    .services-section {
+        padding: 50px 0;
         height: auto;
+    }
+
+    .service-item {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .service-text h3 {
+        font-size: 24px;
+    }
+
+    .service-text p {
+        font-size: 15px;
     }
 
     /* Footer */
     .footer-top {
-        padding: 60px 20px;
+        padding: 50px 20px;
     }
 
     .footer-bottom-container {
@@ -1233,5 +1424,11 @@ body {
 
     .footer-legal {
         align-items: center;
+    }
+
+    .contact-btn {
+        padding: 16px 30px;
+        width: 100%;
+        max-width: 280px;
     }
 }
