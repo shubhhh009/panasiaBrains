@@ -11,6 +11,13 @@
     box-sizing: border-box;
 }
 
+body,
+html {
+    width: 100%;
+    overflow-x: hidden;
+    /* Prevents unwanted horizontal scrolling */
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -26,18 +33,17 @@ body {
 .container {
     width: 100%;
     max-width: 1200px;
-    /* Perfectly matches User's 1200x503 bounding box */
-    /* Provides the exact 110px padding on 1440px wide screens */
     margin: 0 auto;
     position: relative;
     z-index: 2;
+    padding: 10 20px;
 }
 
 /* Top Indicator Line from Figma layout "TOP" */
 .top-indicator {
-    padding-top: 15px;
+    padding-top: 50px;
     padding-bottom: 5px;
-    background-color: #FFFFFF;
+    background-color: transparent;
 }
 
 .top-indicator-container {
@@ -56,12 +62,11 @@ body {
 .hero-section {
     position: relative;
     width: 100%;
-    max-width: px;
     height: 900px;
     margin: 0 auto;
-    padding-top: 20px;
-    /* Using the exact image uploaded by user */
-    background: url('images/4483db7316da99989ee5a995421e03781f54b0ef.jpg') 55% 85%/110% no-repeat;
+    padding-top: 0;
+    /* Full-width background coverage */
+    background: url('images/4483db7316da99989ee5a995421e03781f54b0ef.jpg') 55% top/cover no-repeat;
     color: #FFFFFF;
     overflow: hidden;
 }
@@ -79,6 +84,7 @@ body {
 
 /* Navbar */
 .navbar {
+    padding-top: 44px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1430,5 +1436,92 @@ body {
         padding: 16px 30px;
         width: 100%;
         max-width: 280px;
+    }
+}
+
+/* --- ONLY FOR LAPTOP DIMENSIONS (Approx 1046px - 1150px) --- */
+/* This will FIX the bars and overlap ONLY on this screen size */
+@media (max-width: 1150px) and (min-width: 1024px) {
+    .top-indicator {
+        background-color: transparent !important;
+        position: relative;
+        z-index: 10;
+    }
+
+    .navbar {
+        background: transparent !important;
+    }
+
+    .hero-section {
+        padding-top: 0 !important;
+        background-size: cover !important;
+        background-position: 55% top !important;
+    }
+
+    .subtitle {
+        left: 50% !important;
+        /* Prevents overlap only on this dimension */
+        font-size: 18px !important;
+        width: 500px !important;
+    }
+
+    /* Core Strengths Section Laptop Fix */
+    .strengths-content {
+        gap: 20px !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .strengths-image-wrapper {
+        width: 55% !important;
+        /* Scale down image on laptop */
+        height: auto !important;
+        min-height: 400px;
+    }
+
+    .strengths-text-wrapper {
+        width: 45% !important;
+        /* Scale text block to fit */
+    }
+
+    .strength-heading {
+        font-size: 28px !important;
+        width: 90% !important;
+    }
+
+    .strength-desc {
+        width: 95% !important;
+        font-size: 16px !important;
+        line-height: 1.8 !important;
+    }
+}
+
+
+
+/* --- HIGH-RESOLUTION DESKTOP (Above Macbook Air M1 - 1441px+) --- */
+@media (min-width: 1441px) {
+    .container {
+        max-width: 1350px;
+        /* Expands container for large monitors */
+    }
+
+    .hero-section {
+        background-size: cover !important;
+        /* Photo covers entire screen for big resolutions */
+        background-position: 55% center !important;
+        height: 100vh !important;
+        /* Full window height for large desktops */
+    }
+
+    .hero-text-block h1 {
+        font-size: 100px !important;
+        /* Scales text up so it doesn't look small */
+        line-height: 1.1 !important;
+    }
+
+    .subtitle {
+        font-size: 26px !important;
+        left: 45% !important;
+        /* Re-adjusted for the bigger heading */
+        width: 650px !important;
     }
 }
