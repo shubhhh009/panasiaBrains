@@ -1543,7 +1543,27 @@ body {
         width: 100% !important;
         line-height: 1.8 !important;
     }
+
+    /* About Us Section Laptop Fix */
+    .about-section {
+        width: 100% !important;
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+    }
+
+    .about-right {
+        width: 100% !important;
+        /* Spans full width until white area */
+        margin-right: 0 !important;
+    }
+
+    .about-right p {
+        width: 100% !important;
+        font-size: 22px !important;
+        line-height: 1.8 !important;
+    }
 }
+
 
 
 
