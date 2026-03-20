@@ -1493,7 +1493,59 @@ body {
         font-size: 16px !important;
         line-height: 1.8 !important;
     }
+
+    /* Core Strengths Section Laptop Fix */
+    .strengths-content {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 30px !important;
+        width: 100% !important;
+    }
+
+    .strengths-image-wrapper {
+        width: 55% !important;
+        height: auto !important;
+        min-height: 480px;
+    }
+
+    .strengths-text-wrapper {
+        width: 45% !important;
+        padding-right: 20px;
+    }
+
+    .strength-heading {
+        font-size: 28px !important;
+    }
+
+    /* Services Section Laptop Fix */
+    .service-item {
+        gap: 30px !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+    }
+
+    .service-img {
+        width: 55% !important;
+        height: auto !important;
+    }
+
+    .service-text {
+        width: 45% !important;
+    }
+
+    .service-text h3 {
+        font-size: 26px !important;
+        width: 100% !important;
+    }
+
+    .service-text p {
+        font-size: 16px !important;
+        width: 100% !important;
+        line-height: 1.8 !important;
+    }
 }
+
+
 
 
 
