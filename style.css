@@ -1851,6 +1851,96 @@ body {
 /* --- ONLY FOR LAPTOP DIMENSIONS (Approx 1046px - 1150px) --- */
 /* This will FIX the bars and overlap ONLY on this screen size */
 @media (max-width: 1150px) and (min-width: 1024px) {
+    .header-container {
+        padding: 0 30px !important;
+    }
+
+    .nav-right {
+        gap: 15px !important;
+    }
+
+    .logo {
+        font-size: 20px !important;
+    }
+
+    .nav-link {
+        font-size: 13px !important;
+        letter-spacing: 1px !important;
+    }
+
+    .btn-contact {
+        font-size: 12px !important;
+        padding: 8px 16px !important;
+    }
+
+    /* Content Area Fixes */
+    .service-title-block .container-fluid,
+    .service-paragraphs-block .container-fluid {
+        padding: 0 40px !important;
+        max-width: 100% !important;
+    }
+
+    .service-intro-heading {
+        font-size: 42px !important;
+        line-height: 1.3 !important;
+    }
+
+    .intro-spacer {
+        flex: 0.4 !important;
+    }
+
+    .intro-content-right p {
+        font-size: 20px !important;
+    }
+
+    /* Services List Section Fixes */
+    .services-list-outer-block {
+        padding: 80px 30px !important;
+    }
+
+    .services-flexible-layout {
+        gap: 30px !important;
+    }
+
+    .services-sidebar {
+        width: 250px !important;
+    }
+
+    .sidebar-nav {
+        gap: 30px !important;
+    }
+
+    .sidebar-item {
+        font-size: 18px !important;
+    }
+
+    .block-title {
+        font-size: 36px !important;
+    }
+
+    .service-block p {
+        font-size: 18px !important;
+    }
+
+    /* Footer Fixes for 1024px */
+    .footer-container {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        padding: 0 40px !important;
+        gap: 30px !important;
+    }
+
+    .footer-col {
+        width: auto !important;
+        margin-bottom: 0 !important;
+    }
+
+    .footer-nav-headers {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 20px !important;
+    }
+
     .top-indicator {
         background-color: transparent !important;
         position: relative;
