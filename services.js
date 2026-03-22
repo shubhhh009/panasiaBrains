@@ -11,8 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.scrollY - 150; // Offset for header
+
                 window.scrollTo({
-                    top: targetElement.offsetTop - 120, // Offset for sticky header
+                    top: offsetPosition,
                     behavior: 'smooth'
                 });
             }
@@ -81,6 +84,32 @@ document.addEventListener('DOMContentLoaded', () => {
                     behavior: 'smooth'
                 });
             }
+        });
+    }
+    // --- 5. Mobile Menu Toggle Logic ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+
+    if (menuToggle && mobileDrawer) {
+        menuToggle.addEventListener('click', () => {
+            mobileDrawer.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        if (menuClose) {
+            menuClose.addEventListener('click', () => {
+                mobileDrawer.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        }
+
+        const mobileLinks = document.querySelectorAll('.mobile-nav-item');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileDrawer.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
         });
     }
 });
