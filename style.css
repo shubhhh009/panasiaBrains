@@ -1,3 +1,4 @@
+/* --- BASE & VARIABLES --- */
 :root {
     --primary-color: #353535;
     --text-color: #353535;
@@ -15,11 +16,8 @@ body,
 html {
     width: 100%;
     overflow-x: hidden;
-    /* Prevents unwanted horizontal scrolling */
-}
-
-html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -27,51 +25,166 @@ body {
     background-color: #FFFFFF;
     color: #353535;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: inherit;
 }
 
 .container {
-    width: 100%;
-    max-width: 1200px;
+    max-width: 1220px;
     margin: 0 auto;
-    position: relative;
-    z-index: 2;
-    padding: 10 20px;
+    padding: 0 20px;
 }
 
-/* Top Indicator Line from Figma layout "TOP" */
-.top-indicator {
-    padding-top: 50px;
-    padding-bottom: 5px;
-    background-color: transparent;
+/* Reduced side padding slightly for mid-size screens to help long text wrap better */
+@media (min-width: 1025px) and (max-width: 1400px) {
+    .container {
+        padding: 0 50px;
+    }
 }
 
-.top-indicator-container {
+.hero-container {
+    padding: 0 20px !important;
+}
+
+/* Responsive Br Logic (Figma: Desktop 3 lines, Tablet/Mobile 4 lines) */
+.br-mobile,
+.space-desktop {
+    display: none;
+}
+
+.br-desktop {
+    display: none;
+    /* Hide by default, only show on large desktop */
+}
+
+@media (min-width: 1240px) {
+    .br-desktop {
+        display: inline;
+    }
+
+    .space-desktop {
+        display: inline;
+    }
+}
+
+@media (max-width: 1024px) {
+    .br-desktop {
+        display: none !important;
+    }
+
+    .br-mobile {
+        display: inline !important;
+    }
+}
+
+/* --- NAVIGATION --- */
+.navbar {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    position: relative;
+    z-index: 100;
 }
 
-.top-text {
-    font-size: 10px;
+.logo {
+    font-size: 24px !important;
+    font-weight: 500 !important;
+    letter-spacing: 1px;
+    color: #FFFFFF !important;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px !important;
+}
+
+.nav-link {
+    text-decoration: none !important;
+    color: #FFFFFF !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em !important;
+    white-space: nowrap;
+}
+
+.btn-contact {
+    border: 1px solid #FFFFFF !important;
+    border-radius: 30px !important;
+    color: #FFFFFF !important;
+    padding: 8px 22px !important;
     font-weight: 500;
-    letter-spacing: 2px;
-    color: #999;
 }
 
-/* Hero Section */
+/* --- MOBILE TOGGLE --- */
+.mobile-toggle {
+    display: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+/* --- MOBILE MENU OVERLAY --- */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    z-index: 2000;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-overlay.active {
+    right: 0;
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 36px;
+    color: #353535;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    margin-top: 40px;
+}
+
+.mobile-nav-links li {
+    margin-bottom: 20px;
+}
+
+.mobile-nav-links a {
+    font-size: 20px;
+    font-weight: 600;
+    color: #353535;
+    text-transform: uppercase;
+}
+
+/* --- HERO SECTION --- */
 .hero-section {
     position: relative;
     width: 100%;
     height: 900px;
-    margin: 0 auto;
-    padding-top: 0;
-    /* Full-width background coverage */
     background: url('images/4483db7316da99989ee5a995421e03781f54b0ef.jpg') 55% top/cover no-repeat;
     color: #FFFFFF;
-    overflow: hidden;
+    padding-top: 33px;
 }
 
-/* Very subtle dark gradient overlay to ensure white text is perfectly legible on image */
 .hero-bg-overlay {
     position: absolute;
     top: 0;
@@ -82,2017 +195,615 @@ body {
     z-index: 1;
 }
 
-/* Navbar */
-.navbar {
-    padding-top: 44px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: none;
-    width: 100%;
-    height: 48px;
-    /* Strict 48px bounding height matching UI properties */
-}
-
-.logo {
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    color: #FFFFFF;
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    /* Exactly expands flex width towards the 864px Figma bound */
-}
-
-.nav-link {
-    text-decoration: none;
-    color: #FFFFFF;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    /* Exact typography size from properties */
-    font-weight: 500;
-    line-height: 1;
-    /* 100% line height */
-    letter-spacing: 0.08em;
-    /* 8% letter spacing */
-    text-transform: uppercase;
-    transition: opacity 0.3s ease;
-    display: flex;
-    align-items: center;
-}
-
-.nav-link:hover {
-    opacity: 0.7;
-}
-
-.btn-contact {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Montserrat', sans-serif;
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 18px;
-    /* Matching the 18px nav-links */
-    font-weight: 500;
-    line-height: 1;
-    /* 100% line height */
-    letter-spacing: 0.08em;
-    /* 8% */
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 50px;
-    padding: 8px 30px;
-    height: 40px;
-    /* Constrained under 48px total navbar height */
-    transition: all 0.3s ease;
-}
-
-.btn-contact:hover {
-    background-color: #FFFFFF;
-    color: #f5eaea;
-}
-
-.caret {
-    margin-left: 8px;
-    font-size: 11px;
-    /* Scaled up to mirror the solid SVG triangle proportion */
-    vertical-align: middle;
-    display: inline-block;
-    transform: translateY(-1px);
-    /* Perfect optical vertical center matching 13px line height */
-}
-
-/* Dropdown Menu CSS */
-.dropdown {
-    position: relative;
-    padding-bottom: 10px;
-    margin-bottom: -10px;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: rgba(254, 251, 251, 0.8);
-    backdrop-filter: blur(10px);
-    list-style: none;
-    min-width: 180px;
-    border-radius: 8px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    padding: 10px 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-menu li a {
-    text-decoration: none;
-    color: var(--text-color);
-    padding: 10px 20px;
+.hero-display-grid {
     display: block;
-    font-size: 13px;
-    font-weight: 400;
-    text-transform: none;
-    transition: background 0.3s;
-}
-
-.dropdown-menu li a:hover {
-    background: rgba(78, 71, 71, 0.1);
-}
-
-.btn-contact {
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    padding: 10px 28px;
-    border: 1px solid rgba(255, 255, 255, 1);
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    background: transparent;
-}
-
-.btn-contact:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* Hero Content Flex Layout */
-.hero-content {
-    margin-top: 173px;
-    /* Precise top distance */
     position: relative;
+    z-index: 10 !important;
+    margin-top: 153px;
     width: 100%;
 }
 
-.hero-text-block {
-    position: relative;
-    width: 100%;
+.hero-main-title {
+    font-size: 80px !important;
+    line-height: 84px !important;
+    font-weight: 500 !important;
+    color: #FFFFFF !important;
+    letter-spacing: 0.04em;
     max-width: 1200px;
-    height: 252px;
-    /* Strict dimensions to match 1200x252 exact layout bounds */
 }
 
-/* Main Heading match Figma precisely */
-.hero-text-block h1 {
-    font-size: 80px;
-    /* Adjusted to match visual weight */
-    line-height: 84px;
-    /* Exactly 252px divided by 3 lines = 84px */
-    font-weight: 500;
-    letter-spacing: 1px;
-    word-spacing: 12px;
-    margin: 0;
-}
-
-.hero-right-panel {
-    /* Kept relative to block */
+.hero-subtitle-text {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    max-width: 1200px;
-    /* Spans full width for exact internal positioning */
-    pointer-events: none;
-    /* Allows text to be highlighted */
+    top: 11px;
+    left: 500px;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF !important;
+    max-width: 528px;
 }
 
-.subtitle {
+.hero-cta-stack {
     position: absolute;
-    top: 16px;
-    /* left: 580px; */
-    left: 41%;
-    width: 727.83px;
-    height: auto;
-    /* Exact dimension from Figma inspector */
-    font-size: 22px;
-    line-height: 34px;
-    /* 44px height / 2 lines = exactly 22px */
-    font-weight: 400;
-    opacity: 0.95;
-    letter-spacing: 0.5px;
-    margin: 0;
-    pointer-events: auto;
-}
-
-/* CTA Buttons */
-.cta-buttons {
-    position: absolute;
-    top: 280px;
-    /* Right exactly beneath the 252px text container */
+    top: 312px;
     right: 0;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
     align-items: flex-end;
-    width: 355.56px;
-    margin: 0;
-    pointer-events: auto;
 }
 
-.btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    padding: 0;
-    border-radius: 50px;
-    font-size: 18px;
-    /* Based tightly on 24px bounding height */
-    font-weight: 500;
-    letter-spacing: 2px;
-    /* Emulated letter spacing for correct font stretching */
-    transition: transform 0.3s ease, opacity 0.3s ease;
+.hero-cta-stack .btn {
     width: 355.56px;
     height: 64px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.95;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .outline-btn {
-    background: rgba(40, 20, 20, 0.3);
-    /* Provides the dark brownish tint seen in transparent button overlay */
-    color: #fff;
-    border: 1.5px solid rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px);
-}
-
-.outline-btn:hover {
-    border-color: #fff;
-    background: rgba(40, 20, 20, 0.5);
+    border: 1px solid #fff;
 }
 
 .gradient-btn {
-    background: linear-gradient(90deg, #9C5DB2 0%, #DF6A63 100%);
-    /* Flipped gradient: Purple -> Pink mapping screenshot */
-    color: #fff;
-    border: none;
+    background: linear-gradient(90deg, #DC6061 0%, #B54A4B 100%) !important;
+    color: #fff !important;
 }
 
-/* About Section */
+/* --- RESPONSIVE LOGIC --- */
+
+/* Updated Threshold: Switch to Unified Mobile/Tablet Stack below 1025px */
+@media (max-width: 1024px) {
+    .nav-right {
+        display: none !important;
+    }
+
+    .mobile-toggle {
+        display: block !important;
+    }
+
+    .hero-section {
+        height: auto;
+        min-height: 584px;
+        padding-bottom: 50px;
+        padding-top: 27px;
+    }
+
+    .navbar {
+        padding: 0 24px !important;
+    }
+
+    .hero-display-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+        margin-top: 80px !important;
+        padding: 0 24px;
+    }
+
+    .hero-main-title {
+        font-size: 44px !important;
+        line-height: 52px !important;
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero-subtitle-text {
+        position: relative !important;
+        text-align: center;
+        margin-top: 25px !important;
+        max-width: 100% !important;
+        font-size: 14px;
+        top: 0 !important;
+        left: 0 !important;
+    }
+
+    .hero-cta-stack {
+        position: relative !important;
+        align-items: center !important;
+        margin-top: 35px !important;
+        width: 100%;
+        right: auto;
+        padding: 0;
+        top: 0 !important;
+    }
+
+    .hero-cta-stack .btn {
+        width: 100% !important;
+        max-width: 355px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 481px) {
+    .container {
+        padding: 0;
+    }
+
+    .hero-display-grid {
+        align-items: flex-start !important;
+        margin-top: 116px !important;
+        padding: 0 23px;
+    }
+
+    .hero-main-title {
+        font-size: 32px !important;
+        line-height: 40px !important;
+        text-align: left;
+    }
+
+    .hero-subtitle-text {
+        text-align: left;
+        margin-top: 24px !important;
+        font-size: 12px;
+    }
+
+    .hero-cta-stack {
+        align-items: flex-start !important;
+        padding: 0 23px;
+    }
+}
+
+/* --- ABOUT US SECTION --- */
 .about-section {
-    padding-top: 120px;
-    background-color: #fdfcfc;
-    /* Subtle light grey background */
+    padding: 120px 0;
+    background: #FFFFFF;
+    color: #353535;
 }
 
-.about-top-border {
+.section-divider {
     width: 100%;
-    height: 1px;
-    background-color: #EAEAEA;
-    /* Slightly lighter border */
+    max-width: 1210px;
+    height: 1.5px;
+    background: #353535;
+    opacity: 0.1;
     margin-bottom: 40px;
-    /* Added gap below horizontal line */
 }
 
-.about-content {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 120px;
-}
-
-.about-left {
-    width: 100%;
-    margin-bottom: 0px;
-    /* Zero gap between heading box and paragraph box as shown in Figma blue boxes */
-}
-
-.about-right {
-    align-self: flex-end;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 780px;
-    margin-top: 16px;
-    margin-right: 20px;
-
+.about-header-wrap {
+    margin-bottom: 40px;
 }
 
 .section-label {
-    font-size: 24px;
-    /* Figma direct mapping */
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: #353535;
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.about-main-title {
+    font-size: 40px !important;
+    line-height: 54px !important;
+    /* Reduced from 84px for better sentence wrap */
+    font-weight: 500 !important;
+    letter-spacing: 0.04em !important;
+    color: #353535 !important;
+    max-width: 1008px;
+}
+
+.about-content-frame {
+    margin-top: 40px;
+    padding-left: 400px;
+}
+
+.about-body-text p {
+    font-size: 24px !important;
+    line-height: 50px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.04em !important;
+    color: #353535;
+    margin-bottom: 24px;
+    max-width: 800px !important;
+}
+
+.about-signoff {
     font-weight: 600;
-    line-height: 1;
-    /* 100% line height */
-    letter-spacing: 0.08em;
-    /* 8% character tracking */
-    color: #353535;
-    margin-bottom: 50px;
+    margin-bottom: 48px !important;
+}
+
+.dark-btn {
+    background: #262626 !important;
+    /* Neutral Black from Figma */
+    color: #FFFFFF !important;
+    width: 492.56px !important;
+    /* Exactly as per Figma Layout */
+    height: 64px !important;
+    /* Exactly as per Figma Layout */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px !important;
+    /* Pill shape */
+    font-size: 14px !important;
+    font-weight: 600 !important;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-    /* Binding exact font family */
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    /* Aligns to far right as per Figma Blue Box */
 }
 
-.about-left h2 {
-    font-size: 40px;
-    /* Bigger font */
-    line-height: 1.6;
-    /* Massive, airy line-height */
-    font-weight: 500;
+.dark-btn:hover {
+    background: #000000 !important;
+}
+
+@media (max-width: 1024px) {
+    .about-section {
+        padding: 80px 0;
+    }
+
+    .section-divider {
+        max-width: 100%;
+        margin-bottom: 32px;
+    }
+
+    .about-main-title {
+        font-size: 32px !important;
+        line-height: 48px !important;
+    }
+
+    .about-header-wrap {
+        padding: 0 24px;
+        margin-bottom: 32px;
+    }
+
+    .about-content-frame {
+        padding: 0 24px;
+        margin-top: 32px;
+    }
+
+    .about-body-text p {
+        font-size: 18px !important;
+        line-height: 32px !important;
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 481px) {
+    .about-section {
+        padding: 60px 20px;
+    }
+
+    .about-header-wrap {
+        padding: 0;
+    }
+
+    .about-content-frame {
+        padding: 0;
+        margin-top: 24px;
+    }
+
+    .about-main-title {
+        font-size: 24px !important;
+        line-height: 34px !important;
+        letter-spacing: 0.02em !important;
+    }
+
+    .about-body-text p {
+        font-size: 14px !important;
+        line-height: 24px !important;
+        margin-bottom: 20px;
+    }
+
+    .about-signoff {
+        margin-bottom: 32px !important;
+    }
+
+    .dark-btn {
+        width: 100% !important;
+        max-width: 335px;
+        height: 40px !important;
+        margin: 0 auto;
+    }
+}
+
+/* --- 7 CORE STRENGTHS SECTION --- */
+.strengths-section {
+    padding: 120px 0;
+    background: #F8F8F8;
     color: #353535;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-.about-text {
-    font-size: 15px;
-    line-height: 2;
-    font-weight: 500;
-    /* Looks slightly heavier than regular in the screenshot, maybe medium */
-    color: #666;
-    margin-bottom: 30px;
-}
-
-.about-right p {
-    font-size: 26px;
-    line-height: 2.0;
-    color: #201f1f;
-    font-weight: 450;
-    margin-bottom: 40px;
+.strengths-container {
+    max-width: 1220px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Hard Left Align */
     text-align: left;
 }
 
-.view-all-btn {
-    align-self: flex-end;
-    /* Centers within the 620px box, creating exactly 150px of visual offset */
-    margin-top: 18px;
-    width: 480px;
-    padding: 16px 0;
-    font-size: 22px;
+.strengths-label {
+    font-size: 24px;
+    line-height: 64px;
+    /* Exactly as per Figma Typography */
     font-weight: 500;
-    letter-spacing: 2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-transform: uppercase;
+    color: #353535;
+    margin-top: 10px;
+    /* Gap from divider above */
+    margin-bottom: 10px;
+    /* Gap to slider below */
 }
 
-.btn-dark {
-    background-color: #262626;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 50px;
+.strengths-section .section-divider {
+    margin-bottom: 0px;
+    /* Divider margin handled by label gap */
 }
 
-.btn-dark:hover {
-    background-color: #000;
-    color: #FFF;
-}
-
-.strengths-section {
-    background-color: #F8F8F8;
-    padding: 20px 0 120px 0;
-}
-
-.strengths-header {
-    margin-bottom: 16px;
-    /* Tiny gap to the content below */
-}
-
-.strengths-line {
+.strengths-slider-container {
     width: 100%;
-    height: 1px;
-    background-color: #EFEFEF;
-    margin-bottom: 20px;
 }
 
-.strengths-content {
+.strength-slide {
     display: flex;
-    justify-content: flex-start;
-    gap: 41px;
-    /* 1200 - 700 - 459 = 41px */
     align-items: stretch;
-    /* ensures children can share heights */
+    width: 100%;
+    height: 650px;
+    /* Locked to image height */
+    overflow: hidden;
 }
 
-.strengths-image-wrapper {
-    width: 700px;
+.strength-image-wrap {
+    flex: 0 0 57%;
+    /* Proportional scaling for wide desktop */
     height: 650px;
     flex-shrink: 0;
-    /* strict sizing */
-    background: #f4f4f4;
+    overflow: hidden;
 }
 
-.strengths-image-wrapper img {
+/* On smaller laptops, give more room to text to prevent clipping */
+@media (max-width: 1240px) and (min-width: 1025px) {
+    .strength-image-wrap {
+        flex: 0 0 50%;
+    }
+}
+
+.strength-image-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: opacity 0.3s ease;
 }
 
-/* Right Text Block */
-.strengths-text-wrapper {
-    width: 500px;
-    position: relative;
+.strength-info-wrap {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    padding: 0 40px;
+    position: relative;
+    height: 650px;
+    transition: opacity 0.3s ease;
+    width: 100%;
+    /* Ensure it fills but doesn't exceed its flex grow */
+    overflow: hidden;
+    /* Contain text within */
 }
 
-.strengths-text-top {
-    margin-top: 0;
-    /* flush with image top */
+@media (max-width: 1100px) and (min-width: 1025px) {
+    .strength-info-wrap {
+        padding-right: 42px !important;
+        /* Extra safety for mid-range desktops */
+    }
 }
 
-.strength-number-container {
+/* Spacer logic handled in header */
+.strength-content-inner {
+    width: 100%;
+    max-width: 459px;
+    /* Max cap for wide desktop */
+}
+
+@media (max-width: 1240px) {
+    .strength-content-inner {
+        max-width: 100%;
+        /* Fluid for smaller screens */
+    }
+}
+
+.strength-index-wrap {
     display: flex;
     align-items: center;
-    gap: 25px;
-    margin-bottom: 18px;
-    width: 100%;
+    gap: 12px;
+    margin-bottom: 24px;
+    /* Gap to title top */
 }
 
-.strength-number {
-    font-size: 15px;
-    font-weight: 400;
-    /* Lighter numbers */
-    color: #888888;
-    /* Visually distinct grey */
-    margin: 0;
-}
-
-.strength-number-line {
-    flex-grow: 1;
-    height: 1px;
-    background-color: #E2E2E2;
-    /* Very light subtle grey */
-}
-
-.strength-heading {
-    width: 400px;
-    font-size: 34px;
-    /* Exactly matching 400px width ratio with ~11.7 chars per line */
-    line-height: 1.35;
+.strength-index {
+    font-size: 16px;
     font-weight: 500;
-    color: #2F2F2F;
-    /* Slightly softer than pitch black */
-    margin-bottom: 45px;
-    /* Pronounced vertical gap as in screenshot */
-    letter-spacing: -0.3px;
-}
-
-.strength-desc {
-    width: 459px;
-    font-size: 18px;
-    line-height: 2.2;
-    /* Perfect for 253px height over 7 lines */
-    font-weight: 400;
     color: #353535;
-    letter-spacing: 0.1px;
+    opacity: 0.6;
 }
 
-.strength-nav-buttons {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.index-line {
+    width: 427px;
+    height: 1.5px;
+    background: #353535;
+    opacity: 0.1;
+}
+
+.strength-title {
+    font-size: 36px !important;
+    line-height: 50px !important;
+    font-weight: 500 !important;
+    margin-bottom: 20px;
+    /* Gap to description top */
+    max-width: 400px;
+}
+
+.strength-description {
+    font-size: 18px !important;
+    line-height: 40px !important;
+    font-weight: 400 !important;
+    opacity: 0.8;
+    margin-bottom: 40px;
+    letter-spacing: 0.04em !important;
+}
+
+.strength-controls {
     display: flex;
     gap: 16px;
+    position: absolute;
+    bottom: 0px;
+    /* Pinned to image bottom edge */
+    left: 40px;
 }
 
-.nav-arrow {
-    width: 64px;
-    /* Figma arrows are round but proportional */
-    height: 64px;
+.slider-arrow {
+    width: 72px !important;
+    height: 72px !important;
     border-radius: 50%;
-    border: 1px solid #DEDEDE;
-    /* Super thin subtle border */
+    border: 1px solid rgba(53, 53, 53, 0.4) !important;
     background: transparent;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
-    color: #333;
     transition: all 0.3s ease;
-}
-
-.nav-arrow:hover {
-    border-color: #222;
-    background: #FAFAFA;
-}
-
-
-
-/* Services Page - Main Flexible Wrapper (Figma Exact Match) */
-.services-section-footer-area {
-    background-color: #FFFFFF;
-    /* Figma Background Color updated to White */
-    padding: 120px 118px;
-    /* Figma 120px Top/Bottom, 118px Left/Right */
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-/* Sticky Header for Service Page */
-.service-page-header {
-    background: #fff;
-    padding: 32px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-}
-
-.service-page-header .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 0;
-    /* Reset for sticky header */
-    height: auto;
-}
-
-.service-page-header .logo {
-    color: #333;
-    font-size: 28px;
-    font-weight: 500;
-}
-
-.service-page-header .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-
-
-}
-
-.service-page-header .nav-link {
-    color: #333;
-    font-size: 24px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.service-page-header .caret {
-    font-size: 16px;
-    margin-left: 8px;
-    color: #333;
-}
-
-.service-page-header .btn-contact {
-    padding: 20px 40px;
-    border: 1px solid #333;
-    border-radius: 100px;
-    color: #333;
-    font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 1.8px;
-    text-decoration: none;
-    margin-left: 0px;
-}
-
-/* Service Page Header Title (Figma Exact Measurement Block) */
-.service-page-title {
-    font-size: 92px;
-    font-weight: 600;
     color: #353535;
-    text-transform: uppercase;
-    letter-spacing: 16px;
-    margin-top: 80px;
-    margin-bottom: 30px;
 }
 
-/* Ensure container matches Figma 120px left offset and 1320px layout area */
-.container {
-    max-width: 1440px;
-    /* 120 + 1200 + 120 = 1440px */
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 120px;
-    /* Figma Left: 120px */
+.slider-arrow:hover {
+    background: #353535;
+    color: #FFFFFF;
 }
 
-.service-main-image-placeholder {
-    width: 1320px;
-    /* Figma Width: 1320px */
-    height: 400px;
-    /* Figma Height: 400px */
-    overflow: hidden;
-    margin-bottom: 60px;
-}
-
-.service-main-image-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.service-main-image-placeholder {
-    width: 100%;
-    margin-bottom: 60px;
-}
-
-.service-main-image-placeholder img {
-    border-radius: 2px;
-}
-
-.service-main-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Service Intro Section (Figma Match) */
-.service-intro-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    /* Reduced gap between Top and Bottom parts */
-    padding: 100px 0;
-}
-
-.intro-top {
-    width: 100%;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    font-size: 30px;
-
-}
-
-.intro-bottom {
-    display: flex;
-    width: 100%;
-}
-
-.intro-spacer {
-    flex: 1;
-    /* Approximately 400px of 1200px container */
-}
-
-.intro-content-right {
-    flex: 2;
-    /* Approximately 800px of 1200px container */
-}
-
-.intro-content-right p {
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 1.9;
-    color: #555;
-    margin-bottom: 60px;
-}
-
-.intro-subtitle {
-    font-size: 32px;
-    font-weight: 500;
-    color: #222;
-    line-height: 1.4;
-    margin-bottom: 20px;
-}
-
-.intro-right p {
-    font-size: 32px;
-    color: #444;
-    line-height: 1.9;
-    margin-bottom: 40px;
-}
-
-.intro-right p strong {
-    font-size: 20px;
-    color: #222;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+/* Removed specific medium screen padding as it's handled globally now */
 
 @media (max-width: 1024px) {
-    .service-intro-section {
-        flex-direction: column;
-        gap: 40px;
-    }
-}
-
-.services-list {
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-    margin-top: 60px;
-    width: 100%;
-    /* Spans full width */
-}
-
-.service-item {
-    display: flex;
-    gap: 40px;
-    /* 1200px - 700px (IMG) - 459px (TEXT) = 41px native gap */
-    /* Gap between image and text visually matches vertical gap */
-    align-items: flex-start;
-}
-
-.service-img {
-    width: 700px;
-    /* Exact Figma dimension from user */
-    height: 435px;
-    flex-shrink: 0;
-}
-
-.service-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.service-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex: 1;
-    /* Fills remaining space */
-    padding-top: 0;
-}
-
-.service-text h3 {
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 1.35;
-    /* Matched 75px / 2 = ~37.5px line-height */
-    margin-bottom: 24px;
-    color: #353535;
-    width: 400px;
-    /* Explicit Figma boundary */
-}
-
-.service-text p {
-    font-size: 18px;
-    line-height: 2.2;
-    /* Matched 133px / 4 = ~33.25px line-height */
-    color: #444;
-    width: 459px;
-    /* Explicit Figma boundary */
-    margin-bottom: 40px;
-    /* Stronger gap to the button */
-}
-
-.btn-contact {
-    padding: 12px 28px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 50px;
-    color: #FFFFFF;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-small {
-    padding: 12px 40px;
-    border: 1px solid #CCC;
-    border-radius: 50px;
-    font-size: 15px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    letter-spacing: 3px;
-    /* Strong text tracking as seen in screenshot */
-    transition: all 0.3s ease;
-    align-self: flex-start;
-    margin-top: 20px;
-}
-
-.btn-outline-small:hover {
-    background-color: #333;
-    color: #FFF;
-    border-color: #333;
-}
-
-
-
-/* Catalogs & Press */
-.catalogs-section {
-    padding: 120px 0;
-    /* Creates exact 743px height given a 503px inner bound */
-    background: #F8F8F8;
-}
-
-.catalogs-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    width: 100%;
-    margin-top: 40px;
-    /* Perfectly fits the 503px container bounding box */
-}
-
-.catalog-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 24px;
-}
-
-.catalog-img-wrapper {
-    width: 100%;
-    height: 180px;
-    /* Adjusted to hit 503px overall section height constraint */
-    /* Reduced slightly to match aspect ratio of product shots */
-    background-color: transparent;
-}
-
-.catalog-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    /* ensures complete product shows neatly like the screenshot */
-}
-
-.catalog-item p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #353535;
-    font-weight: 400;
-    /* Regular weight styling */
-}
-
-.catalogs-footer {
-    display: flex;
-    justify-content: flex-end;
-    /* Matches the right alignment shown in image */
-    margin-top: 60px;
-}
-
-.view-more-catalogs {
-    width: 280px;
-    /* Roughly exactly the width of one column beneath it */
-    display: flex;
-    justify-content: center;
-    padding: 14px 0;
-    /* Override generic pill to fit */
-}
-
-/* Proof Section */
-.proof-section {
-    padding: 120px 0;
-    background: #FDFDFA;
-    /* Matching Figma properties precisely */
-}
-
-.proof-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    /* Extremely tight gap matching Figma layout */
-    width: 100%;
-    margin-top: 40px;
-}
-
-.proof-item {
-    position: relative;
-    width: 100%;
-    height: 320px;
-    /* Matches proportions shown in Figma container bounding box */
-    overflow: hidden;
-}
-
-.proof-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.proof-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding-bottom: 30px;
-}
-
-.proof-overlay p {
-    color: #FFFFFF;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.5;
-    text-align: center;
-    margin: 0;
-}
-
-/* Contact Section */
-.contact-section {
-    position: relative;
-    width: 100%;
-    height: 240px;
-    /* Exact Figma dimension */
-    background: url('https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=1440&h=240&auto=format&fit=crop') center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-/* Dark overlay to ensure button pops identically to screenshot */
-.contact-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-}
-
-.contact-button-wrapper {
-    position: relative;
-    z-index: 2;
-}
-
-.contact-btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(90deg, #D4667A 0%, #A95EB5 100%);
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    padding: 18px 80px;
-    /* Creates wide pill identical to Figma image */
-    border-radius: 50px;
-    border: none;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.contact-btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.95;
-}
-
-/* Footer Section */
-.footer-section {
-    width: 100%;
-    background-color: #262626;
-}
-
-.footer-top {
-    padding: 80px 0;
-    width: 100%;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
-}
-
-.footer-col {
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-col-1 {
-    width: 25%;
-}
-
-.footer-col-2 {
-    width: 25%;
-}
-
-.footer-col-3 {
-    width: 50%;
-}
-
-.footer-heading {
-    color: #FFFFFF;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    margin-bottom: 24px;
-    text-transform: uppercase;
-}
-
-.footer-heading a {
-    color: #FFFFFF;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
-
-.footer-heading a:hover {
-    opacity: 0.7;
-}
-
-.footer-desc {
-    color: #DEDEDE;
-    font-size: 13px;
-    line-height: 1.8;
-    margin-bottom: 40px;
-}
-
-.social-block {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.follow-text {
-    color: #FFFFFF;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.social-line {
-    width: 40px;
-    height: 1px;
-    background-color: #555;
-}
-
-.social-icons {
-    display: flex;
-    gap: 16px;
-}
-
-.social-icons a {
-    color: #FFFFFF;
-    font-size: 16px;
-    transition: opacity 0.3s ease;
-}
-
-.social-icons a:hover {
-    opacity: 0.7;
-}
-
-.footer-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    /* Airy vertical spacing as shown */
-}
-
-.footer-list a {
-    color: #B0B0B0;
-    text-decoration: none;
-    font-size: 11px;
-    transition: color 0.3s ease;
-}
-
-.footer-list a:hover {
-    color: #FFFFFF;
-}
-
-.footer-nav-headers {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 24px;
-}
-
-.footer-nav-headers .footer-heading {
-    margin-bottom: 0;
-}
-
-/* Footer Bottom Strip */
-.footer-bottom {
-    background-color: #FFFFFF;
-    padding: 40px 0;
-}
-
-.footer-bottom-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.footer-logo {
-    font-size: 24px;
-    color: #353535;
-    font-weight: 300;
-    letter-spacing: 2px;
-}
-
-.footer-legal {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 20px;
-}
-
-.footer-legal a,
-.footer-legal p {
-    color: #666;
-    font-size: 12px;
-    text-decoration: none;
-    margin: 0;
-    font-weight: 500;
-}
-
-/* RESPONSIVE MEDIA QUERIES */
-
-@media screen and (max-width: 1240px) {
-    .container {
-        padding: 0 40px;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-
-    /* Navbar Scaling */
-    .nav-right {
-        gap: 20px;
+    .strengths-section {
+        padding: 60px 0;
     }
 
-    .nav-link {
-        font-size: 13px;
-        letter-spacing: 0em;
-    }
-
-    .btn-contact {
-        font-size: 13px;
-        padding: 6px 16px;
-        height: 36px;
-    }
-
-    /* Tablet and Small Desktop Fixes */
-    @media (max-width: 1024px) {
-        .container {
-            padding: 0 40px;
-        }
-
-        .hero-text-block {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .hero-text-block h1 {
-            font-size: 60px;
-            line-height: 1.2;
-        }
-
-        .subtitle {
-            position: static;
-            width: 100%;
-            margin-top: 20px;
-            left: 0;
-        }
-
-        .about-content {
-            flex-direction: column;
-            padding-bottom: 60px;
-        }
-
-        .about-left,
-        .about-right {
-            width: 100% !important;
-            margin-top: 0 !important;
-        }
-
-        .about-right {
-            margin-top: 40px !important;
-        }
-    }
-
-    .cta-buttons {
-        position: static;
-        margin-top: 30px;
-        width: 100%;
-        align-items: flex-start;
-    }
-
-    .btn {
-        width: 100%;
-        max-width: 355px;
-    }
-
-    .hero-right-panel {
-        position: relative;
-        top: 0;
-        margin-top: 40px;
-        padding-bottom: 40px;
-    }
-
-    /* About Section */
-    .about-content {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .about-left,
-    .about-right {
-        width: 100%;
-        margin-bottom: 0px;
-    }
-
-    .about-right p {
-        width: 100%;
-    }
-
-    .about-left h2 {
-        font-size: 32px;
-    }
-
-    /* Strengths Section */
-    .strengths-content {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .strengths-image-wrapper {
-        width: 100%;
-        height: auto;
-        min-height: 300px;
-    }
-
-    .strengths-text-wrapper {
-        width: 100%;
-        background: transparent;
-    }
-
-    .strength-heading {
-        width: 100%;
-        font-size: 28px;
-    }
-
-    .strength-desc {
-        width: 100%;
-    }
-
-    .strength-nav-buttons {
-        position: relative;
-        margin-top: 20px;
-    }
-
-    /* Services Section */
-    .service-item {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .service-img {
-        width: 100%;
-        height: auto;
-        max-height: 480px;
-    }
-
-    .service-text {
-        width: 100%;
-    }
-
-    .service-text h3,
-    .service-text p {
-        width: 100%;
-    }
-
-    /* Grids */
-    .catalogs-grid,
-    .proof-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    /* Footer */
-    .footer-container {
-        flex-direction: column;
-        gap: 50px;
-    }
-
-    .footer-col-1,
-    .footer-col-2,
-    .footer-col-3 {
-        width: 100%;
-    }
-
-    .footer-nav-headers {
-        flex-wrap: wrap;
-    }
-}
-
-@media screen and (max-width: 768px) {
-
-    .container {
-        padding: 0 20px;
-    }
-
-    /* Navbar Mobile Layout */
-    .navbar {
-        flex-wrap: wrap;
-        height: auto;
-        gap: 20px;
-        padding: 20px 0;
-        justify-content: center;
-    }
-
-    .nav-right {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .nav-link {
-        font-size: 12px;
-    }
-}
-
-/* --- RESPONSIVE DESIGN --- */
-
-/* Tablet and Small Desktop Fixes */
-@media (max-width: 1024px) {
-    .container {
-        padding: 0 40px;
-    }
-
-    .hero-text-block {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .hero-text-block h1 {
-        font-size: 56px;
-        line-height: 1.2;
-    }
-
-    .subtitle {
-        position: static;
-        width: 100%;
-        margin-top: 20px;
-        left: 0;
-    }
-
-    .about-content {
-        flex-direction: column;
-        padding-bottom: 60px;
-    }
-
-    .about-left,
-    .about-right {
-        width: 100% !important;
-        margin-top: 0 !important;
-    }
-
-    .about-right {
-        margin-top: 40px !important;
-    }
-
-    .cta-buttons {
-        position: static;
-        margin-top: 30px;
-    }
-}
-
-/* Global Hidden State for Mobile Drawer to prevent showing on Laptop */
-.mobile-menu-drawer,
-.mobile-menu-toggle {
-    display: none !important;
-}
-
-/* Global Image States for Service Blocks */
-.mobile-top-image,
-.mobile-section-services-label {
-    display: none !important;
-}
-
-.desktop-bottom-image {
-    display: block !important;
-}
-
-/* Mobile Fine-tuning */
-@media (max-width: 768px) {
-    .hero-section {
-        height: auto;
-        min-height: 100vh;
-        padding: 60px 20px 80px 20px;
-        background-size: cover !important;
-        background-position: center !important;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .navbar {
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 20px 0 !important;
-        width: 100% !important;
-    }
-
-    .nav-links,
-    .nav-right {
-        display: none !important;
-    }
-
-    /* Hamburger Menu Icon (3 Lines) */
-    .mobile-menu-toggle {
-        display: flex !important;
-        flex-direction: column;
-        gap: 4px;
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    .mobile-menu-toggle span {
-        width: 32px;
-        height: 1px;
-        background-color: #333;
-        transition: 0.3s;
-    }
-
-    .mobile-menu-toggle::before {
-        content: "";
-        width: 32px;
-        height: 1px;
-        background-color: #333;
-    }
-
-    /* Mobile Menu Drawer Overlay */
-    .mobile-menu-drawer {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: #FFFFFF;
-        z-index: 2000;
-        display: none;
-        /* Toggle via JS */
-        flex-direction: column;
-        align-items: center;
-        padding: 40px 20px;
-        overflow-y: auto;
-    }
-
-    .mobile-menu-drawer.active {
-        display: flex !important;
-    }
-
-    .mobile-drawer-header {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 60px;
-    }
-
-    .mobile-nav-items {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-        width: 100%;
-    }
-
-    .mobile-nav-item {
-        font-size: 24px;
-        font-weight: 500;
-        color: #333;
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .mobile-btn-contact {
-        margin-top: 30px;
-        padding: 16px 45px;
-        border: 1px solid #333;
-        border-radius: 100px;
-        font-size: 20px;
-        font-weight: 600;
-        color: #333;
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: 1.2px;
-    }
-
-    .hero-content {
-        margin-top: 40px;
-        text-align: center;
-    }
-
-    .hero-text-block h1 {
-        font-size: 32px;
-        line-height: 1.3;
-        letter-spacing: 0.5px;
-        word-spacing: 2px;
-        text-align: center;
-        width: 100%;
-    }
-
-    .subtitle {
-        font-size: 16px;
-        line-height: 1.6;
-        text-align: center;
-        margin: 30px auto 0 auto;
-        position: static;
-        width: 100%;
-        left: auto;
-    }
-
-    .cta-buttons {
-        position: static;
-        width: 100%;
-        margin-top: 40px;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .btn {
-        width: 100%;
-        max-width: 320px;
-        height: 52px;
-        font-size: 14px;
-    }
-
-    .about-left h2 {
-        font-size: 26px;
-        line-height: 1.4;
-    }
-
-    .about-right p {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
-    .view-all-btn {
-        width: 100%;
-        font-size: 18px;
-    }
-
-    /* Strengths Section */
     .strengths-container {
-        padding: 40px 20px;
-        /* Added side padding to stop text touching edges */
-    }
-
-    .strengths-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        width: 100%;
-    }
-
-    .strengths-text-wrapper,
-    .strength-desc {
-        width: 100% !important;
-        /* Forces fluid width on mobile */
-    }
-
-    .strength-heading {
-        font-size: 26px;
-        /* Slightly bigger for better impact */
-        line-height: 1.3;
-    }
-
-    .strength-desc {
-        font-size: 16px;
-        line-height: 1.8;
-    }
-
-    /* Grids */
-    .catalogs-grid,
-    .proof-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .proof-item {
-        height: 250px;
-    }
-
-    /* Sections */
-    .catalogs-section,
-    .proof-section,
-    .about-section,
-    .services-section {
-        padding: 50px 0;
-        height: auto;
-    }
-
-    .service-item {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .service-text h3 {
-        font-size: 24px;
-    }
-
-    .service-text p {
-        font-size: 15px;
-    }
-
-    /* Footer */
-    .footer-top {
-        padding: 50px 20px;
-    }
-
-    .footer-bottom-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .footer-legal {
-        align-items: center;
-    }
-
-    .contact-btn {
-        padding: 16px 30px;
-        width: 100%;
-        max-width: 280px;
-    }
-
-    /* --- SERVICE PAGE MOBILE OVERRIDES --- */
-    .services-section-footer-area {
-        padding: 40px 20px !important;
-    }
-
-    .service-page-title {
-        font-size: 42px !important;
-        letter-spacing: 6px !important;
-        margin-top: 60px !important;
-        text-align: left !important;
-        width: 100% !important;
-        display: block !important;
-    }
-
-    .service-main-image-placeholder {
-        height: 200px !important;
-        margin-bottom: 40px !important;
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-    }
-
-    .intro-bottom {
-        flex-direction: column !important;
-    }
-
-    .intro-spacer {
-        display: none !important;
-    }
-
-    .intro-content-right p {
-        font-size: 18px !important;
-        line-height: 1.6 !important;
-        margin-bottom: 30px !important;
-    }
-
-    .service-title-block {
-        padding-top: 30px !important;
-    }
-
-    .service-main-image-placeholder {
-        margin-top: 20px !important;
-        height: auto !important;
-        margin-bottom: 10px !important;
-    }
-
-    .service-paragraphs-block {
-        padding-bottom: 40px !important;
-        padding-top: 40px !important;
-    }
-
-    .services-list-outer-block {
-        padding-top: 40px !important;
-        padding-bottom: 60px !important;
-    }
-
-    /* Fixed Intro Alignment to match Logo */
-    .service-title-block .container-fluid,
-    .service-paragraphs-block .container-fluid {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-    }
-
-    .service-intro-heading {
-        font-size: 32px !important;
-        line-height: 1.3 !important;
-        margin-top: 15px !important;
-    }
-
-    .services-flexible-layout {
-        flex-direction: column !important;
-        gap: 40px !important;
-    }
-
-    .services-sidebar {
-        display: none !important;
-    }
-
-    .services-content-area {
-        width: 100% !important;
-        padding: 0 !important;
-    }
-
-    .service-block {
-        margin-bottom: 60px !important;
-    }
-
-    .block-title {
-        font-size: 26px !important;
-        line-height: 1.3 !important;
-        margin-bottom: 15px !important;
-    }
-
-    .mobile-section-services-label {
-        display: block !important;
-    }
-
-    .mobile-top-image {
-        display: block !important;
-        margin-bottom: 30px !important;
-    }
-
-    .desktop-bottom-image {
-        display: none !important;
-    }
-
-    .service-block p {
-        font-size: 16px !important;
-        line-height: 1.6 !important;
-        margin-bottom: 20px !important;
-    }
-
-    .what-we-do-box {
-        margin-top: 30px !important;
-    }
-
-    .what-we-do-box h4 {
-        font-size: 22px !important;
-        min-width: unset !important;
-        width: 100% !important;
-        padding-bottom: 10px !important;
-    }
-
-    .box-list div {
-        font-size: 16px !important;
-        margin-bottom: 15px !important;
-        gap: 10px !important;
-    }
-
-    .box-list span {
-        width: 12px !important;
-        height: 12px !important;
-    }
-}
-
-/* --- ONLY FOR LAPTOP DIMENSIONS (Approx 1046px - 1150px) --- */
-/* This will FIX the bars and overlap ONLY on this screen size */
-@media (max-width: 1150px) and (min-width: 1024px) {
-    .header-container {
-        padding: 0 30px !important;
-    }
-
-    .nav-right {
-        gap: 15px !important;
-    }
-
-    .logo {
-        font-size: 20px !important;
-    }
-
-    .nav-link {
-        font-size: 13px !important;
-        letter-spacing: 1px !important;
-    }
-
-    .btn-contact {
-        font-size: 12px !important;
-        padding: 8px 16px !important;
-    }
-
-    /* Content Area Fixes */
-    .service-title-block .container-fluid,
-    .service-paragraphs-block .container-fluid {
-        padding: 0 40px !important;
-        max-width: 100% !important;
-    }
-
-    .service-intro-heading {
-        font-size: 42px !important;
-        line-height: 1.3 !important;
-    }
-
-    .intro-spacer {
-        flex: 0.4 !important;
-    }
-
-    .intro-content-right p {
-        font-size: 20px !important;
-    }
-
-    /* Services List Section Fixes */
-    .services-list-outer-block {
-        padding: 80px 30px !important;
-    }
-
-    .services-flexible-layout {
-        gap: 30px !important;
-    }
-
-    .services-sidebar {
-        width: 250px !important;
-    }
-
-    .sidebar-nav {
-        gap: 30px !important;
-    }
-
-    .sidebar-item {
-        font-size: 18px !important;
-    }
-
-    .block-title {
-        font-size: 36px !important;
-    }
-
-    .service-block p {
-        font-size: 18px !important;
-    }
-
-    /* Footer Fixes for 1024px */
-    .footer-container {
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        padding: 0 40px !important;
-        gap: 30px !important;
-    }
-
-    .footer-col {
-        width: auto !important;
-        margin-bottom: 0 !important;
-    }
-
-    .footer-nav-headers {
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        gap: 20px !important;
-    }
-
-    .top-indicator {
-        background-color: transparent !important;
+        padding: 0 24px;
         position: relative;
-        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
     }
 
-    .navbar {
-        background: transparent !important;
+    .strengths-label {
+        font-size: 14px;
+        line-height: 32px;
+        margin-bottom: 24px;
+        margin-top: 10px;
+        /* Space from top divider */
     }
 
-    .hero-section {
-        padding-top: 0 !important;
-        background-size: cover !important;
-        background-position: 55% top !important;
+    .strength-slide {
+        flex-direction: column;
+        height: 654px !important;
+        /* EXACT FIGMA HEIGHT */
+        position: relative;
     }
 
-    .subtitle {
-        left: 50% !important;
-        /* Prevents overlap only on this dimension */
+    .strength-image-wrap {
+        width: 100%;
+        height: 200px;
+        /* EXACT FIGMA HEIGHT */
+        flex: none;
+    }
+
+    .strength-info-wrap {
+        padding: 24px 0 100px 0;
+        /* Space for absolute arrows */
+        height: auto;
+        min-height: auto;
+        width: 100%;
+    }
+
+    .strength-content-inner {
+        max-width: 100%;
+    }
+
+    .strength-title {
         font-size: 18px !important;
-        width: 500px !important;
+        line-height: 30px !important;
+        /* EXACT FIGMA LINE HEIGHT */
+        margin-bottom: 12px !important;
+        font-weight: 500;
     }
 
-    /* Core Strengths Section Laptop Fix */
-    .strengths-content {
-        gap: 20px !important;
-        flex-wrap: nowrap !important;
+    .strength-description {
+        font-size: 10px !important;
+        /* Default for small mobile */
+        line-height: 20px !important;
+        /* EXACT FIGMA LINE HEIGHT */
+        margin-bottom: 24px;
+        opacity: 0.8;
     }
 
-    .strengths-image-wrapper {
-        width: 55% !important;
-        /* Scale down image on laptop */
-        height: auto !important;
-        min-height: 400px;
+    /* Tablet adjustment: Increase font size between 481px and 1024px */
+    @media (min-width: 481px) {
+        .strength-description {
+            font-size: 16px !important;
+            line-height: 28px !important;
+        }
+
+        .strength-title {
+            font-size: 28px !important;
+            line-height: 38px !important;
+        }
     }
 
-    .strengths-text-wrapper {
-        width: 45% !important;
-        /* Scale text block to fit */
+    .strength-controls {
+        position: absolute;
+        bottom: 25px !important;
+        left: 0;
+        display: flex;
+        gap: 16px;
+        /* Exactly as per Figma (96px block width) */
+        z-index: 100;
     }
 
-    .strength-heading {
-        font-size: 28px !important;
-        width: 90% !important;
+    .slider-arrow {
+        width: 40px !important;
+        height: 40px !important;
+        background: transparent !important;
+        border: 1px solid #353535 !important;
+        outline: none !important;
+        /* Remove browser blue ring */
     }
 
-    .strength-desc {
-        width: 95% !important;
-        font-size: 16px !important;
-        line-height: 1.8 !important;
-    }
-
-    /* Core Strengths Section Laptop Fix */
-    .strengths-content {
-        display: flex !important;
-        flex-direction: row !important;
-        gap: 30px !important;
-        width: 100% !important;
-    }
-
-    .strengths-image-wrapper {
-        width: 55% !important;
-        height: auto !important;
-        min-height: 480px;
-    }
-
-    .strengths-text-wrapper {
-        width: 45% !important;
-        padding-right: 20px;
-    }
-
-    .strength-heading {
-        font-size: 28px !important;
-    }
-
-    /* Services Section Laptop Fix */
-    .service-item {
-        gap: 30px !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-    }
-
-    .service-img {
-        width: 55% !important;
-        height: auto !important;
-    }
-
-    .service-text {
-        width: 45% !important;
-    }
-
-    .service-text h3 {
-        font-size: 26px !important;
-        width: 100% !important;
-    }
-
-    .service-text p {
-        font-size: 16px !important;
-        width: 100% !important;
-        line-height: 1.8 !important;
-    }
-
-    /* About Us Section Laptop Fix */
-    .about-section {
-        width: 100% !important;
-        padding-left: 40px !important;
-        padding-right: 40px !important;
-    }
-
-    .about-right {
-        width: 100% !important;
-        /* Spans full width until white area */
-        margin-right: 0 !important;
-    }
-
-    .about-right p {
-        width: 100% !important;
-        font-size: 22px !important;
-        line-height: 1.8 !important;
+    .index-line {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
-
-
-
-
-
-/* --- HIGH-RESOLUTION DESKTOP (Above Macbook Air M1 - 1441px+) --- */
-@media (min-width: 1441px) {
-    .container {
-        max-width: 1350px;
-        /* Expands container for large monitors */
+@media (max-width: 768px) {
+    .strengths-section {
+        padding: 80px 0;
     }
 
-    .hero-section {
-        background-size: cover !important;
-        /* Photo covers entire screen for big resolutions */
-        background-position: 55% center !important;
-        height: 100vh !important;
-        /* Full window height for large desktops */
+    .strengths-label {
+        font-size: 20px;
+        line-height: 1.2;
+        text-align: center;
+        margin-bottom: 30px;
     }
 
-    .hero-text-block h1 {
-        font-size: 100px !important;
-        /* Scales text up so it doesn't look small */
-        line-height: 1.1 !important;
+    .strength-title {
+        font-size: 24px;
+        line-height: 32px;
     }
 
-    .subtitle {
-        font-size: 26px !important;
-        left: 45% !important;
-        /* Re-adjusted for the bigger heading */
-        width: 650px !important;
+    .slider-arrow {
+        width: 56px !important;
+        height: 56px !important;
     }
 }

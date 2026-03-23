@@ -23,34 +23,67 @@
     <header class="hero-section">
         <div class="hero-bg-overlay"></div>
         <div class="container hero-container">
-            <!-- Navigation -->
+            <!-- Navbar -->
             <nav class="navbar">
                 <div class="logo">LOGO</div>
                 <div class="nav-right">
-                    <a href="service.html" class="nav-link">SERVICES <span class="caret">▼</span></a>
+                    <div class="dropdown">
+                        <a href="service.html" class="nav-link">SERVICES <span class="caret">▼</span></a>
+                    </div>
                     <div class="dropdown">
                         <a href="#catalogs" class="nav-link">PRODUCT CATALOGS <span class="caret">▼</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#catalogs">Ceramics</a></li>
-                            <li><a href="#catalogs">Industrial tools</a></li>
-                        </ul>
                     </div>
                     <a href="#strengths" class="nav-link">HOW IT WORKS</a>
                     <a href="#proof" class="nav-link">CASE STUDIES</a>
                     <a href="#about" class="nav-link">ABOUT</a>
                     <a href="#contact" class="btn-contact">CONTACT</a>
                 </div>
+                <!-- Hamburger Icon -->
+                <div class="mobile-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
             </nav>
-            <!-- Main Hero Content -->
-            <div class="hero-content">
-                <div class="hero-text-block">
-                    <h1>30 Years of<br>Expertise in Exporting<br>Japan to the World.</h1>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="mobile-menu-overlay" id="mobileOverlay">
+                <div class="mobile-menu-close" id="mobileMenuClose">&times;</div>
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html">TOP</a></li>
+                    <li><a href="service.html">SERVICE</a></li>
+                    <li><a href="#catalogs">PRODUCT CATALOG</a></li>
+                    <li><a href="#strengths">HOW IT WORKS</a></li>
+                    <li><a href="#proof">CASESTUDY</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                </ul>
+                <div class="mobile-menu-footer">
+                    <a href="#contact" class="btn-contact-mobile">CONTACT</a>
+                    <div class="mobile-socials">
+                        <span>Follow me</span>
+                        <div class="social-icons">
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                    </div>
+                    <div class="logo">LOGO</div>
+                </div>
+            </div>
+
+            <!-- Main Hero Display (Figma Grid Layout) -->
+            <div class="hero-display-grid">
+                <div class="hero-main-heading-wrap">
+                    <h1 class="hero-main-title">
+                        30 Years of<br>
+                        Expertise in<span class="space-desktop">&nbsp;</span><br class="br-mobile">Exporting <br
+                            class="br-desktop">
+                        Japan <span class="space-desktop">&nbsp;</span><br class="br-mobile">to the World.
+                    </h1>
                 </div>
 
-                <div class="hero-right-panel">
-                    <p class="subtitle">Your One-Stop Shop for Japanese B2B Exports.<br>From Sourcing to Global
-                        Delivery.</p>
-                    <div class="cta-buttons">
+                <div class="hero-side-content-wrap">
+                    <p class="hero-subtitle-text">Your One-Stop Shop for Japanese B2B Exports.<br>From Sourcing to
+                        Global Delivery.</p>
+                    <div class="hero-cta-stack">
                         <a href="#catalogs" class="btn outline-btn">Browse Catalog</a>
                         <a href="#contact" class="btn gradient-btn">Request an Export Quote</a>
                     </div>
@@ -60,74 +93,74 @@
         </div>
     </header>
 
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="about-top-border"></div>
-            <div class="about-content">
-                <div class="about-left">
-                    <h4 class="section-label">ABOUT US</h4>
-                    <h2 class="section-heading">Three Decades of Mastery in Japanese Global<br>Supply Chains. From
-                        Premium Sourcing to<br>Seamless Logistics — We Act as Your<br>Dedicated Japan Office.</h2>
-                </div>
-                <div class="about-right">
-                    <p>We PANASIA BRAINS was established in 2003 and we have<br>ever been spreading the Japanese
-                        products to all over the<br>world as the experienced exporting expert since then.</p>
-                    <p>Based on our long term experience and knowledge, we<br>strongly emphasize that we are the true
-                        specialist as "ONE<br>STOP ARRANGEMENTS" to meet your expectation.</p>
-                    <p>And we can be "YOUR JAPAN BRANCH"</p>
-                    <a href="#view-all" class="btn btn-dark view-all-btn">VIEW ALL</a>
+    <!-- ABOUT US SECTION -->
+    <section id="about" class="about-section">
+        <div class="container about-container">
+            <div class="section-divider"></div>
+            <div class="about-header-wrap">
+                <span class="section-label">ABOUT US</span>
+                <h2 class="about-main-title">
+                    Three Decades of Mastery in Japanese Global<br class="br-desktop">
+                    Supply Chains. From Premium Sourcing to<br class="br-desktop">
+                    Seamless Logistics — We Act as Your<br class="br-desktop">
+                    Dedicated Japan Office.
+                </h2>
+            </div>
+
+            <div class="about-content-frame">
+                <div class="about-body-text">
+                    <p>We PANASIA BRAINS was established in 2003 and we have ever been spreading the Japanese products
+                        to all over the world as the experienced exporting expert since then.</p>
+                    <p>Based on our long term experience and knowledge, we strongly emphasize that we are the true
+                        specialist as "ONE STOP ARRANGEMENTS" to meet your expectation.</p>
+                    <p class="about-signoff">And we can be "YOUR JAPAN BRANCH"</p>
+                    <a href="#" class="btn dark-btn">VIEW ALL</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Strengths Section -->
-    <section class="strengths-section" id="strengths">
+    <!-- 7 CORE STRENGTHS SECTION -->
+    <section id="strengths" class="strengths-section">
         <div class="container strengths-container">
-            <!-- Top indicator line & title -->
-            <div class="strengths-header">
-                <div class="strengths-line"></div>
-                <h4 class="section-label" style="margin-bottom: 0;">7 CORE STRENGTHS</h4>
-            </div>
+            <div class="section-divider"></div>
+            <h2 class="strengths-label">7 CORE STRENGTHS</h2>
 
-            <div class="strengths-content">
-                <!-- Left Image -->
-                <div class="strengths-image-wrapper">
-                    <!-- High quality placeholder sourced via Unsplash mimicking restaurant plates/glasses -->
-                    <img id="slide-img" src="images/core1.jpg" alt="Restaurant Supplies" class="strengths-image">
-                </div>
-
-                <!-- Right Text Block -->
-                <div class="strengths-text-wrapper">
-                    <div class="strengths-text-top">
-                        <div class="strength-number-container">
-                            <span class="strength-number" id="slide-num">01</span>
-                            <div class="strength-number-line"></div>
-                        </div>
-                        <h3 class="strength-heading" id="slide-title">Comprehensive<br>Selection of<br>Restaurant
-                            Supplies</h3>
-                        <p class="strength-desc" id="slide-desc">Especially we specialize in the wide range of various
-                            products for the
-                            Japanese restaurant use, such as kitchen utensils, restaurant decorations, tableware,
-                            disposable products, uniforms and any other kinds of the relative products as the
-                            professional of the Japanese restaurant supplies.</p>
+            <div class="strengths-slider-container">
+                <!-- Slide 01 -->
+                <div class="strength-slide active">
+                    <div class="strength-image-wrap">
+                        <img id="strength-img" src="images/core1.jpg" alt="Core Strength 01">
                     </div>
-                    <div class="strength-nav-buttons">
-                        <button class="nav-arrow left-arrow">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="1.2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="19" y1="12" x2="5" y2="12"></line>
-                                <polyline points="12 19 5 12 12 5"></polyline>
-                            </svg>
-                        </button>
-                        <button class="nav-arrow right-arrow">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="1.2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </button>
+                    <div class="strength-info-wrap">
+                        <div class="strength-content-inner">
+                            <div class="strength-index-wrap">
+                                <span id="strength-index" class="strength-index">01</span>
+                                <div class="index-line"></div>
+                            </div>
+                            <h3 id="strength-title" class="strength-title">Comprehensive Selection of Restaurant
+                                Supplies</h3>
+                            <p id="strength-desc" class="strength-description">
+                                Especially we specialize the wide range of various products for the Japanese restaurant
+                                use, such as kitchen utensils, restaurant decorations, tableware, disposable products,
+                                uniforms and any other kinds of the relative products as the professional of the
+                                Japanese restaurant supplies.
+                            </p>
+                            <div class="strength-controls">
+                                <button class="slider-arrow prev-arrow">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                                        stroke-width="1.5">
+                                        <path d="M19 12H5M5 12L12 19M5 12L12 5" />
+                                    </svg>
+                                </button>
+                                <button class="slider-arrow next-arrow">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                                        stroke-width="1.5">
+                                        <path d="M5 12H19M19 12L12 5M19 12L12 19" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -352,6 +385,31 @@
     <!-- Scripts -->
     <script src="script.js"></script>
     <script src="services.js"></script>
+    <script>
+        // Mobile Menu Logic
+        const toggle = document.getElementById('mobileMenuToggle');
+        const overlay = document.getElementById('mobileOverlay');
+        const close = document.getElementById('mobileMenuClose');
+
+        if (toggle && overlay && close) {
+            toggle.addEventListener('click', () => {
+                overlay.classList.add('active');
+            });
+
+            close.addEventListener('click', () => {
+                overlay.classList.remove('active');
+            });
+
+            // Close on link click
+            const links = overlay.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    overlay.classList.remove('active');
+                });
+            });
+        }
+    </script>
+    <script src="slider.js"></script>
 </body>
 
 </html>
