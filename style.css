@@ -807,3 +807,802 @@ a:active {
         height: 56px !important;
     }
 }
+
+/* --- SERVICES SECTION (FIGMA PIXEL-PERFECT) --- */
+.services-list-outer-block {
+    background-color: #FFFFFF !important;
+    padding: 120px 0 !important;
+    width: 100%;
+}
+
+.container-services,
+.catalogs-section .container {
+    max-width: 1440px;
+    /* Entire Frame Width */
+    margin: 0 auto;
+    padding: 0 110px;
+    /* Aligns content to center 1220px/1200px area */
+    width: 100%;
+}
+
+/* Limit inner content to 1200px as per Figma properties */
+.services-inner-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Figma Line 31: Top divider */
+.services-top-divider {
+    width: 100%;
+    height: 1.5px;
+    background-color: #353535;
+    opacity: 0.1;
+    /* 10% Opacity as per Figma */
+    margin-bottom: 24px;
+}
+
+.services-label {
+    font-size: 24px !important;
+    /* Figma Typography Property */
+    text-transform: uppercase;
+    color: #353535;
+    margin-bottom: 60px;
+    /* Matching the vertical gap pattern */
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.services-items-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    /* Figma Frame 1200 Gap: 60px */
+}
+
+.service-row {
+    display: flex;
+    gap: 40px;
+    /* Figma: Text Left 740px - Image Width 700px = 40px Gap */
+    align-items: flex-start;
+    width: 100%;
+}
+
+.service-image-side {
+    flex: 0 0 700px;
+    /* Figma Width 700px */
+}
+
+.service-image-side img {
+    width: 700px;
+    height: 435px;
+    /* Figma Height 435px */
+    object-fit: cover;
+    display: block;
+}
+
+.service-content-side {
+    flex: 1;
+    padding-top: 0;
+}
+
+.service-item-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.service-item-number {
+    font-size: 20px;
+    /* Figma Typography Property */
+    color: #353535;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.service-item-divider {
+    flex-grow: 1;
+    /* Extends to the right edge */
+    height: 1.5px;
+    /* Figma Border property */
+    background-color: #353535;
+    opacity: 0.1;
+    /* Figma 10% Opacity */
+}
+
+.service-item-title {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 50px;
+    /* Exact Figma Property */
+    margin-bottom: 24px;
+    color: #353535;
+    max-width: 400px;
+    /* Figma Width Property */
+}
+
+.service-item-description {
+    font-size: 18px;
+    /* Figma Property: 18px */
+    line-height: 40px;
+    /* Figma Property: 40px */
+    letter-spacing: 0.04em;
+    /* Figma Property: 4% */
+    color: #353535;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    /* Gap from Title calculated via Top coordinates */
+    max-width: 459px;
+    /* Figma Width Property */
+}
+
+.view-more-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    /* Fixed Frame Width: 279.71px */
+    height: 52px;
+    /* Fixed Frame Height: 52px */
+    font-size: 20px;
+    /* Figma Property: 20px */
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #353535;
+    text-decoration: none;
+    border: 1px solid #353535;
+    letter-spacing: 0.08em;
+    /* Figma Property: 8% */
+    transition: all 0.3s ease;
+    background: transparent;
+    border-radius: 30px;
+    /* Figma Radius Property */
+}
+
+.view-more-btn:hover {
+    background-color: #333;
+    color: #FFFFFF;
+}
+
+/* --- CATALOGS SECTION (FIGMA FRAME 1199) --- */
+.catalogs-section {
+    background-color: #F8F8F8 !important;
+    /* Figma Background color */
+    padding: 120px 0 !important;
+    width: 100%;
+}
+
+.catalogs-section .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 110px;
+}
+
+.catalogs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 13px;
+    /* Figma Frame 1196 Gap: 13px */
+    margin-top: 80px;
+    /* Gap from header identified in Frame 1198 */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.catalog-item {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 290px;
+    /* Figma Group 220 Width: 290px */
+}
+
+.catalog-img-wrapper {
+    width: 290px;
+    height: 290px;
+    /* Figma: 290x290 square */
+    overflow: hidden;
+    background: #FFFFFF;
+    /* Using white for the clean product look */
+    padding: 20px !important;
+    /* Forces product to shrink and stay centered */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.catalog-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    /* Full visibility: no cropping */
+}
+
+.catalog-item p {
+    font-size: 20px;
+    /* Figma Property: 20px */
+    line-height: 30px;
+    /* Figma Property: 30px */
+    color: #353535;
+    font-weight: 500;
+    text-align: center;
+    /* Figma horizontal alignment: Center */
+    margin-top: 10px;
+}
+
+.catalogs-footer {
+    display: flex;
+    justify-content: flex-end;
+    /* Aligns button to the right as per Figma thumbnail */
+    margin-top: 40px;
+    /* Figma Frame 1203 Gap: 40px */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.catalogs-footer .view-more-btn {
+    width: 317px;
+    /* Figma Frame 1194 Width: 317px (Catalog specific) */
+}
+
+/* --- PROOF SECTION (Fidelity Reversion) --- */
+.proof-section {
+    background-color: #FDFDFA !important;
+    /* Reverted to Figma background */
+    padding: 120px 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    /* Spans full width for background */
+}
+
+.proof-section .services-label {
+    color: #353535 !important;
+    opacity: 1;
+}
+
+.proof-section .services-top-divider {
+    background-color: rgba(53, 53, 53, 0.2) !important;
+    opacity: 1;
+}
+
+.proof-section .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 110px;
+}
+
+.proof-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 13px;
+    /* Consistent with Catalogs grid gap */
+    margin-top: 80px;
+    /* Consistent Vertical Rhythm */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.proof-item {
+    position: relative;
+    width: 290px;
+    height: 290px;
+    overflow: hidden;
+}
+
+.proof-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.proof-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* Dark overlay from design */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    /* Move to the bottom as per Figma coordinates */
+    padding-bottom: 32px;
+    /* Figma: Top 214px + Box 44px = 32px gap from bottom */
+    text-align: center;
+}
+
+.proof-overlay p {
+    color: #FFFFFF;
+    font-size: 20px;
+    /* Figma Property: 20px */
+    font-weight: 500;
+    line-height: 30px;
+    /* Figma Property: 30px */
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    /* Figma horizontal alignment: Center */
+}
+
+/* --- CONTACT (CTA) SECTION (FIGMA 'cta' FRAME) --- */
+.contact-section {
+    position: relative;
+    width: 100% !important;
+    max-width: none !important;
+    /* Spans full background width */
+    height: 320px;
+    margin: 0 auto !important;
+    background: url('images/4483db7316da99989ee5a995421e03781f54b0ef.jpg') no-repeat center center;
+    background-size: cover !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 461px;
+    /* Figma Rectangle 17 Width: 461px */
+    height: 80px;
+    /* Figma Rectangle 17 Height: 80px */
+    background: linear-gradient(90deg, #AC60C3 0%, #DC6061 100%);
+    /* Figma Literal Gradient Colors */
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 60px;
+    /* Figma Radius: 60px */
+    font-size: 24px;
+    /* Scaled for the larger 80px button height */
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: transform 0.3s ease;
+}
+
+.contact-btn:hover {
+    transform: scale(1.05);
+}
+
+/* --- FOOTER SECTION (FIGMA footer_PC - 100% MATCH) --- */
+.footer-section {
+    background-color: #262626;
+    width: 100% !important;
+    max-width: none !important;
+    /* Spans full background width */
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-top {
+    padding: 60px 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-col-1 {
+    flex: 1;
+}
+
+.footer-col-2 {
+    flex: 1.5;
+    padding-left: 20px;
+}
+
+.footer-col-3 {
+    flex: 3;
+}
+
+.footer-heading {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    white-space: nowrap !important;
+    /* Forces single line */
+}
+
+.footer-desc {
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.8;
+    margin-bottom: 30px;
+    max-width: 200px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list li {
+    margin-bottom: 15px;
+    font-size: 14px;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+}
+
+.footer-list li::before {
+    margin-right: 8px;
+    /* Tight bullet spacing */
+    font-size: 12px;
+}
+
+.footer-list li a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* Horizontal Nav Row from Figma Step 350 */
+.footer-nav-row {
+    display: flex;
+    gap: 30px;
+    /* Precise horizontal gap between headers */
+    align-items: flex-start;
+}
+
+.footer-nav-row .footer-heading {
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+/* Social Section with Line */
+.social-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.follow-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.follow-text {
+    font-size: 14px;
+    opacity: 0.8;
+    white-space: nowrap;
+}
+
+.social-line {
+    width: 80px;
+    /* Literal line next to label */
+    height: 1px;
+    background: #FFFFFF;
+    opacity: 0.5;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #FFFFFF;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+    background-color: #FFFFFF;
+    padding: 30px 0;
+}
+
+.footer-bottom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.footer-logo {
+    font-weight: 700;
+    font-size: 32px;
+    color: #353535;
+    letter-spacing: 0.05em;
+}
+
+.footer-legal {
+    text-align: right;
+}
+
+.footer-legal a {
+    color: #353535;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+.footer-legal p {
+    font-size: 14px;
+    color: #353535;
+    opacity: 0.8;
+}
+
+/* RESPONSIVE ADAPTATIONS (1024px - 1920px range) */
+@media (max-width: 1440px) {
+    .nav-right {
+        gap: 15px !important;
+        /* Reduced to fit on one line for laptops */
+        flex-wrap: nowrap !important;
+    }
+
+    .nav-link {
+        font-size: 14px !important;
+        white-space: nowrap !important;
+    }
+
+    .footer-heading {
+        font-size: 14px !important;
+        /* Smaller size for one-line fit on laptop */
+    }
+
+    .container-services,
+    .catalogs-section .container,
+    .proof-section .container {
+        padding: 0 60px !important;
+        width: 100% !important;
+        max-width: 1320px !important;
+    }
+
+    .catalogs-grid,
+    .proof-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        justify-items: center;
+        gap: 20px !important;
+    }
+
+    .footer-container {
+        padding: 0 60px !important;
+    }
+}
+
+@media (max-width: 1280px) {
+    .nav-right {
+        gap: 8px !important;
+        /* Further reduced for smaller screens */
+    }
+
+    .nav-link {
+        font-size: 13px !important;
+    }
+
+    .footer-heading {
+        font-size: 13px !important;
+    }
+
+    .catalogs-grid,
+    .proof-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        /* Switch both grids to 2 cols for balance */
+        gap: 30px !important;
+    }
+
+    .footer-container {
+        flex-wrap: wrap !important;
+        gap: 50px !important;
+        justify-content: center !important;
+    }
+
+    .footer-col-1,
+    .footer-col-2,
+    .footer-col-3 {
+        flex: 1 1 300px !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 1240px) {
+    .catalogs-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        /* Switch to 2 columns for small screens */
+        justify-items: center;
+        column-gap: 40px !important;
+    }
+
+    .container-services,
+    .catalogs-section .container {
+        padding: 0 40px;
+    }
+
+    .service-image-side {
+        flex: 0 0 500px;
+    }
+
+    .service-image-side img {
+        width: 100%;
+        height: auto;
+    }
+
+    .service-item-title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .services-list-outer-block,
+    .catalogs-section {
+        padding: 80px 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .container-services,
+    .catalogs-section .container {
+        padding: 0 40px;
+    }
+
+    .services-label {
+        margin-bottom: 50px;
+        text-align: left;
+    }
+
+    .services-items-stack {
+        gap: 70px;
+    }
+
+    .service-row {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .service-image-side {
+        flex: none;
+        width: 100%;
+    }
+
+    .service-image-side img {
+        width: 100%;
+        height: auto;
+    }
+
+    .service-item-title {
+        font-size: 30px;
+    }
+
+    .service-item-description {
+        max-width: 100%;
+    }
+
+    .catalogs-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .view-more-btn {
+        margin: 40px auto 0 !important;
+        display: flex !important;
+    }
+
+    /* Selective Hide for Catalogs only */
+    .catalogs-section .catalogs-footer {
+        display: none !important;
+    }
+}
+
+/* --- MOBILE PIXEL-PERFECT (375px & 500px Range) --- */
+@media (max-width: 768px) {
+    .catalogs-section {
+        width: 100% !important;
+        /* Spans full background color */
+        margin: 0 auto !important;
+        background-color: #F8F8F8 !important;
+        padding: 60px 0 !important;
+        box-sizing: border-box;
+    }
+
+    .catalogs-section .container,
+    .catalogs-section .services-inner-wrap {
+        width: 328px !important;
+        /* Literal Figma Content Width */
+        margin: 0 auto !important;
+        padding: 0 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Ensures inner items stay centered block-wise */
+    }
+
+    .catalogs-section .services-label {
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 12px !important;
+        font-weight: 400 !important;
+        text-transform: uppercase !important;
+        color: #353535 !important;
+        line-height: 64px !important;
+        text-align: left !important;
+        border-bottom: 1.5px solid rgba(53, 53, 53, 0.1) !important;
+        width: 100% !important;
+        /* Spans the full 328px */
+        display: block;
+        margin: 0 !important;
+    }
+
+    .catalogs-grid {
+        width: 328px !important;
+        display: grid !important;
+        grid-template-columns: 152px 152px !important;
+        column-gap: 24px !important;
+        /* 152+24+152 = 328px */
+        row-gap: 40px !important;
+        margin: 40px auto 0 !important;
+        /* Literal 40px Gap from title to grid */
+    }
+
+    .catalog-item {
+        width: 152px !important;
+        height: auto !important;
+        min-height: 146px !important;
+        display: flex;
+        flex-direction: column;
+        gap: 24px !important;
+        align-items: center;
+    }
+
+    .catalog-img-wrapper {
+        width: 152px !important;
+        height: 100px !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        border-radius: 4px;
+        overflow: hidden;
+        padding: 5px !important;
+        /* Internal breathing room for mobile */
+    }
+
+    .catalog-img-wrapper img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+    .catalog-item p {
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 10px !important;
+        font-weight: 400 !important;
+        color: #353535 !important;
+        line-height: 15px !important;
+        text-align: center !important;
+        margin: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .catalogs-footer {
+        display: none !important;
+    }
+
+    .view-more-btn {
+        width: 280px !important;
+        max-width: 280px !important;
+        margin: 0 auto !important;
+        display: block;
+        text-align: center;
+    }
+}
