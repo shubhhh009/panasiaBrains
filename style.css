@@ -82,46 +82,80 @@ a:active {
     }
 }
 
-/* --- NAVIGATION --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 1200px;
+    /* Matches Figma Width */
+    margin: 0 auto;
+    /* Auto centers (creating the 120px Left on 1440px screens) */
     height: 48px;
+    /* Matches Figma Height 48px */
     position: relative;
     z-index: 100;
 }
 
 .logo {
     font-size: 24px !important;
-    font-weight: 500 !important;
-    letter-spacing: 1px;
+    font-weight: 400 !important;
+    /* Matches Figma Weight 400 Regular */
+    letter-spacing: 0 !important;
+    /* Matches Figma Letter Spacing 0% */
     color: #FFFFFF !important;
+    width: 100px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    line-height: 100% !important;
 }
 
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 15px !important;
+    gap: 19px !important;
+    /* Matches Figma Frame 1209 Gap 19px */
+    width: auto !important;
+    /* Reverting from 864px to Hug content */
 }
 
 .nav-link {
     text-decoration: none !important;
     color: #FFFFFF !important;
-    font-size: 16px !important;
+    font-size: 18px !important;
+    /* Manually bumped above Figma 18px for better visibility */
     font-weight: 500 !important;
     text-transform: uppercase;
-    letter-spacing: 0.1em !important;
+    letter-spacing: 0.08em !important;
     white-space: nowrap;
+    line-height: 100% !important;
+}
+
+.dropdown .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    /* Small gap to push caret */
 }
 
 .btn-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 141.18px !important;
+    height: 48px !important;
     border: 1px solid #FFFFFF !important;
     border-radius: 30px !important;
     color: #FFFFFF !important;
-    padding: 8px 22px !important;
-    font-weight: 500;
+    text-decoration: none !important;
+    font-size: 20px !important;
+    /* Syncs with .nav-link bump */
+    font-weight: 500 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase;
+    line-height: 100% !important;
+    box-sizing: border-box;
 }
 
 /* --- MOBILE TOGGLE --- */
@@ -1097,10 +1131,16 @@ a:active {
     overflow: hidden;
 }
 
+/* Hide mobile controls by default for Desktop/Laptop */
+.proof-controls {
+    display: none !important;
+}
+
 .proof-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .proof-overlay {
@@ -1343,16 +1383,7 @@ a:active {
 
 /* RESPONSIVE ADAPTATIONS (1024px - 1920px range) */
 @media (max-width: 1440px) {
-    .nav-right {
-        gap: 15px !important;
-        /* Reduced to fit on one line for laptops */
-        flex-wrap: nowrap !important;
-    }
-
-    .nav-link {
-        font-size: 14px !important;
-        white-space: nowrap !important;
-    }
+    /* Nav resizing removed for 1440px to respect primary 18px Figma bounds */
 
     .footer-heading {
         font-size: 14px !important;
@@ -1381,12 +1412,17 @@ a:active {
 
 @media (max-width: 1280px) {
     .nav-right {
-        gap: 8px !important;
-        /* Further reduced for smaller screens */
+        gap: 12px !important;
     }
 
     .nav-link {
-        font-size: 13px !important;
+        font-size: 16px !important;
+    }
+
+    .btn-contact {
+        font-size: 16px !important;
+        width: 120px !important;
+        height: 40px !important;
     }
 
     .footer-heading {
@@ -1532,9 +1568,12 @@ a:active {
         font-weight: 400 !important;
         text-transform: uppercase !important;
         color: #353535 !important;
-        line-height: 64px !important;
+        line-height: normal !important;
+        padding-bottom: 12px !important;
+        /* Exact Gap to horizontal rule from Figma */
         text-align: left !important;
-        border-bottom: 1.5px solid rgba(53, 53, 53, 0.1) !important;
+        border-bottom: 0 !important;
+        /* Removed horizontal divider per user request */
         width: 100% !important;
         /* Spans the full 328px */
         display: block;
@@ -1558,7 +1597,8 @@ a:active {
         min-height: 146px !important;
         display: flex;
         flex-direction: column;
-        gap: 24px !important;
+        gap: 16px !important;
+        /* Correct gap mapping (100+16+30 = 146px total block height) */
         align-items: center;
     }
 
@@ -1571,8 +1611,8 @@ a:active {
         background: #fff;
         border-radius: 4px;
         overflow: hidden;
-        padding: 5px !important;
-        /* Internal breathing room for mobile */
+        padding: 0 !important;
+        /* Removes pseudo padding to strictly match 152px layout width */
     }
 
     .catalog-img-wrapper img {
@@ -1604,5 +1644,622 @@ a:active {
         margin: 0 auto !important;
         display: block;
         text-align: center;
+    }
+
+    /* --- PROOF SECTION MOBILE --- */
+    .proof-section {
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 60px 0 !important;
+        box-sizing: border-box;
+    }
+
+    .proof-section .container,
+    .proof-section .services-inner-wrap {
+        width: 335px !important;
+        /* Matches exactly Hug (335px) */
+        margin: 0 auto !important;
+        padding: 0 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .proof-section .services-inner-wrap {
+        gap: 40px !important;
+        /* Gap between Title block and Grid/Slider block */
+    }
+
+    .proof-section .services-top-divider {
+        width: 100% !important;
+        height: 1.5px !important;
+        background-color: rgba(53, 53, 53, 0.1) !important;
+        margin-bottom: 12px !important;
+        /* Gap 12px from Line to Title shown in Group inspector */
+    }
+
+    .proof-section .services-label {
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 12px !important;
+        font-weight: 400 !important;
+        text-transform: uppercase !important;
+        color: #353535 !important;
+        line-height: normal !important;
+        text-align: left !important;
+        width: 100% !important;
+        margin: 0 !important;
+        border: none !important;
+        /* No bottom border on Proof */
+    }
+
+    .proof-grid {
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        gap: 24px !important;
+    }
+
+    .proof-item {
+        min-width: 100% !important;
+        width: 100% !important;
+        position: relative;
+        transition: opacity 0.25s ease; /* Supports slider.js crossfade */
+        display: none !important; /* Slider controls this via .active */
+    }
+
+    .proof-item.active {
+        display: block !important;
+    }
+
+    .proof-item::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0, 0, 0, 0.4) !important;
+        /* Matches Figma #000000 40% image tint for text legibility */
+        pointer-events: none;
+    }
+
+    .proof-item img {
+        width: 100% !important;
+        height: 335px !important;
+        /* Exact 335x335px square bound per inspector */
+        display: block;
+        object-fit: cover;
+    }
+
+    .proof-overlay {
+        position: absolute;
+        bottom: 24px !important;
+        left: 0 !important;
+        right: 0 !important;
+        text-align: center;
+        background: transparent !important;
+        z-index: 2 !important;
+        /* Elevate above the image tint layer */
+    }
+
+    .proof-overlay p {
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 20px !important;
+        font-weight: 500 !important;
+        color: #FFFFFF !important;
+        line-height: 30px !important;
+        margin: 0 auto !important;
+        width: 325px !important;
+        text-align: center !important;
+    }
+    
+    .proof-controls {
+        display: flex !important;
+        gap: 16px;
+        align-items: center;
+        justify-content: flex-start; /* Figma shows arrows aligned left below image */
+        margin-top: 16px;
+    }
+    
+    .proof-controls .slider-arrow {
+        width: 40px !important;
+        height: 40px !important;
+        border: 1px solid #353535;
+        border-radius: 50%;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #353535;
+        cursor: pointer;
+    }
+
+    /* --- MOBILE SECTION RESET --- */
+    .proof-section,
+    .contact-section,
+    .footer-section {
+        margin: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .proof-section {
+        padding: 60px 0 !important;
+        background-color: #FDFDFA !important;
+    }
+
+    /* --- MOBILE HERO SP --- */
+    .hero-container {
+        width: 100% !important;
+        max-width: 375px !important;
+        margin: 0 auto !important;
+        padding: 0 24px !important;
+        box-sizing: border-box !important;
+        /* Strictly targets Figma 375px size */
+    }
+
+    .navbar {
+        padding: 0 !important;
+    }
+
+    .hero-section {
+        height: 584px !important;
+        min-height: 584px !important;
+        padding-top: 27px !important;
+        box-sizing: border-box;
+    }
+
+    .navbar .logo {
+        font-size: 24px !important;
+        line-height: 100% !important;
+    }
+
+    .hero-display-grid {
+        align-items: flex-start !important;
+        margin-top: 99px !important;
+        /* Stripped problematic inner padding to stop bleed */
+        padding: 0 !important;
+        box-sizing: border-box;
+    }
+
+    .hero-main-heading-wrap,
+    .hero-side-content-wrap {
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+
+    .hero-main-title {
+        text-align: left !important;
+        font-size: 32px !important;
+        line-height: 40px !important;
+        letter-spacing: 0.08em !important;
+        width: 314px !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .hero-subtitle-text {
+        text-align: left !important;
+        margin-top: 24px !important;
+        font-size: 12px !important;
+        line-height: 20px !important;
+        letter-spacing: 0.08em !important;
+        width: 247.12px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .hero-cta-stack {
+        align-items: flex-end !important;
+        width: 100% !important;
+        margin-top: 40px !important;
+        gap: 16px !important;
+        box-sizing: border-box;
+        padding: 0 !important;
+    }
+
+    .hero-cta-stack .btn {
+        width: 240px !important;
+        height: 40px !important;
+        font-size: 14px !important;
+        padding: 6px 8px !important;
+        border-radius: 30px !important;
+        box-sizing: border-box;
+    }
+
+    /* --- MOBILE ABOUT US SP --- */
+    .about-section {
+        min-height: 670px !important;
+        padding: 50px 0 60px 0 !important;
+        box-sizing: border-box;
+    }
+
+    .about-container {
+        width: 100% !important;
+        max-width: 375px !important;
+        margin: 0 auto !important;
+        padding: 0 20px !important;
+        /* Converts 375px bounding to 335px Frame inner width */
+        box-sizing: border-box !important;
+    }
+
+    .about-header-wrap {
+        text-align: left !important;
+        padding: 0 !important;
+        margin-bottom: 40px !important;
+        /* Precise 40px block-to-block Frame Gap */
+    }
+
+    .about-main-title {
+        text-align: left !important;
+        font-size: 20px !important;
+        line-height: 30px !important;
+        letter-spacing: 0.04em !important;
+        margin: 0 !important;
+        width: 319px !important;
+        max-width: 100% !important;
+    }
+
+    .about-content-frame {
+        padding: 0 !important;
+        margin-top: 0 !important;
+        /* Margin resolved via header-wrap gap */
+    }
+
+    .about-body-text p {
+        text-align: left !important;
+        font-size: 12px !important;
+        line-height: 20px !important;
+        letter-spacing: 0.04em !important;
+        margin-bottom: 16px !important;
+    }
+
+    .about-signoff {
+        margin-bottom: 32px !important;
+    }
+
+    .about-body-text .dark-btn {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        height: 40px !important;
+        /* Matches exactly the Fixed 40px sizing flag */
+        line-height: 40px !important;
+        font-size: 14px !important;
+        padding: 0 !important;
+        box-sizing: border-box;
+    }
+
+    /* --- MOBILE 7 CORE STRENGTHS SP --- */
+    .strengths-section {
+        padding: 60px 0 !important;
+        box-sizing: border-box;
+    }
+
+    .strengths-container {
+        width: 100% !important;
+        max-width: 375px !important;
+        margin: 0 auto !important;
+        padding: 0 24px !important;
+        /* Converts 375px bounds to exact 327px inner workspace */
+        box-sizing: border-box !important;
+    }
+
+    .strengths-section .section-divider {
+        margin-bottom: 10px !important;
+        max-width: 100% !important;
+    }
+
+    .strengths-label {
+        font-size: 14px !important;
+        margin-bottom: 10px !important;
+        text-align: left !important;
+        line-height: normal !important;
+    }
+
+    .strengths-slider-container {
+        width: 100% !important;
+    }
+
+    .strength-slide {
+        flex-direction: column !important;
+        gap: 40px !important;
+        /* Matches Frame 2307 Layout Gap exactly */
+        height: auto !important;
+        min-height: 534px !important;
+    }
+
+    .strength-image-wrap {
+        width: 100% !important;
+        height: 200px !important;
+        /* Locks specifically to Figma 200px height */
+        flex: none !important;
+    }
+
+    .strength-image-wrap img {
+        object-fit: cover !important;
+        height: 100% !important;
+    }
+
+    .strength-info-wrap {
+        width: 100% !important;
+        height: auto !important;
+        padding: 0 !important;
+        flex: none !important;
+    }
+
+    .strength-content-inner {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 0 !important;
+    }
+
+    .strength-index-wrap {
+        display: none !important;
+        /* Hide numbers explicitly excluded from Figma Mobile */
+    }
+
+    .strength-title {
+        font-size: 18px !important;
+        line-height: 30px !important;
+        letter-spacing: 0 !important;
+        width: 277px !important;
+        /* Native bounding width */
+        max-width: 100% !important;
+        margin: 0 0 24px 0 !important;
+        /* Matches exactly 24px jump from Top 343 to 367 */
+    }
+
+    .strength-description {
+        font-size: 10px !important;
+        /* Specific override for compact 10px body size */
+        line-height: 20px !important;
+        letter-spacing: 0.04em !important;
+        width: 100% !important;
+        margin-bottom: 40px !important;
+        /* Exact GAP between body and footer Controls */
+    }
+
+    .strength-controls {
+        position: static !important;
+        /* Restores native flow so it stops overlapping the absolute bottom */
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        justify-content: flex-start !important;
+        gap: 16px !important;
+    }
+
+    .slider-arrow {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    /* --- MOBILE SERVICES SP (Frame 2309) --- */
+    .services-list-outer-block {
+        padding: 60px 0 !important;
+        background: #FFFFFF !important;
+        box-sizing: border-box;
+    }
+
+    .container-services {
+        width: 100% !important;
+        max-width: 375px !important;
+        margin: 0 auto !important;
+        padding: 0 20px !important;
+        /* Constrains workspace exactly to 335px as shown in Figma Frame 2310 */
+        box-sizing: border-box !important;
+    }
+
+    .services-top-divider {
+        margin-bottom: 24px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .services-label {
+        font-size: 14px !important;
+        margin-bottom: 40px !important;
+        text-align: left !important;
+        line-height: normal !important;
+    }
+
+    .service-row,
+    .service-row:nth-child(even) {
+        flex-direction: column !important;
+        gap: 0 !important;
+        margin-bottom: 40px !important;
+        /* Frame 2310 Gap between stacked service rows */
+        padding: 0 !important;
+    }
+
+    .service-image-side {
+        width: 100% !important;
+        height: 200px !important;
+        margin-bottom: 24px !important;
+        /* Distance to '01' index marker */
+        flex: none !important;
+        padding: 0 !important;
+    }
+
+    .service-image-side img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    .service-content-side {
+        width: 100% !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .service-item-header {
+        display: flex !important;
+        align-items: center !important;
+        margin-bottom: 32px !important;
+        /* Matches Frame Title Top 757px - Frame Box Top 709px calculation */
+        width: 100% !important;
+        gap: 6px !important;
+        /* Accurately spaces 18px Number width from 311px Divider */
+    }
+
+    .service-item-divider {
+        flex-grow: 1 !important;
+        height: 0 !important;
+        border-top: 1.5px solid rgba(53, 53, 53, 0.1) !important;
+        /* Figma 1.5px 10% Opacity Border Specification */
+    }
+
+    .service-item-number {
+        font-size: 12px !important;
+        /* Extracted explicitly from Customization & Labeling 02 text constraint */
+        line-height: normal !important;
+    }
+
+    .service-item-title {
+        font-size: 18px !important;
+        /* Corrects from 20px */
+        line-height: 30px !important;
+        letter-spacing: 0 !important;
+        /* Corrects to 0% */
+        width: 277px !important;
+        margin-top: 0 !important;
+        margin-bottom: 16px !important;
+        max-width: 100% !important;
+        text-align: left !important;
+    }
+
+    .service-item-description {
+        font-size: 10px !important;
+        line-height: 20px !important;
+        letter-spacing: 0.04em !important;
+        margin-top: 0 !important;
+        margin-bottom: 40px !important;
+        /* Matches exactly 40px remaining offset down to 49px high button */
+        max-width: 100% !important;
+        text-align: left !important;
+    }
+
+    .view-more-btn {
+        width: 317px !important;
+        /* Exact Width from Global Logistics container */
+        max-width: 100% !important;
+        height: 49px !important;
+        /* Exact Height from Figma */
+        line-height: 49px !important;
+        font-size: 14px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 1px solid #353535 !important;
+        background: transparent !important;
+        color: #353535 !important;
+        border-radius: 30px !important;
+        box-sizing: border-box !important;
+    }
+    /* --- MOBILE CONTACT (CTA) SP --- */
+    .contact-section {
+        height: 240px !important;
+        min-height: 240px !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: url('images/4483db7316da99989ee5a995421e03781f54b0ef.jpg') no-repeat center center !important;
+        background-size: cover !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: hidden;
+    }
+
+    .contact-overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: rgba(49, 49, 49, 0.3) !important;
+        /* Matches Figma #313131 30% overlay */
+    }
+
+    .contact-btn {
+        position: relative;
+        z-index: 2;
+        width: 240px !important;
+        height: 40px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        font-family: 'Montserrat', sans-serif !important;
+        letter-spacing: 0.08em !important;
+        border-radius: 30px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto !important;
+        background: linear-gradient(90deg, #AC60C3 0%, #DC6061 100%) !important;
+    }
+
+    /* --- MOBILE FOOTER SP --- */
+    .footer-section {
+        background-color: #262626 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .footer-top {
+        display: none !important;
+    }
+
+    .footer-bottom {
+        background-color: #262626 !important;
+        height: 235px !important;
+        min-height: 235px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        position: relative;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .footer-bottom-container {
+        width: 100% !important;
+        max-width: 327px !important;
+        height: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    .footer-logo {
+        color: #FFFFFF !important;
+        font-size: 24px !important;
+        font-weight: 400 !important; /* Regular per figma */
+        font-family: 'Montserrat', sans-serif !important;
+        margin-top: 52px !important;
+        margin-bottom: 0 !important;
+        display: block !important;
+        text-align: left !important;
+        width: fit-content !important;
+    }
+
+    .footer-legal {
+        display: block !important;
+        width: 100% !important;
+        margin-top: 55px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        padding-top: 48px !important; /* Matches 48px offset from line to text top */
+        text-align: right !important;
+    }
+
+    .footer-legal a, 
+    .footer-legal p {
+        color: #999999 !important;
+        font-size: 12px !important;
+        font-weight: 500 !important; /* Medium per figma */
+        opacity: 1 !important;
+        letter-spacing: 0.08em !important;
+        text-decoration: none !important;
+        font-family: 'Montserrat', sans-serif !important;
+        margin-bottom: 8px !important;
     }
 }

@@ -70,12 +70,46 @@ function updateSlide(index) {
     }, 250);
 }
 
-document.querySelector('.next-arrow').addEventListener('click', () => {
+document.querySelector('.strength-controls .next-arrow').addEventListener('click', () => {
     currentSlide = (currentSlide + 1) % strengthsData.length;
     updateSlide(currentSlide);
 });
 
-document.querySelector('.prev-arrow').addEventListener('click', () => {
+document.querySelector('.strength-controls .prev-arrow').addEventListener('click', () => {
     currentSlide = (currentSlide - 1 + strengthsData.length) % strengthsData.length;
     updateSlide(currentSlide);
 });
+
+// --- PROOF SLIDER LOGIC ---
+const proofItems = document.querySelectorAll('.proof-section .proof-item');
+let currentProofSlide = 0;
+
+function updateProofSlide(index) {
+    if (!proofItems.length) return;
+
+    // Toggle active class
+    proofItems.forEach((item, i) => {
+        if (i === index) {
+            item.classList.add('active');
+            item.style.opacity = '1';
+        } else {
+            item.classList.remove('active');
+            item.style.opacity = '0';
+        }
+    });
+}
+
+const nextProofBtn = document.querySelector('.proof-controls .next-arrow');
+const prevProofBtn = document.querySelector('.proof-controls .prev-arrow');
+
+if (nextProofBtn && prevProofBtn) {
+    nextProofBtn.addEventListener('click', () => {
+        currentProofSlide = (currentProofSlide + 1) % proofItems.length;
+        updateProofSlide(currentProofSlide);
+    });
+
+    prevProofBtn.addEventListener('click', () => {
+        currentProofSlide = (currentProofSlide - 1 + proofItems.length) % proofItems.length;
+        updateProofSlide(currentProofSlide);
+    });
+}
