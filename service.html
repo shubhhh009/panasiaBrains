@@ -5,330 +5,295 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - Japanese Global Supply Chains</title>
+    <!-- Google Fonts: Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for carets/icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .service-page-header {
-            background: #fff;
-            padding: 40px 0;
-        }
 
-        .logo,
-        .nav-link {
-            color: #333;
-        }
-
-        .service-intro-section {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding: 40px 0 100px 0;
-            margin-top: 0;
-            border-top: none;
-        }
-
-        .btn-contact {
-            border: 1px solid #333;
-            color: #333;
-        }
-
-        .sidebar-item.active {
-            color: #D4667A;
-            font-weight: 600;
-        }
-
-        .box-list li {
-            margin-bottom: 8px;
-            font-size: 14px;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .box-list li::before {
-            content: "●";
-            position: absolute;
-            left: 0;
-            color: #888;
-            font-size: 10px;
-            top: 2px;
-        }
-    </style>
+    <!-- ONLY service.css for complete isolation and control -->
+    <link rel="stylesheet" href="service.css?v=8.0">
 </head>
 
 <body>
 
-    <header class="service-page-header">
-        <div class="container-fluid header-container" style="padding: 0 140px;">
-            <nav class="navbar dark-nav">
-                <div class="logo">LOGO</div>
+    <div class="service-page-wrapper">
+        <!-- 1. Header Section -->
+        <header class="sp-header">
+            <div class="sp-navbar">
+                <a href="index.html" class="sp-logo">LOGO</a>
 
-                <!-- Desktop Nav -->
-                <div class="nav-right">
-                    <a href="service.html" class="nav-link active">SERVICES <span class="caret">▼</span></a>
-                    <a href="#catalogs" class="nav-link">PRODUCT CATALOGS <span class="caret">▼</span></a>
-                    <a href="#how" class="nav-link">HOW IT WORKS</a>
-                    <a href="#case" class="nav-link">CASE STUDIES</a>
-                    <a href="#about" class="nav-link">ABOUT</a>
-                    <a href="#" class="btn-contact">CONTACT</a>
-                </div>
-
-                <!-- Hamburger (Mobile Only) -->
-                <div class="mobile-menu-toggle" id="menu-toggle">
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-
-            <!-- Mobile Menu Drawer -->
-            <div class="mobile-menu-drawer" id="mobile-drawer">
-                <div class="mobile-drawer-header">
-                    <div class="logo">LOGO</div>
-                    <div class="close-menu" id="menu-close" style="font-size: 30px; cursor: pointer;">✕</div>
-                </div>
-                <div class="mobile-nav-items">
-                    <a href="service.html" class="mobile-nav-item">SERVICES <span class="caret">▼</span></a>
-                    <a href="#catalogs" class="mobile-nav-item">PRODUCT CATALOGS <span class="caret">▼</span></a>
-                    <a href="#how" class="mobile-nav-item">HOW IT WORKS</a>
-                    <a href="#case" class="mobile-nav-item">CASE STUDIES</a>
-                    <a href="#about" class="mobile-nav-item">ABOUT</a>
-                    <a href="#" class="mobile-btn-contact">CONTACT</a>
-                </div>
+                <nav class="sp-nav">
+                    <a href="service.html" class="sp-nav-link active">SERVICES <span class="sp-caret">▼</span></a>
+                    <a href="index.html#catalogs" class="sp-nav-link">PRODUCT CATALOGS <span
+                            class="sp-caret">▼</span></a>
+                    <a href="index.html#how" class="sp-nav-link">HOW IT WORKS</a>
+                    <a href="index.html#case" class="sp-nav-link">CASE STUDIES</a>
+                    <a href="index.html#about" class="sp-nav-link">ABOUT</a>
+                    <a href="index.html#contact" class="sp-btn-contact">CONTACT</a>
+                </nav>
+                <div class="hamburger-menu" id="sp-hamburger"><span class="hb-mid"></span></div>
             </div>
+        </header>
 
-            <style>
-                @media (max-width: 768px) {
-                    .header-container {
-                        padding: 0 20px !important;
-                    }
-
-                    .service-page-header .container-fluid {
-                        padding: 0 20px !important;
-                    }
-                }
-            </style>
-
-            <div class="service-page-title-wrap">
-                <h1 class="service-page-title">SERVICE</h1>
-            </div>
-        </div>
-    </header>
-
-    <main class="service-page-main">
-        <div class="service-main-image-placeholder"
-            style="padding-left: 140px; width: 100%; height: 600px !important; max-width: none; margin-left: 0; margin-right: 0; overflow: hidden; margin-top: 50px; margin-bottom: 0;">
-            <img src="images/servicesMain/servicesMain.jpg" alt="Service Hero"
-                style="width: 100%; height: 540px !important; object-fit: cover; object-position: center; display: block;">
+        <!-- Mobile Menu Overlay -->
+        <div class="sp-mobile-overlay" id="sp-mobile-overlay">
+            <button class="sp-mobile-close" id="sp-mobile-close">&#x2715;</button>
+            <ul class="sp-mobile-links">
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="service.html">SERVICE</a></li>
+                <li><a href="index.html#catalogs">PRODUCT CATALOG</a></li>
+                <li><a href="index.html#how">HOW IT WORKS</a></li>
+                <li><a href="index.html#case">CASESTUDY</a></li>
+                <li><a href="index.html#about">ABOUT</a></li>
+            </ul>
         </div>
 
-        <!-- Block 1: Intro Title & Label -->
-        <div class="service-title-block" style="background-color: #FFFFFF; padding: 80px 0 0 0; width: 100%;">
-            <div class="container-fluid"
-                style="border-top: 1px solid #eee; margin-top: 0; padding-top: 36px; max-width: 1350px; margin: 0 auto;">
-                <div class="service-intro-section" style="padding: 0;">
-                    <div class="intro-top" style="margin-bottom: 0;">
-                        <h4 class="section-label">WHAT WE DO</h4>
-                        <h2 class="service-intro-heading">Your One-Stop Solution for Seamless Export to Japan.</h2>
+        <!-- 2. Main content area -->
+        <main class="sp-main">
+            <!-- Title Section -->
+            <div class="sp-main-title">
+                <h1>SERVICE</h1>
+            </div>
+
+            <!-- Hero Image Section (No Right Gap) -->
+            <div class="sp-hero-area">
+                <img src="images/servicesMain/servicesMain.jpg" alt="Service Hero" class="sp-hero-image">
+            </div>
+
+            <!-- Intro Section: WHAT WE DO -->
+            <section class="sp-intro-block">
+                <div class="sp-sub-divider"></div>
+
+                <div class="sp-intro-grid">
+                    <div class="sp-intro-left">
+                        <span class="sp-label">WHAT WE DO</span>
+                        <h2 class="sp-intro-heading">Your One-Stop Solution for Seamless Export to Japan.</h2>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Block 2: Intro Paragraphs (Prose) -->
-        <div class="service-paragraphs-block" style="background-color: #FFFFFF; padding: 80px 0 180px 0; width: 100%;">
-            <div class="container-fluid" style="max-width: 1350px; margin: 0 auto;">
-                <div class="intro-bottom" style="display: flex;">
-                    <div class="intro-spacer" style="flex: 1;"></div>
-                    <div class="intro-content-right" style="flex: 2;">
-                        <p>We PANASIA BRAINS was established in 2003 and we have ever been spreading the Japanese
-                            products to all over the world as the experienced exporting expert since then.</p>
-                        <p>Based on our long term experience and knowledge, we strongly emphasize that we are the
-                            true specialist as "ONE STOP ARRANGEMENTS" to meet your expectation.</p>
-                        <p>And we can be "YOUR JAPAN BRANCH"</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Block 3: Services List (01-05 Items) matching Figma Frame 1201 -->
-        <section class="services-list-outer-block" id="services">
-            <div class="container-services">
-                <div class="services-inner-wrap">
-                    <div class="services-top-divider"></div>
-                    <h4 class="services-label">SERVICES</h4>
-
-                    <div class="services-items-stack">
-
-                        <!-- Service 1: Procurement & Negotiation -->
-                        <div id="service-01" class="service-row">
-                            <div class="service-image-side">
-                                <img src="images/servicesMain/service1.jpg" alt="Procurement & Negotiation">
-                            </div>
-                            <div class="service-content-side">
-                                <div class="service-item-header">
-                                    <span class="service-item-number">01</span>
-                                    <div class="service-item-divider"></div>
-                                </div>
-                                <h3 class="service-item-title">Procurement &<br>Negotiation</h3>
-                                <p class="service-item-description">
-                                    We source authentic products directly from our vast network of Japanese manufacturers
-                                    while handling all price and quality negotiations on your behalf.
-                                </p>
-                                <a href="#" class="view-more-btn">VIEW MORE</a>
-                            </div>
-                        </div>
-
-                        <!-- Service 2: Compliance & Documentation -->
-                        <div id="service-02" class="service-row">
-                            <div class="service-image-side">
-                                <img src="images/servicesMain/service2.jpg" alt="Compliance & Documentation">
-                            </div>
-                            <div class="service-content-side">
-                                <div class="service-item-header">
-                                    <span class="service-item-number">02</span>
-                                    <div class="service-item-divider"></div>
-                                </div>
-                                <h3 class="service-item-title">Compliance &<br>Documentation</h3>
-                                <p class="service-item-description">
-                                    We manage all complex paperwork, Certificates of Origin and health certifications,
-                                    ensuring your shipments fully comply with international customs regulations.
-                                </p>
-                                <a href="#" class="view-more-btn">VIEW MORE</a>
-                            </div>
-                        </div>
-
-                        <!-- Service 3: Customization & Labeling -->
-                        <div id="service-03" class="service-row">
-                            <div class="service-image-side">
-                                <img src="images/servicesMain/service4.jpg" alt="Customization & Labeling">
-                            </div>
-                            <div class="service-content-side">
-                                <div class="service-item-header">
-                                    <span class="service-item-number">03</span>
-                                    <div class="service-item-divider"></div>
-                                </div>
-                                <h3 class="service-item-title">Customization &<br>Labeling</h3>
-                                <p class="service-item-description">
-                                    From multi-lingual labeling to custom-branded tableware, we provide tailored solutions
-                                    to ensure your products are ready for your specific market and regulations.
-                                </p>
-                                <a href="#" class="view-more-btn">VIEW MORE</a>
-                            </div>
-                        </div>
-
-                        <!-- Service 4: Global Logistics & Shipping -->
-                        <div id="service-04" class="service-row">
-                            <div class="service-image-side">
-                                <img src="images/servicesMain/service3.jpg" alt="Global Logistics & Shipping">
-                            </div>
-                            <div class="service-content-side">
-                                <div class="service-item-header">
-                                    <span class="service-item-number">04</span>
-                                    <div class="service-item-divider"></div>
-                                </div>
-                                <h3 class="service-item-title">Global Logistics &<br>Shipping</h3>
-                                <p class="service-item-description">
-                                    We provide end-to-end shipping solutions by sea or air, ensuring safe, efficient, and
-                                    reliable delivery from Japan to your designated destination.
-                                </p>
-                                <a href="#" class="view-more-btn">VIEW MORE</a>
-                            </div>
-                        </div>
-
-                        <!-- Service 5: Market Research & Consulting -->
-                        <div id="service-05" class="service-row">
-                            <div class="service-image-side">
-                                <img src="images/servicesMain/marketReserch.jpg" alt="Market Research & Consulting">
-                            </div>
-                            <div class="service-content-side">
-                                <div class="service-item-header">
-                                    <span class="service-item-number">05</span>
-                                    <div class="service-item-divider"></div>
-                                </div>
-                                <h3 class="service-item-title">Market Research &<br>Consulting</h3>
-                                <p class="service-item-description">
-                                    We provide data-driven insights and actionable strategies to help you navigate the
-                                    Japanese market, helping you to make informed decisions with confidence.
-                                </p>
-                                <a href="#" class="view-more-btn">VIEW MORE</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="contact-overlay"></div>
-        <div class="contact-button-wrapper">
-            <a href="#" class="contact-btn">CONTACT</a>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="footer-section">
-        <div class="footer-top">
-            <div class="container footer-container">
-                <div class="footer-col footer-col-1">
-                    <h5 class="footer-heading">TEXT</h5>
-                    <p class="footer-desc">TEXT TEXT TEXT<br>TEXT TEXT TEXT<br>TEXT TEXT TEXT</p>
-                    <div class="social-block">
-                        <span class="follow-text">Follow me</span>
-                        <div class="social-line"></div>
-                        <div class="social-icons">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <div class="sp-intro-right">
+                        <div class="sp-intro-text">
+                            <p>We PANASIA BRAINS was established in 2003 and we have ever been spreading the Japanese
+                                products to all over the world as the experienced exporting expert since then.</p>
+                            <p>Based on our long term experience and knowledge, we strongly emphasize that we are the
+                                true specialist as "ONE STOP ARRANGEMENTS" to meet your expectation.</p>
+                            <p>And we can be "YOUR JAPAN BRANCH"</p>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="footer-col footer-col-2">
-                    <h5 class="footer-heading">SERVICES</h5>
-                    <ul class="footer-list">
-                        <li><a href="#">Full Export Management</a></li>
-                        <li><a href="#">Product Sourcing & Procurement Agency</a></li>
-                        <li><a href="#">Export Documentation & Compliance</a></li>
-                        <li><a href="#">Logistics & International Shipping</a></li>
-                        <li><a href="#">Labeling & Packaging Solutions</a></li>
-                        <li><a href="#">Market Research & Consulting</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col footer-col-3">
-                    <div class="footer-nav-headers">
-                        <h5 class="footer-heading">PRODUCT CATALOGS</h5>
-                        <h5 class="footer-heading"><a href="#">HOW IT WORKS</a></h5>
-                        <h5 class="footer-heading"><a href="#">CASE STUDIES</a></h5>
-                        <h5 class="footer-heading"><a href="#">ABOUT</a></h5>
-                        <h5 class="footer-heading"><a href="#">CONTACT</a></h5>
-                    </div>
-                    <div class="footer-footer-list">
-                        <ul class="footer-list">
-                            <li><a href="#">Restaurant Supplies</a></li>
-                            <li><a href="#">Food & Beverage</a></li>
-                            <li><a href="#">Featured Collections</a></li>
+            <!-- Sticky Layout Section -->
+            <section class="sp-content-layout">
+                <!-- Sidebar Nav -->
+                <aside class="sp-sidebar">
+                    <div class="sp-sticky-nav">
+                        <ul class="sidebar-list">
+                            <li><a class="sidebar-item active" data-target="procurement">01 PROCUREMENT &
+                                    NEGOTIATION</a></li>
+                            <li><a class="sidebar-item" data-target="compliance">02 COMPLIANCE & DOCUMENTATION</a></li>
+                            <li><a class="sidebar-item" data-target="logistics">03 GLOBAL LOGISTICS & SHIPPING</a></li>
+                            <li><a class="sidebar-item" data-target="customization">04 CUSTOMIZATION & LABELING</a></li>
+                            <li><a class="sidebar-item" data-target="research">05 MARKET RESEARCH & CONSULTING</a></li>
                         </ul>
                     </div>
+                </aside>
+
+                <!-- Detailed Specs -->
+                <div class="sp-details-col">
+                    <!-- 1. Procurement -->
+                    <div class="detail-block" id="procurement">
+                        <div class="sp-block-header">
+                            <span class="sp-block-num">01</span>
+                            <div class="sp-block-divider"></div>
+                        </div>
+                        <img src="images/servicesMain/service1.jpg" alt="Procurement & Negotiation" class="detail-img">
+                        <h3 class="detail-title">Procurement & Negotiation</h3>
+                        <p class="detail-description">We source authentic products directly from our vast network of
+                            Japanese manufacturers and artisans while handling all price and quality negotiations on
+                            your behalf.</p>
+                        <div class="sp-detail-subarea">
+                            <h4 class="sp-sub-label">What we can do</h4>
+                            <div class="sp-sub-divider"></div>
+                            <ul class="detail-list">
+                                <li>Nationwide Network of Manufacturers & Factories</li>
+                                <li>On-site Visits & Strategic Negotiations</li>
+                                <li>Rigorous Quality Control & Inspection</li>
+                                <li>Custom Product Development</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 2. Compliance -->
+                    <div class="detail-block" id="compliance">
+                        <div class="sp-block-header">
+                            <span class="sp-block-num">02</span>
+                            <div class="sp-block-divider"></div>
+                        </div>
+                        <img src="images/servicesMain/service2.jpg" alt="Compliance & Documentation" class="detail-img">
+                        <h3 class="detail-title">Compliance & Documentation</h3>
+                        <p class="detail-description">We manage all complex paperwork, including Certificates of Origin
+                            and health certificates, ensuring your shipments fully comply with international customs
+                            regulations.</p>
+                        <div class="sp-detail-subarea">
+                            <h4 class="sp-sub-label">What we can do</h4>
+                            <div class="sp-sub-divider"></div>
+                            <ul class="detail-list">
+                                <li>Certificates of Origin</li>
+                                <li>Health & Quality Certificates</li>
+                                <li>Customs Clearance Documentation</li>
+                                <li>Country-Specific Regulatory Compliance</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 3. Logistics -->
+                    <div class="detail-block" id="logistics">
+                        <div class="sp-block-header">
+                            <span class="sp-block-num">03</span>
+                            <div class="sp-block-divider"></div>
+                        </div>
+                        <img src="images/servicesMain/service3.jpg" alt="Global Logistics & Shipping"
+                            class="detail-img">
+                        <h3 class="detail-title">Global Logistics & Shipping</h3>
+                        <p class="detail-description">Our efficient supply chain solutions ensure timely delivery by sea
+                            or air, with careful temperature control for perishable goods.</p>
+                        <div class="sp-detail-subarea">
+                            <h4 class="sp-sub-label">What we can do</h4>
+                            <div class="sp-sub-divider"></div>
+                            <ul class="detail-list">
+                                <li>Cold Chain Logistics for Food Items</li>
+                                <li>Sea Freight & Air Freight Solutions</li>
+                                <li>Inventory Management & Warehousing</li>
+                                <li>Door-to-Door Delivery Tracking</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 4. Customization -->
+                    <div class="detail-block" id="customization">
+                        <div class="sp-block-header">
+                            <span class="sp-block-num">04</span>
+                            <div class="sp-block-divider"></div>
+                        </div>
+                        <img src="images/servicesMain/service4.jpg" alt="Customization & Labeling" class="detail-img">
+                        <h3 class="detail-title">Customization & Labeling</h3>
+                        <p class="detail-description">We offer tailored product adaptations, from custom packaging
+                            designs to localized nutrition labels, ensuring your products appeal to Japanese consumers.
+                        </p>
+                        <div class="sp-detail-subarea">
+                            <h4 class="sp-sub-label">What we can do</h4>
+                            <div class="sp-sub-divider"></div>
+                            <ul class="detail-list">
+                                <li>Private Labeling (OEM)</li>
+                                <li>Localized Packaging & Sticker Design</li>
+                                <li>Mandatory Ingredient Label Translation</li>
+                                <li>Visual Brand Adaptation for Local Market</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 5. Research -->
+                    <div class="detail-block" id="research">
+                        <div class="sp-block-header">
+                            <span class="sp-block-num">05</span>
+                            <div class="sp-block-divider"></div>
+                        </div>
+                        <img src="images/servicesMain/marketReserch.jpg" alt="Market Research & Consulting"
+                            class="detail-img">
+                        <h3 class="detail-title">Market Research & Consulting</h3>
+                        <p class="detail-description">Our expert consultants provide actionable market insights and
+                            trends, helping you identify opportunities and navigate the competitive Japanese business
+                            landscape.</p>
+                        <div class="sp-detail-subarea">
+                            <h4 class="sp-sub-label">What we can do</h4>
+                            <div class="sp-sub-divider"></div>
+                            <ul class="detail-list">
+                                <li>In-depth Market Trend Analysis</li>
+                                <li>Competitive Landscaping & Pricing Studies</li>
+                                <li>Consumer Preferences & Behavior Analysis</li>
+                                <li>Distribution Channel Strategy Development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="contact-overlay"></div>
+            <div class="contact-button-wrapper">
+                <a href="#" class="contact-btn">CONTACT</a>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer-section">
+            <div class="footer-top">
+                <div class="container footer-container">
+
+                    <!-- Col 1: Brand Info -->
+                    <div class="footer-col-1">
+                        <h5 class="footer-heading">TEXT</h5>
+                        <p class="footer-desc">TEXT TEXT TEXT<br>TEXT TEXT TEXT<br>TEXT TEXT TEXT</p>
+                        <div class="social-block">
+                            <div class="follow-wrapper">
+                                <span class="follow-text">Follow me</span>
+                                <div class="social-line"></div>
+                            </div>
+                            <div class="social-icons">
+                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Col 2: Internal Services -->
+                    <div class="footer-col-2">
+                        <h5 class="footer-heading">SERVICES</h5>
+                        <ul class="footer-list">
+                            <li><a href="#">Full Export Management</a></li>
+                            <li><a href="#">Product Sourcing & Procurement Agency</a></li>
+                            <li><a href="#">Export Documentation & Compliance</a></li>
+                            <li><a href="#">Logistics & International Shipping</a></li>
+                            <li><a href="#">Labeling & Packaging Solutions</a></li>
+                            <li><a href="#">Market Research & Consulting</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Catalog & Page Nav Row -->
+                    <div class="footer-col-3">
+                        <div class="footer-nav-row">
+                            <div class="nav-group">
+                                <h5 class="footer-heading">PRODUCT CATALOGS</h5>
+                                <ul class="footer-list">
+                                    <li><a href="#">Restaurant Supplies</a></li>
+                                    <li><a href="#">Food & Beverage</a></li>
+                                    <li><a href="#">Featured Collections</a></li>
+                                </ul>
+                            </div>
+                            <h5 class="footer-heading"><a href="#">HOW IT WORKS</a></h5>
+                            <h5 class="footer-heading"><a href="#">CASE STUDIES</a></h5>
+                            <h5 class="footer-heading"><a href="#">ABOUT</a></h5>
+                            <h5 class="footer-heading"><a href="#">CONTACT</a></h5>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </div>
 
-        <div class="footer-bottom">
-            <div class="container footer-bottom-container">
-                <div class="footer-logo">LOGO</div>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <p>@2026 ONE STOP Restaurant Supplies</p>
+            <div class="footer-bottom">
+                <div class="container footer-bottom-container">
+                    <div class="footer-logo">LOGO</div>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <p>@2026 ONE STOP Restaurant Supplies</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
-    <script src="script.js"></script>
+    <!-- Scroll Spy and Interactive Logic (Optional - will be verified next) -->
     <script src="services.js"></script>
 </body>
 
