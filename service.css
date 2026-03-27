@@ -14,7 +14,7 @@
 html,
 body {
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip; /* clip instead of hidden — hidden breaks position:sticky */
     background-color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
     color: #353535;
@@ -274,25 +274,27 @@ body {
 
 /* 6. Sticky Sidebar Layout */
 .sp-content-layout {
-    display: flex;
-    justify-content: center;
-    gap: 80px;
-    padding: 120px 24px 0px 24px;
-    /* Bottom padding 0 */
     background-color: #F8F8F8;
-    width: 100% !important;
+    width: 100%;
+}
+
+.sp-content-inner {
+    max-width: 1440px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 120px 118px 120px 118px;
 }
 
 .sp-sidebar {
-    width: 300px;
+    width: 333px;
     flex-shrink: 0;
+    position: sticky;
+    top: 120px;          /* stays at 120px from top while right side scrolls */
+    align-self: flex-start; /* CRITICAL: prevents sidebar from stretching full height */
 }
 
-.sp-sticky-nav {
-    position: sticky;
-    top: 50px;
-}
 
 .sidebar-list {
     list-style: none;
@@ -340,25 +342,18 @@ body {
 
 /* 7. Content Details Blocks */
 .sp-details-col {
-    width: 800px !important;
+    width: 801px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
 }
 
 .detail-block {
-    width: 800px !important;
-    min-height: 850px !important;
-    /* Reduced to 850px for tighter layout as per 1963 */
+    width: 100%;
     display: flex;
     flex-direction: column;
-    padding-bottom: 80px;
-    /* Reduced from 120px */
 }
 
-.detail-block:last-child {
-    min-height: 0 !important;
-    /* Allow the last block to be minimal height */
-    padding-bottom: 80px;
-    /* Space between last content and Contact section */
-}
 
 .detail-img {
     width: 800px !important;
@@ -479,7 +474,7 @@ body {
         width: 67%;
     }
 
-    .sp-content-layout {
+    .sp-content-inner {
         padding-left: 60px !important;
         padding-right: 60px !important;
         gap: 40px;
@@ -702,7 +697,7 @@ body {
     }
 
     /* Services Layout */
-    .sp-content-layout {
+    .sp-content-inner {
         padding: 60px 24px !important;
         flex-direction: column !important;
         gap: 0 !important;
