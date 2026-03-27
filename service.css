@@ -14,7 +14,8 @@
 html,
 body {
     width: 100%;
-    overflow-x: clip; /* clip instead of hidden — hidden breaks position:sticky */
+    overflow-x: clip;
+    /* clip instead of hidden — hidden breaks position:sticky */
     background-color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
     color: #353535;
@@ -23,11 +24,11 @@ body {
 
 /* 2. Main Wrapper - Fluid to handle larger screens up to 1920px */
 .service-page-wrapper {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
+    width: 100%;
+    max-width: 100%;
     background-color: #FFFFFF;
     min-height: 100vh;
+    position: relative;
 }
 
 .sp-main {
@@ -291,8 +292,10 @@ body {
     width: 333px;
     flex-shrink: 0;
     position: sticky;
-    top: 120px;          /* stays at 120px from top while right side scrolls */
-    align-self: flex-start; /* CRITICAL: prevents sidebar from stretching full height */
+    top: 120px;
+    /* stays at 120px from top while right side scrolls */
+    align-self: flex-start;
+    /* CRITICAL: prevents sidebar from stretching full height */
 }
 
 

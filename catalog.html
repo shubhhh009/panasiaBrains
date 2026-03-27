@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalogs - Japanese Global Supply Chains</title>
+    <!-- Google Fonts: Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Catalog CSS -->
+    <link rel="stylesheet" href="catalog.css">
+</head>
+
+<body>
+
+    <div class="cp-page-wrapper">
+
+        <!-- 1. Header / Navbar -->
+        <header class="cp-header">
+            <div class="cp-navbar">
+                <a href="index.html" class="cp-logo">LOGO</a>
+
+                <nav class="cp-nav">
+                    <a href="service.html" class="cp-nav-link">SERVICES <span class="cp-caret">▼</span></a>
+                    <a href="catalog.html" class="cp-nav-link active">PRODUCT CATALOGS <span
+                            class="cp-caret">▼</span></a>
+                    <a href="index.html#how" class="cp-nav-link">HOW IT WORKS</a>
+                    <a href="index.html#case" class="cp-nav-link">CASE STUDIES</a>
+                    <a href="index.html#about" class="cp-nav-link">ABOUT</a>
+                    <a href="index.html#contact" class="cp-btn-contact">CONTACT</a>
+                </nav>
+
+                <!-- Hamburger (mobile only) -->
+                <div class="cp-hamburger" id="cp-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="cp-mobile-overlay" id="cp-mobile-overlay">
+            <button class="cp-mobile-close" id="cp-mobile-close">&#x2715;</button>
+            <ul class="cp-mobile-links">
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="service.html">SERVICE</a></li>
+                <li><a href="catalog.html">PRODUCT CATALOG</a></li>
+                <li><a href="index.html#how">HOW IT WORKS</a></li>
+                <li><a href="index.html#case">CASE STUDY</a></li>
+                <li><a href="index.html#about">ABOUT</a></li>
+            </ul>
+        </div>
+
+        <!-- 2. Main Content         <main class="cp-main">
+            <!-- SECTION 1: PRODUCT CATALOG (1440px, White, Padding 120 110) -->
+        <section class="cp-catalog-section">
+
+            <!-- Title Content -->
+            <div class="cp-title-wrap">
+                <h1 class="cp-page-title">PRODUCT CATALOGS</h1>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="cp-hero-image-wrap">
+                <img src="images/catalog/catalogMain.jpg" alt="Product Catalogs Hero" class="cp-hero-img">
+            </div>
+
+            <!-- Search area + Grid Content Wrapper (1200px inner) -->
+            <div class="cp-catalog-body-content">
+
+                <!-- Search Bar -->
+                <div class="cp-search-bar-wrap">
+                    <input type="text" class="cp-search-input" placeholder="Search products...">
+                    <button class="cp-search-btn"><i class="fas fa-search"></i></button>
+                </div>
+
+                <!-- Frame 2295 Wrapper -->
+                <div class="cp-catalog-content-wrap">
+                    <div class="cp-catalog-group">
+                        <div class="cp-tabs">
+                            <button class="cp-tab cp-tab-purple active" data-category="restaurant">Restaurant
+                                Supplies</button>
+                            <button class="cp-tab cp-tab-gold" data-category="food">Restaurant Supplies</button>
+                            <button class="cp-tab cp-tab-teal" data-category="custom">Restaurant Supplies</button>
+                        </div>
+
+                        <div class="cp-products-grid-wrap">
+                            <div class="cp-products-grid" id="cp-products-grid">
+                                <!-- Injected by catalog.js -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Browse All Row -->
+                    <div class="cp-browse-all-wrap">
+                        <a href="#" class="cp-browse-btn">BROWS ALL CATALOGS</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 3. Specialized Sourcing Section (Alag Container) -->
+        <section class="cp-sourcing-section">
+
+            <!-- Frame 2300: 1200px Boxed Section -->
+            <div class="cp-sourcing-inner">
+
+                <!-- Frame 2298: Top Content Group (Banner + Grid + Text) -->
+                <div class="cp-sourcing-top-group">
+
+                    <!-- Sourcing Banner -->
+                    <div class="cp-sourcing-banner">
+                        <div class="cp-sourcing-overlay">
+                            <h2 class="cp-sourcing-quote">
+                                "Can't find what you're looking for?<br>
+                                We source specialized items beyond our catalog."
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="cp-sourcing-grid">
+                        <div class="cp-sourcing-item">
+                            <div class="cp-sourcing-img-wrap">
+                                <img src="images/catalog/cata4.png" alt="Grand Pianos">
+                            </div>
+                            <p class="cp-sourcing-name">Grand Pianos &<br>Musical Instruments</p>
+                        </div>
+                        <div class="cp-sourcing-item">
+                            <div class="cp-sourcing-img-wrap">
+                                <img src="images/catalog/cata5.png" alt="Sports Equipment">
+                            </div>
+                            <p class="cp-sourcing-name">Professional<br>Sports Equipment</p>
+                        </div>
+                        <div class="cp-sourcing-item">
+                            <div class="cp-sourcing-img-wrap">
+                                <img src="images/catalog/cata6.png" alt="Industrial Machinery">
+                            </div>
+                            <p class="cp-sourcing-name">Custom-made<br>Industrial Machinery</p>
+                        </div>
+                    </div>
+
+
+
+                </div> <!-- End Frame 2298 -->
+
+                <!-- Contact Form (Frame 2297) -->
+                <div class="cp-inquiry-form-wrap">
+
+                    <p class="cp-inquiry-intro">
+                        We can source items not listed in our catalog, including pianos, sports equipment, and custom
+                        machinery. Please contact us via the inquiry form with your specific requirements.
+                    </p>
+
+                    <div class="cp-form-row">
+                        <label class="cp-form-label">Company Name <span class="cp-req">※</span></label>
+                        <input type="text" class="cp-form-input">
+                    </div>
+                    <div class="cp-form-row">
+                        <label class="cp-form-label">Full Name <span class="cp-req">※</span></label>
+                        <input type="text" class="cp-form-input">
+                    </div>
+                    <div class="cp-form-row">
+                        <label class="cp-form-label">Phone Number <span class="cp-req">※</span></label>
+                        <input type="tel" class="cp-form-input">
+                    </div>
+                    <div class="cp-form-row">
+                        <label class="cp-form-label">Email Address <span class="cp-req">※</span></label>
+                        <input type="email" class="cp-form-input">
+                    </div>
+                    <div class="cp-form-row">
+                        <label class="cp-form-label">Item Details (Description / Specifications)</label>
+                        <textarea class="cp-form-textarea"></textarea>
+                    </div>
+                    <div class="cp-form-row">
+                        <label class="cp-form-label">Estimated Quantity & Budget</label>
+                        <input type="text" class="cp-form-input">
+                    </div>
+                    <div class="cp-form-row">
+                        <label class="cp-form-label">Upload Reference Images / Photos</label>
+                        <div class="cp-upload-box">
+                            Browse files
+                            <i class="fas fa-arrow-up-from-bracket"></i>
+                            <input type="file" hidden>
+                        </div>
+                    </div>
+                    <div class="cp-form-row">
+                        <label class="cp-form-label">Desired Lead Time</label>
+                        <input type="text" class="cp-form-input">
+                    </div>
+                    <div class="cp-form-privacy">
+                        <label class="cp-checkbox-container">
+                            <input type="checkbox" required>
+                            <span class="cp-checkmark"></span>
+                            <span>Privacy Policy</span>
+                        </label>
+                    </div>
+                    <div class="cp-form-submit-wrap">
+                        <button type="submit" class="cp-form-submit-btn">SUBMIT</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        </main>
+
+        <!-- Contact Section -->
+        <section class="cp-contact-section" id="contact">
+            <div class="cp-contact-overlay"></div>
+            <div class="cp-contact-btn-wrap">
+                <a href="#" class="cp-contact-btn">CONTACT</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="cp-footer">
+            <div class="cp-footer-top">
+                <div class="cp-container cp-footer-inner">
+
+                    <div class="cp-footer-col-1">
+                        <h5 class="cp-footer-heading">TEXT</h5>
+                        <p class="cp-footer-desc">TEXT TEXT TEXT<br>TEXT TEXT TEXT<br>TEXT TEXT TEXT</p>
+                        <div class="cp-social-block">
+                            <div class="cp-follow-wrap">
+                                <span class="cp-follow-text">Follow me</span>
+                                <div class="cp-social-line"></div>
+                            </div>
+                            <div class="cp-social-icons">
+                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cp-footer-col-2">
+                        <h5 class="cp-footer-heading">SERVICES</h5>
+                        <ul class="cp-footer-list">
+                            <li><a href="#">Full Export Management</a></li>
+                            <li><a href="#">Product Sourcing &amp; Procurement</a></li>
+                            <li><a href="#">Export Documentation &amp; Compliance</a></li>
+                            <li><a href="#">Logistics &amp; International Shipping</a></li>
+                            <li><a href="#">Labeling &amp; Packaging Solutions</a></li>
+                            <li><a href="#">Market Research &amp; Consulting</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="cp-footer-col-3">
+                        <div class="cp-footer-nav-row">
+                            <div class="cp-nav-group">
+                                <h5 class="cp-footer-heading">PRODUCT CATALOGS</h5>
+                                <ul class="cp-footer-list">
+                                    <li><a href="#">Restaurant Supplies</a></li>
+                                    <li><a href="#">Food &amp; Beverage</a></li>
+                                    <li><a href="#">Featured Collections</a></li>
+                                </ul>
+                            </div>
+                            <h5 class="cp-footer-heading"><a href="#">HOW IT WORKS</a></h5>
+                            <h5 class="cp-footer-heading"><a href="#">CASE STUDIES</a></h5>
+                            <h5 class="cp-footer-heading"><a href="#">ABOUT</a></h5>
+                            <h5 class="cp-footer-heading"><a href="#">CONTACT</a></h5>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="cp-footer-bottom">
+                <div class="cp-container cp-footer-bottom-inner">
+                    <div class="cp-footer-logo">LOGO</div>
+                    <div class="cp-footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <p>@2026 ONE STOP Restaurant Supplies</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="catalog.js"></script>
+</body>
+
+</html>
