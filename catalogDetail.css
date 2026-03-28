@@ -1,0 +1,627 @@
+/* 
+    Catalog Detail Page Structure (Figma Reference - 1440px)
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F5F5F7;
+    /* Light grey background outside the container */
+    overflow-x: hidden;
+}
+
+.cp-page-wrapper {
+    width: 100%;
+}
+
+/* Reusable Section Container (1440px) */
+.cd-section-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    background-color: #FFFFFF;
+}
+
+/* 1. Hero Section (716px) */
+.cd-hero-section {
+    width: 100%;
+    background-color: #FFFFFF;
+    height: 716px;
+    /* Exact Figma Height */
+    display: flex;
+    flex-direction: column;
+}
+
+.cd-hero-section .cd-section-container {
+    height: 100%;
+}
+
+.cd-header-content {
+    padding: 100px 120px 0 120px;
+    /* Adjusted to fit 716px total height */
+}
+
+.cd-page-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80px;
+    font-weight: 500;
+    color: #353535;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 60px;
+}
+
+.cd-hero-image {
+    padding: 0 120px;
+    width: 100%;
+}
+
+.cd-hero-image img {
+    width: 1320px;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* 2. Product List Section (1680px) */
+.cd-products-section {
+    width: 100%;
+    background-color: #FFFFFF;
+    min-height: 1680px;
+    /* Exact Figma Height */
+}
+
+/* Sub-Header Container (Group 255: 108px Total Height) */
+.cd-breadcrumb-bar {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    background-color: #F8F8F8;
+    border: none !important;
+    outline: none;
+    width: 100%;
+    padding: 0 120px;
+}
+
+.cd-nav-breadcrumb {
+    font-size: 18px;
+    font-weight: 400;
+    color: #353535;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cd-nav-breadcrumb a {
+    color: #353535;
+    text-decoration: underline;
+    margin-right: 8px;
+}
+
+.cd-nav-breadcrumb span {
+    margin-right: 8px;
+    color: #353535;
+}
+
+.cd-filter-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    background-color: #FFFFFF;
+    border: none;
+    width: 100%;
+    padding: 0 120px;
+}
+
+.cd-filter-btn {
+    background: transparent;
+    border: 1.5px solid #353535;
+    /* Figma Border Color */
+    width: 120px;
+    /* Exact Figma Width */
+    height: 60px;
+    /* Exact Figma Height */
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #353535;
+}
+
+.cd-product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 380px);
+    /* Fixed 380px Width per Group 189/190 */
+    gap: 60px;
+    /* 60px Gap per Frame 2280 */
+    padding: 120px 90px;
+    /* Aligned to 1260px total inner width (3*380 + 2*60) */
+    justify-content: center;
+}
+
+.cd-product-card {
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+}
+
+.cd-product-image {
+    width: 380px;
+    height: 300px;
+    /* Exact Height per Spec */
+    margin-bottom: 32px;
+    /* Remaining space for 635px total */
+    overflow: hidden;
+}
+
+.cd-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cd-product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    /* Gap between Frame 2288 and Frame 2289 */
+    height: 303px;
+}
+
+/* Frame 2288: Title + Description (113px) */
+.cd-product-text-frame {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* Gap from Frame 2288 */
+    height: 113px;
+}
+
+.cd-product-name {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1;
+    /* 100% */
+    letter-spacing: 0.04em;
+    /* 4% */
+    color: #353535;
+    margin: 0;
+}
+
+.cd-product-desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.04em;
+    /* 4% */
+    color: #353535;
+    margin: 0;
+}
+
+/* Frame 2289: Price + Actions (150px) */
+.cd-product-footer-frame {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* Exact Gap per Frame 2289 */
+    height: 150px;
+}
+
+.cd-product-price {
+    font-size: 16px;
+    /* Updated from 14px */
+    font-weight: 500;
+    line-height: 30px;
+    /* 30px per spec */
+    letter-spacing: 0.04em;
+    /* 4% */
+    color: #353535;
+    text-align: right;
+    margin: 0;
+    height: 30px;
+    /* Exact Height per spec */
+}
+
+.cd-product-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* Gap from Button Container spec */
+    align-items: flex-end;
+    /* Align actions to the right per layout */
+}
+
+.cd-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    /* Fixed Width per spec */
+    height: 40px;
+    /* Fixed Height per spec */
+    border: 1px solid #353535;
+    border-radius: 30px;
+    /* Pill shape */
+    background: transparent;
+    color: #353535;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    /* Updated from 14px */
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    /* 8% letter spacing */
+    transition: all 0.3s ease;
+    padding: 6px 8px;
+    /* Padding per spec */
+    box-sizing: border-box;
+}
+
+.cd-btn:hover {
+    background-color: #353535;
+    color: #FFFFFF;
+}
+
+/* =============================================
+   SHARED CONTAINER — 1440px centered, 120px padding
+   ============================================= */
+.cp-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 120px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* =============================================
+   CONTACT SECTION (CTA)
+   ============================================= */
+.cp-contact-section {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    background: url('images/4483db7316da99989ee5a995421e03781f54b0ef.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0; /* Ensure no gap with footer */
+}
+
+.cp-contact-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.cp-contact-btn-wrap {
+    position: relative;
+    z-index: 1;
+}
+
+.cp-contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 461px;
+    height: 80px;
+    background: linear-gradient(90deg, #AC60C3 0%, #DC6061 100%);
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 60px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: transform 0.3s ease;
+    text-transform: uppercase;
+}
+
+.cp-contact-btn:hover {
+    transform: scale(1.05);
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.cp-footer {
+    background-color: #262626;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 406px;
+    overflow: hidden;
+    margin-top: 0; /* Forced reset */
+    display: block;
+}
+
+.cp-footer-top {
+    width: 100%;
+    height: 280px;
+    background-color: #262626;
+    display: flex;
+    justify-content: flex-start; /* Pinned to left */
+}
+
+.cp-footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    width: 1440px;
+    padding: 0px 110px 40px 110px; /* Tighter top gap */
+    min-height: 220px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.cp-footer-col-1 {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.cp-footer-company-block {
+    width: 119px;
+    /* Exact Company Text Width per spec */
+    height: 80px;
+    /* Exact Company Text Height per spec */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.cp-footer-col-2 {
+    flex: 1.5;
+}
+
+.cp-footer-col-3 {
+    flex: 3;
+}
+
+.cp-footer-heading {
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    /* SemiBold */
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: 100%;
+    letter-spacing: 0.04em;
+    /* 4% letter spacing per spec */
+}
+
+.cp-footer-heading a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.cp-footer-desc {
+    font-size: 14px;
+    font-weight: 500;
+    /* Medium */
+    line-height: normal;
+    color: rgba(255, 255, 255, 0.7);
+    width: 125px; /* Increased slightly to prevent word wrapping */
+    letter-spacing: 0.04em;
+    /* 4% letter spacing */
+    margin: 0;
+}
+
+.cp-footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cp-footer-list li {
+    margin-bottom: 10px;
+}
+
+.cp-footer-list a {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    line-height: 20px;
+    transition: color 0.2s ease;
+}
+
+.cp-footer-list a:hover {
+    color: #FFFFFF;
+}
+
+.cp-social-block {
+    display: flex;
+    flex-direction: row;
+    /* Single row for everything */
+    align-items: center;
+    width: 274px;
+    /* Exact SNS Block Width */
+    height: 24px;
+    /* Exact Height */
+    gap: 16px;
+}
+
+.cp-follow-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    /* Take up available space for text + line */
+}
+
+.cp-follow-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600; /* SemiBold per spec */
+    color: #FFFFFF;
+    white-space: nowrap;
+    width: 84px; /* Exact Width per spec */
+    height: 17px; /* Exact Height per spec */
+    line-height: 100%;
+    letter-spacing: 0.08em; /* 8% letter spacing per spec */
+}
+
+.cp-social-line {
+    width: 80px;
+    /* Fixed line width to fit 274px container */
+    height: 1px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.cp-social-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.cp-social-icons a {
+    color: #FFFFFF;
+    font-size: 20px;
+    /* Exact Icon Size per spec proportionality */
+    transition: opacity 0.2s ease;
+}
+
+.cp-social-icons a:hover {
+    opacity: 0.7;
+}
+
+.cp-footer-col-1 {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.cp-footer-col-2 {
+    width: 207px; /* Exact Group 87 Width */
+    flex-shrink: 0;
+}
+
+.cp-footer-col-2 .cp-footer-heading {
+    letter-spacing: 0.08em; /* 8% letter spacing */
+}
+
+.cp-footer-col-3 {
+    width: 634px;
+    flex-shrink: 0;
+}
+
+.cp-footer-col-3 .cp-footer-heading {
+    letter-spacing: 0.08em; /* 8% letter spacing per spec */
+}
+
+.cp-footer-nav-header-inline {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-bottom: 24px;
+}
+
+.cp-footer-nav-header-inline .cp-footer-heading {
+    margin-bottom: 0;
+}
+
+.cp-footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Exact Frame 1204 Gap */
+}
+
+.cp-footer-col-3 .cp-footer-list a {
+    width: 171px; /* Exact width from spec */
+}
+
+.cp-footer-list li {
+    margin-bottom: 0; /* Handled by flex gap */
+}
+
+.cp-footer-list a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 10px; /* Exact spec size for list items */
+    line-height: normal;
+    font-weight: 400; /* Regular */
+    transition: color 0.2s ease;
+    display: block;
+    width: 207px; /* Match frame width */
+}
+
+.cp-footer-list a:hover {
+    color: #FFFFFF;
+}
+
+/* Footer Bottom */
+.cp-footer-bottom {
+    background-color: #F9F9F9;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    width: 100%;
+    height: 126px;
+    display: flex;
+    justify-content: flex-start; /* Pinned to left */
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.cp-footer-bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1440px;
+    padding: 0 110px;
+    box-sizing: border-box;
+}
+
+.cp-footer-logo {
+    font-size: 24px;
+    font-weight: 500;
+    color: #353535;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.cp-footer-legal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.cp-footer-legal a, 
+.cp-footer-legal p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #353535;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    line-height: normal;
+    margin: 0;
+}
+
+.cd-footer-section .cd-section-container {
+    height: 100%;
+    background-color: #1A1A1A;
+    padding: 60px 120px;
+    color: #FFFFFF;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1440px) {
+    .cd-section-container {
+        width: 100%;
+    }
+}

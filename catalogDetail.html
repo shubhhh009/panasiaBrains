@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog Detail - Japan Global Supply Chains</title>
+    <!-- Google Fonts: Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Base Styles from catalog.css (for header consistency) -->
+    <link rel="stylesheet" href="catalog.css">
+    <!-- Specific Styles for Detail Page -->
+    <link rel="stylesheet" href="catalogDetail.css">
+</head>
+
+<body>
+
+    <div class="cp-page-wrapper">
+
+        <!-- 1. Header / Navbar (Reusing catalog header) -->
+        <header class="cp-header">
+            <div class="cp-navbar">
+                <a href="index.html" class="cp-logo">LOGO</a>
+
+                <nav class="cp-nav">
+                    <div class="cp-nav-item">
+                        <a href="service.html" class="cp-nav-link">SERVICES <span class="cp-caret">▼</span></a>
+                    </div>
+                    <div class="cp-nav-item">
+                        <a href="catalog.html" class="cp-nav-link active">PRODUCT CATALOGS <span
+                                class="cp-caret">▼</span></a>
+                    </div>
+                    <a href="index.html#how" class="cp-nav-link">HOW IT WORKS</a>
+                    <a href="index.html#case" class="cp-nav-link">CASE STUDIES</a>
+                    <a href="index.html#about" class="cp-nav-link">ABOUT</a>
+                    <a href="index.html#contact" class="cp-btn-contact">CONTACT</a>
+                </nav>
+
+                <!-- Hamburger (mobile only) -->
+                <div class="cp-hamburger" id="cp-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 1. Hero Section (1440x716) -->
+        <div class="cd-hero-section">
+            <div class="cd-section-container">
+                <div class="cd-header-content">
+                    <h1 class="cd-page-title">PRODUCT CATALOGS</h1>
+                </div>
+                <div class="cd-hero-image">
+                    <img src="images/catalog/catalogMain.jpg" alt="Catalog Detail Section">
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Product List Section (1440x1680) -->
+        <div class="cd-products-section">
+            <div class="cd-section-container">
+                <!-- Sub-Header Block (108px) -->
+                <div class="cd-breadcrumb-bar">
+                    <div class="cd-nav-breadcrumb">
+                        <a href="index.html">HOME</a> <span>&gt;</span>
+                        <a href="catalog.html">Restaurant Supplies</a> <span>&gt;</span>
+                        Tableware &amp; Dinnerware
+                    </div>
+                </div>
+                <div class="cd-filter-bar">
+                    <button class="cd-filter-btn">
+                        <i class="fas fa-sliders-h"></i> filter
+                    </button>
+                </div>
+
+                <!-- 3-Column Product Grid (6 Items Total) -->
+                <div class="cd-product-grid">
+                    <!-- Product Card 1 -->
+                    <div class="cd-product-card">
+                        <div class="cd-product-image"><img src="images/catalog/catalog1.png" alt="Product"></div>
+                        <div class="cd-product-info">
+                            <div class="cd-product-text-frame">
+                                <h3 class="cd-product-name">Product Name</h3>
+                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text
+                                </p>
+                            </div>
+                            <div class="cd-product-footer-frame">
+                                <div class="cd-product-price">¥5,264 <span class="cd-tax-label">(tax)</span></div>
+                                <div class="cd-product-actions">
+                                    <a href="#" class="cd-btn">VIEW CATALOG</a>
+                                    <a href="#" class="cd-btn">CONTACT</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 2 (Repeated for 6 cards with alternating images) -->
+                    <div class="cd-product-card">
+                        <div class="cd-product-image"><img src="images/catalog/catalog4.jpg" alt="Product"></div>
+                        <div class="cd-product-info">
+                            <div class="cd-product-text-frame">
+                                <h3 class="cd-product-name">Product Name</h3>
+                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text
+                                </p>
+                            </div>
+                            <div class="cd-product-footer-frame">
+                                <div class="cd-product-price">¥5,264 <span class="cd-tax-label">(tax)</span></div>
+                                <div class="cd-product-actions">
+                                    <a href="#" class="cd-btn">VIEW CATALOG</a>
+                                    <a href="#" class="cd-btn">CONTACT</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cd-product-card">
+                        <div class="cd-product-image"><img src="images/catalog/catalog1.png" alt="Product"></div>
+                        <div class="cd-product-info">
+                            <div class="cd-product-text-frame">
+                                <h3 class="cd-product-name">Product Name</h3>
+                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text
+                                </p>
+                            </div>
+                            <div class="cd-product-footer-frame">
+                                <div class="cd-product-price">¥5,264 <span class="cd-tax-label">(tax)</span></div>
+                                <div class="cd-product-actions">
+                                    <a href="#" class="cd-btn">VIEW CATALOG</a>
+                                    <a href="#" class="cd-btn">CONTACT</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cd-product-card">
+                        <div class="cd-product-image"><img src="images/catalog/catalog4.jpg" alt="Product"></div>
+                        <div class="cd-product-info">
+                            <div class="cd-product-text-frame">
+                                <h3 class="cd-product-name">Product Name</h3>
+                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text
+                                </p>
+                            </div>
+                            <div class="cd-product-footer-frame">
+                                <div class="cd-product-price">¥5,264 <span class="cd-tax-label">(tax)</span></div>
+                                <div class="cd-product-actions">
+                                    <a href="#" class="cd-btn">VIEW CATALOG</a>
+                                    <a href="#" class="cd-btn">CONTACT</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cd-product-card">
+                        <div class="cd-product-image"><img src="images/catalog/catalog1.png" alt="Product"></div>
+                        <div class="cd-product-info">
+                            <div class="cd-product-text-frame">
+                                <h3 class="cd-product-name">Product Name</h3>
+                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text
+                                </p>
+                            </div>
+                            <div class="cd-product-footer-frame">
+                                <div class="cd-product-price">¥5,264 <span class="cd-tax-label">(tax)</span></div>
+                                <div class="cd-product-actions">
+                                    <a href="#" class="cd-btn">VIEW CATALOG</a>
+                                    <a href="#" class="cd-btn">CONTACT</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cd-product-card">
+                        <div class="cd-product-image"><img src="images/catalog/catalog4.jpg" alt="Product"></div>
+                        <div class="cd-product-info">
+                            <div class="cd-product-text-frame">
+                                <h3 class="cd-product-name">Product Name</h3>
+                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text
+                                </p>
+                            </div>
+                            <div class="cd-product-footer-frame">
+                                <div class="cd-product-price">¥5,264 <span class="cd-tax-label">(tax)</span></div>
+                                <div class="cd-product-actions">
+                                    <a href="#" class="cd-btn">VIEW CATALOG</a>
+                                    <a href="#" class="cd-btn">CONTACT</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section (CTA) -->
+        <section class="cp-contact-section" id="contact">
+            <div class="cp-contact-overlay"></div>
+            <div class="cp-contact-btn-wrap">
+                <a href="#" class="cp-contact-btn">CONTACT</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="cp-footer">
+            <!-- Desktop Footer -->
+            <div class="cp-footer-desktop">
+                <div class="cp-footer-top">
+                    <div class="cp-footer-inner">
+                        <!-- Column 1: Brand & SNS -->
+                        <div class="cp-footer-col-1">
+                            <div class="cp-footer-company-block">
+                                <h5 class="cp-footer-heading">TEXT</h5>
+                                <p class="cp-footer-desc">TEXT TEXT TEXT<br>
+                                    TEXT TEXT TEXT<br>
+                                    TEXT TEXT TEXT<br>
+                                </p>
+                            </div>
+                            <div class="cp-social-block">
+                                <div class="cp-follow-wrap">
+                                    <span class="cp-follow-text">Follow me</span>
+                                    <div class="cp-social-line"></div>
+                                </div>
+                                <div class="cp-social-icons">
+                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column 2: Services -->
+                        <div class="cp-footer-col-2">
+                            <h5 class="cp-footer-heading">SERVICES</h5>
+                            <ul class="cp-footer-list">
+                                <li><a href="#">Full Export Management</a></li>
+                                <li><a href="#">Product Sourcing &amp; Procurement</a></li>
+                                <li><a href="#">Export Documentation &amp; Compliance</a></li>
+                                <li><a href="#">Logistics &amp; International Shipping</a></li>
+                                <li><a href="#">Labeling &amp; Packaging Solutions</a></li>
+                                <li><a href="#">Market Research &amp; Consulting</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 3: Products & Navbar style links -->
+                        <div class="cp-footer-col-3">
+                            <div class="cp-footer-nav-header-inline">
+                                <h5 class="cp-footer-heading"><a href="catalog.html">PRODUCT CATALOGS</a></h5>
+                                <h5 class="cp-footer-heading"><a href="index.html#how">HOW IT WORKS</a></h5>
+                                <h5 class="cp-footer-heading"><a href="index.html#case">CASE STUDIES</a></h5>
+                                <h5 class="cp-footer-heading"><a href="index.html#about">ABOUT</a></h5>
+                                <h5 class="cp-footer-heading"><a href="#contact">CONTACT</a></h5>
+                            </div>
+                            <ul class="cp-footer-list">
+                                <li><a href="#">Restaurant Supplies</a></li>
+                                <li><a href="#">Food &amp; Beverage</a></li>
+                                <li><a href="#">Featured Collections</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cp-footer-bottom">
+                    <div class="cp-container cp-footer-bottom-inner">
+                        <div class="cp-footer-logo">LOGO</div>
+                        <div class="cp-footer-legal">
+                            <a href="#">Privacy Policy</a>
+                            <p>©2026 ONE STOP Restaurant Supply All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Reusing catalog mobile menu script if needed -->
+    <script src="catalog.js"></script>
+    <script src="catalogDetail.js"></script>
+</body>
+
+</html>
