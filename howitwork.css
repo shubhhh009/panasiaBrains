@@ -1,0 +1,506 @@
+/* 
+    'HOW IT WORKS' Page Specific Styles
+*/
+
+.how-it-works-page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #353535;
+    background: #FFFFFF;
+}
+
+.how-it-works-page * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.hw-main-container {
+    width: 1440px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    position: relative;
+}
+
+/* Common Container Helpers */
+.hw-container-1200 {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hw-container-1440 {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    /* Pin hero image to right */
+}
+
+/* 1. Header (Top: 33px) */
+.hw-header {
+    width: 100%;
+    padding-top: 33px;
+    background: #FFFFFF;
+}
+
+.hw-navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+}
+
+.hw-logo {
+    font-size: 24px;
+    color: #353535;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.hw-nav {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+}
+
+.hw-nav-link {
+    font-size: 18px;
+    color: #353535;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.hw-nav-link.active {
+    opacity: 1;
+}
+
+.hw-btn-contact {
+    width: 141px;
+    height: 48px;
+    border: 1px solid #353535;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #353535;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* 2. Title Section (Top: 180px) */
+.hw-title-section {
+    width: 100%;
+    margin-top: 99px;
+}
+
+.hw-page-title {
+    font-size: 80px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 56px;
+}
+
+/* 3. Hero Image Section (Top: 316px) */
+.hw-image-section {
+    width: 100%;
+    margin-top: 80px;
+}
+
+.hw-hero-img {
+    width: 1320px;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* 4. About Section (Steps) 
+   Top: 716px
+   Width: 1440px
+   Padding: 120px (Top/Bot), 110px (Left/Right)
+*/
+.hw-about-section {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    padding: 120px 110px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Frame 1211 (Inside About)
+   Width: 1200px
+   Gap: 40px (Vertical arrows)
+*/
+.hw-frame-1211 {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.hw-step-card {
+    width: 1200px;
+    margin: 0 auto;
+    border: 1.5px solid #353535;
+    /* Crisp, sharp corners */
+    background: #FFFFFF;
+    position: relative;
+}
+
+/* Specific Figma Group Heights */
+.hw-group-225 {
+    height: 505px;
+}
+
+.hw-group-226 {
+    height: 453px;
+}
+
+.hw-group-227 {
+    height: 431px;
+}
+
+.hw-group-228 {
+    height: 431px;
+}
+
+.hw-group-229 {
+    height: 433px;
+}
+
+.hw-step-row {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.hw-step-img {
+    flex: 0 0 500px;
+    /* Precise Figma Width */
+    height: 311px;
+    /* Precise Figma Height */
+    margin-top: 40px;
+    /* Shifted UP from 60px */
+    margin-left: 40px;
+    /* Precise Figma Left offset */
+    background: #F5F5F5;
+    overflow: hidden;
+}
+
+.hw-step-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hw-step-info {
+    width: 580px;
+    /* Precise Figma Width */
+    margin-top: 40px;
+    /* Shifted UP from 60px */
+    margin-left: 40px;
+    /* Gap = 580 (Text Left) - 540 (Img Left + Width) */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.hw-step-label-wrap {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 64px;
+    /* Precise Figma Line Height */
+    margin-bottom: 0;
+    /* Removing excess margin */
+}
+
+.hw-step-label-line {
+    width: 100%;
+    /* Exact Figma 580px Fill */
+    height: 1.5px;
+    /* Exact Figma 1.5px border */
+    background-color: #353535;
+    opacity: 0.1;
+    /* Exact Figma 10% opacity */
+    margin-top: 10px;
+    /* Tight offset from label */
+}
+
+.hw-step-title {
+    width: 534px;
+    /* Precise Figma Width */
+    height: 75px;
+    /* Precise Figma Height */
+    font-size: 36px;
+    /* Precise Figma Size */
+    font-weight: 500;
+    line-height: 50px;
+    /* Precise Figma LH */
+    margin-top: 15px;
+    /* Tightened from 21px */
+    color: #353535;
+}
+
+.hw-step-desc {
+    width: 580px;
+    /* Precise Figma Width */
+    min-height: 93px;
+    /* Base height from Step 01 */
+    font-size: 18px;
+    /* Precise Figma Size */
+    line-height: 40px;
+    /* Precise Figma LH */
+    letter-spacing: 0.04em;
+    /* Precise Figma 4% LS */
+    color: #353535;
+    margin-top: 25px;
+    /* Tightened from 40px */
+    opacity: 0.8;
+}
+
+/* Step-specific content adjustments if needed */
+.hw-group-226 .hw-step-desc {
+    height: 133px;
+    /* Specific height for longer Step 02 text */
+}
+
+.hw-step-btn {
+    width: 279.71px;
+    /* Precise Figma Width */
+    height: 52px;
+    /* Precise Figma Height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #353535;
+    border-radius: 30px;
+    /* Precise Figma Radius */
+    text-decoration: none;
+    color: #353535;
+    font-size: 18px;
+    /* Matching common project button size */
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 25px;
+    /* Tightened from 40px */
+    padding: 0 16px;
+    /* Precise Figma Padding */
+    transition: all 0.3s ease;
+}
+
+.hw-step-btn:hover {
+    background: #353535;
+    color: #FFFFFF;
+}
+
+.hw-icon-arrow {
+    width: 45px;
+    /* Precise Figma Width */
+    height: 45px;
+    /* Precise Figma Height */
+    font-size: 24px;
+    color: #353535;
+    opacity: 0.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =============================================
+   CONTACT SECTION (CTA) - FIGMA MATCH
+   ============================================= */
+.cp-contact-section {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    background: url('images/4483db7316da99989ee5a995421e03781f54b0ef.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.cp-contact-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.cp-contact-btn-wrap {
+    position: relative;
+    z-index: 1;
+}
+
+.cp-contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 461px;
+    height: 80px;
+    background: linear-gradient(90deg, #AC60C3 0%, #DC6061 100%);
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 60px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: transform 0.3s ease;
+    text-transform: uppercase;
+}
+
+.cp-contact-btn:hover {
+    transform: scale(1.05);
+}
+
+/* =============================================
+   FOOTER - SITE-WIDE SYNC (MATCH CATALOG/TOP)
+   ============================================= */
+.cp-footer {
+    width: 100%; /* Spans 100% to fill viewport */
+    background-color: #262626;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    overflow: hidden;
+}
+
+/* 1. Black Top Section (Standard 60px Padding) */
+.cp-footer-top {
+    width: 100%;
+    padding: 60px 0;
+    background-color: #262626;
+    display: flex;
+    justify-content: center;
+}
+
+/* Inner content area (Standard 1440px centered shell) */
+.cp-footer-inner {
+    max-width: 1440px; 
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 120px; /* SITE-STANDARD 120px PADDING */
+    box-sizing: border-box;
+}
+
+/* COL 1: Branding & SNS */
+.cp-footer-col-1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cp-footer-heading {
+    font-size: 14px; 
+    font-weight: 600; /* SITE-STANDARD SEMIBOLD */
+    color: #FFFFFF;
+    margin-bottom: 20px; /* SITE-STANDARD MARGIN */
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.cp-footer-heading a { color: #FFFFFF; text-decoration: none; }
+
+.cp-footer-desc {
+    font-size: 13px; /* SITE-STANDARD SIZE */
+    font-weight: 400; 
+    line-height: 22px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 24px;
+}
+
+/* SNS Line & Icons (SITE-STANDARD) */
+.cp-social-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cp-follow-wrap { display: flex; align-items: center; gap: 12px; }
+.cp-follow-text { font-size: 12px; color: rgba(255, 255, 255, 0.5); }
+.cp-social-line { flex: 1; height: 1px; background: rgba(255, 255, 255, 0.2); }
+.cp-social-icons { display: flex; gap: 16px; }
+.cp-social-icons a { color: rgba(255, 255, 255, 0.7); font-size: 16px; transition: color 0.2s ease; }
+.cp-social-icons a:hover { color: #FFFFFF; }
+
+/* 2. Navigation Matrix (SITE-STANDARD) */
+.cp-footer-nav-matrix {
+    flex: 3; /* Matches catalog.css distribution */
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+}
+
+.cp-footer-nav-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.cp-footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cp-footer-list li {
+    margin-bottom: 10px; /* SITE-STANDARD LI GAP */
+}
+
+.cp-footer-list a {
+    font-size: 13px; /* SITE-STANDARD LINK SIZE */
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    line-height: 20px;
+    transition: color 0.2s ease;
+}
+
+.cp-footer-list a:hover { color: #FFFFFF; }
+
+/* 3. Footer Bottom (White 24px Area) */
+.cp-footer-bottom {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0; /* SITE-STANDARD PADDING */
+}
+
+.cp-footer-bottom-inner {
+    max-width: 1440px; 
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.cp-footer-logo { font-size: 20px; font-weight: 400; color: #353535; }
+.cp-footer-legal { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.cp-footer-legal a { font-size: 14px; color: #353535; text-decoration: none; font-weight: 500; letter-spacing: 0.08em; line-height: 100%; }
+.cp-footer-legal p { font-size: 14px; color: #353535; margin: 0; font-weight: 500; letter-spacing: 0.08em; line-height: 100%; }
+
+/* 4. Mobile Responsiveness (MATCH CATALOG.CSS MEDIA QUERIES) */
+@media (max-width: 1024px) {
+    .cp-footer-top { padding: 40px 20px; }
+    .cp-footer-inner { flex-direction: column; gap: 32px; padding: 0; }
+    .cp-footer-nav-matrix { flex-wrap: wrap; gap: 24px; margin-left: 0; }
+    .cp-footer-bottom { padding: 20px; }
+    .cp-footer-bottom-inner { flex-direction: column; gap: 15px; padding: 0; }
+}

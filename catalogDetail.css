@@ -144,9 +144,11 @@ body {
 
 .cd-product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 380px); /* 3x380 + 2x30 gap = 1200px EXACT */
-    row-gap: 80px; 
-    column-gap: 30px; /* Reduced to 30px to fit 1200px container */
+    grid-template-columns: repeat(3, 380px);
+    /* 3x380 + 2x30 gap = 1200px EXACT */
+    row-gap: 80px;
+    column-gap: 30px;
+    /* Reduced to 30px to fit 1200px container */
     padding: 120px 0;
     width: 1200px;
     margin: 0 auto;
@@ -163,7 +165,8 @@ body {
     width: 380px;
     height: 300px;
     /* Exact Height per Spec */
-    margin-bottom: 32px; /* EXACT Figma Gap per Screenshot 1 */
+    margin-bottom: 32px;
+    /* EXACT Figma Gap per Screenshot 1 */
     overflow: hidden;
 }
 
@@ -176,7 +179,8 @@ body {
 .cd-product-info {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* EXACT Figma Gap from Frame 2287 */
+    gap: 40px;
+    /* EXACT Figma Gap from Frame 2287 */
     height: 303px;
 }
 
@@ -184,7 +188,8 @@ body {
 .cd-product-name-desc-part {
     display: flex;
     flex-direction: column;
-    gap: 24px; /* EXACT Figma Gap from Frame 2288 */
+    gap: 24px;
+    /* EXACT Figma Gap from Frame 2288 */
     height: 113px;
 }
 
@@ -213,7 +218,8 @@ body {
 .cd-product-actions-wrap {
     display: flex;
     flex-direction: column;
-    gap: 24px; /* EXACT Figma Gap from Frame 2289 */
+    gap: 24px;
+    /* EXACT Figma Gap from Frame 2289 */
     height: 150px;
 }
 
@@ -235,7 +241,8 @@ body {
 .cd-product-buttons {
     display: flex;
     flex-direction: column;
-    gap: 16px; /* EXACT Figma Gap from Frame 2290 */
+    gap: 16px;
+    /* EXACT Figma Gap from Frame 2290 */
     align-items: flex-end;
     /* Align actions to the right per layout */
 }
@@ -913,7 +920,8 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 12px !important; /* Spacing between price and buttons */
+        gap: 12px !important;
+        /* Spacing between price and buttons */
     }
 
     .cd-product-price {
@@ -926,16 +934,22 @@ body {
     .cd-product-buttons {
         display: flex;
         flex-direction: column;
-        align-items: flex-end; /* Pin buttons to the right */
-        gap: 16px !important; /* Button vertical gap */
-        height: 96px; /* (40 + 40 + 16) math */
+        align-items: flex-end;
+        /* Pin buttons to the right */
+        gap: 16px !important;
+        /* Button vertical gap */
+        height: 96px;
+        /* (40 + 40 + 16) math */
     }
 
     .cd-btn {
-        width: 138px !important; /* EXACT Figma Width */
-        height: 40px !important; /* EXACT Figma Height */
+        width: 138px !important;
+        /* EXACT Figma Width */
+        height: 40px !important;
+        /* EXACT Figma Height */
         font-size: 12px !important;
-        border-radius: 30px !important; /* Exact radius from Screenshot 2 */
+        border-radius: 30px !important;
+        /* Exact radius from Screenshot 2 */
         border: 1px solid #353535;
         background: transparent;
         display: flex;
@@ -1003,7 +1017,8 @@ body {
 
     /* 4. Footer Mobile Adjustments - Dark #262626 Bottom Bar */
     .cp-footer-mobile {
-        background-color: #262626 !important; /* FIXED: Targeting the correct mobile container */
+        background-color: #262626 !important;
+        /* FIXED: Targeting the correct mobile container */
         padding: 40px 20px !important;
         width: 100% !important;
         box-sizing: border-box;
@@ -1012,7 +1027,8 @@ body {
     .cp-footer-mobile-inner {
         display: flex;
         flex-direction: column;
-        align-items: flex-start; /* LEFT ALIGNED PER REQUEST */
+        align-items: flex-start;
+        /* LEFT ALIGNED PER REQUEST */
         text-align: left;
         gap: 24px;
     }
@@ -1020,7 +1036,8 @@ body {
     .cp-footer-bottom-info {
         display: flex;
         flex-direction: column;
-        align-items: flex-start; /* Ensure everything here is left-aligned */
+        align-items: flex-start;
+        /* Ensure everything here is left-aligned */
         gap: 12px;
     }
 
@@ -1030,7 +1047,8 @@ body {
         font-size: 10px !important;
         text-decoration: none;
         display: block;
-        margin: 0; /* Reset margins for left align */
+        margin: 0;
+        /* Reset margins for left align */
     }
 
     .cp-footer-logo-mob {
@@ -1045,7 +1063,8 @@ body {
     }
 
     .cp-footer-bottom {
-        background-color: #262626 !important; /* DARK BACKGROUND PER REQUEST */
+        background-color: #262626 !important;
+        /* DARK BACKGROUND PER REQUEST */
         height: 120px !important;
         padding: 0 20px !important;
         border-top: none !important;
@@ -1060,7 +1079,8 @@ body {
 
     .cp-copyright,
     .cp-footer-bottom-links a {
-        color: rgba(255, 255, 255, 0.7) !important; /* LIGHT TEXT FOR DARK BG */
+        color: rgba(255, 255, 255, 0.7) !important;
+        /* LIGHT TEXT FOR DARK BG */
         font-size: 10px !important;
     }
 
@@ -1075,6 +1095,7 @@ body {
    Ultra-Wide Desktop Responsiveness (1440px to 1920px+)
    ========================================================================== */
 @media (min-width: 1440px) {
+
     /* Header Centering - White background spans 100%, content (Navbar) uses 1200px centered */
     .cp-header {
         width: 100% !important;
@@ -1087,7 +1108,7 @@ body {
     }
 
     .cp-navbar {
-        width: 1200px !important; 
+        width: 1200px !important;
         max-width: 1200px !important;
         margin: 0 auto !important;
         padding: 0 !important;
@@ -1111,7 +1132,8 @@ body {
 
     .cd-page-title {
         width: 1200px !important;
-        margin: 0 0 0 120px !important; /* Start where logo starts */
+        margin: 0 0 0 120px !important;
+        /* Start where logo starts */
         text-align: left;
     }
 
@@ -1122,11 +1144,13 @@ body {
         max-width: 1440px !important;
         margin: 0 auto !important;
         display: flex !important;
-        justify-content: flex-end !important; /* Sticks to the right edge of 1440 shell */
+        justify-content: flex-end !important;
+        /* Sticks to the right edge of 1440 shell */
     }
 
     .cd-hero-image img {
-        width: 1320px !important; /* 1440 - 120 = 1320 */
+        width: 1320px !important;
+        /* 1440 - 120 = 1320 */
         height: 400px !important;
         object-fit: cover;
     }
@@ -1138,7 +1162,8 @@ body {
         max-width: none !important;
         display: flex !important;
         justify-content: center !important;
-        background-color: #F8F8F8 !important; /* Upper Bar HAS Background */
+        background-color: #F8F8F8 !important;
+        /* Upper Bar HAS Background */
         border-bottom: 1px solid #EDEDED;
     }
 
@@ -1149,7 +1174,8 @@ body {
         max-width: none !important;
         display: flex !important;
         justify-content: center !important;
-        background-color: #FFFFFF !important; /* Lower Bar is WHITE */
+        background-color: #FFFFFF !important;
+        /* Lower Bar is WHITE */
         border-bottom: 1px solid #EDEDED;
     }
 
@@ -1160,13 +1186,15 @@ body {
         margin: 0 auto !important;
         display: flex !important;
         align-items: center !important;
-        height: 50px !important; /* EXACT Figma Height from 'search' frame */
+        height: 50px !important;
+        /* EXACT Figma Height from 'search' frame */
         padding-left: 0 !important;
     }
 
     /* Wrap the filter button in a 1200px frame to pin it to the far right */
     .cd-filter-bar {
-        height: 60px !important; /* EXACT Figma Height from 'Group 254' */
+        height: 60px !important;
+        /* EXACT Figma Height from 'Group 254' */
     }
 
     .cd-filter-btn {
@@ -1182,17 +1210,17 @@ body {
         gap: 8px;
         cursor: pointer;
     }
-    
+
     /* Force the button to the right side of the 1200px inner zone */
     .cd-filter-bar {
         display: flex !important;
     }
-    
+
     .cd-filter-btn {
         margin-right: calc((100% - 1440px) / 2 + 120px) !important;
         margin-left: auto !important;
     }
-    
+
     .cd-nav-breadcrumb {
         margin-left: calc((100% - 1440px) / 2 + 120px) !important;
         margin-right: auto !important;
