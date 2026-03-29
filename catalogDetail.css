@@ -17,6 +17,8 @@ body {
 
 .cp-page-wrapper {
     width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
 }
 
 /* Reusable Section Container (1440px) */
@@ -142,12 +144,12 @@ body {
 
 .cd-product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 380px);
-    /* Fixed 380px Width per Group 189/190 */
-    gap: 60px;
-    /* 60px Gap per Frame 2280 */
-    padding: 120px 90px;
-    /* Aligned to 1260px total inner width (3*380 + 2*60) */
+    grid-template-columns: repeat(3, 380px); /* 3x380 + 2x30 gap = 1200px EXACT */
+    row-gap: 80px; 
+    column-gap: 30px; /* Reduced to 30px to fit 1200px container */
+    padding: 120px 0;
+    width: 1200px;
+    margin: 0 auto;
     justify-content: center;
 }
 
@@ -161,8 +163,7 @@ body {
     width: 380px;
     height: 300px;
     /* Exact Height per Spec */
-    margin-bottom: 32px;
-    /* Remaining space for 635px total */
+    margin-bottom: 32px; /* EXACT Figma Gap per Screenshot 1 */
     overflow: hidden;
 }
 
@@ -175,17 +176,15 @@ body {
 .cd-product-info {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    /* Gap between Frame 2288 and Frame 2289 */
+    gap: 40px; /* EXACT Figma Gap from Frame 2287 */
     height: 303px;
 }
 
 /* Frame 2288: Title + Description (113px) */
-.cd-product-text-frame {
+.cd-product-name-desc-part {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    /* Gap from Frame 2288 */
+    gap: 24px; /* EXACT Figma Gap from Frame 2288 */
     height: 113px;
 }
 
@@ -211,11 +210,10 @@ body {
 }
 
 /* Frame 2289: Price + Actions (150px) */
-.cd-product-footer-frame {
+.cd-product-actions-wrap {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    /* Exact Gap per Frame 2289 */
+    gap: 24px; /* EXACT Figma Gap from Frame 2289 */
     height: 150px;
 }
 
@@ -234,11 +232,10 @@ body {
     /* Exact Height per spec */
 }
 
-.cd-product-actions {
+.cd-product-buttons {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    /* Gap from Button Container spec */
+    gap: 16px; /* EXACT Figma Gap from Frame 2290 */
     align-items: flex-end;
     /* Align actions to the right per layout */
 }
@@ -298,7 +295,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0; /* Ensure no gap with footer */
+    margin-bottom: 0;
+    /* Ensure no gap with footer */
 }
 
 .cp-contact-overlay {
@@ -343,7 +341,8 @@ body {
     width: 100%;
     height: 406px;
     overflow: hidden;
-    margin-top: 0; /* Forced reset */
+    margin-top: 0;
+    /* Forced reset */
     display: block;
 }
 
@@ -352,7 +351,8 @@ body {
     height: 280px;
     background-color: #262626;
     display: flex;
-    justify-content: flex-start; /* Pinned to left */
+    justify-content: flex-start;
+    /* Pinned to left */
 }
 
 .cp-footer-inner {
@@ -360,7 +360,8 @@ body {
     justify-content: space-between;
     gap: 40px;
     width: 1440px;
-    padding: 0px 110px 40px 110px; /* Tighter top gap */
+    padding: 0px 110px 40px 110px;
+    /* Tighter top gap */
     min-height: 220px;
     box-sizing: border-box;
     flex-shrink: 0;
@@ -414,7 +415,8 @@ body {
     /* Medium */
     line-height: normal;
     color: rgba(255, 255, 255, 0.7);
-    width: 125px; /* Increased slightly to prevent word wrapping */
+    width: 125px;
+    /* Increased slightly to prevent word wrapping */
     letter-spacing: 0.04em;
     /* 4% letter spacing */
     margin: 0;
@@ -465,13 +467,17 @@ body {
 .cp-follow-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
-    font-weight: 600; /* SemiBold per spec */
+    font-weight: 600;
+    /* SemiBold per spec */
     color: #FFFFFF;
     white-space: nowrap;
-    width: 84px; /* Exact Width per spec */
-    height: 17px; /* Exact Height per spec */
+    width: 84px;
+    /* Exact Width per spec */
+    height: 17px;
+    /* Exact Height per spec */
     line-height: 100%;
-    letter-spacing: 0.08em; /* 8% letter spacing per spec */
+    letter-spacing: 0.08em;
+    /* 8% letter spacing per spec */
 }
 
 .cp-social-line {
@@ -504,12 +510,14 @@ body {
 }
 
 .cp-footer-col-2 {
-    width: 207px; /* Exact Group 87 Width */
+    width: 207px;
+    /* Exact Group 87 Width */
     flex-shrink: 0;
 }
 
 .cp-footer-col-2 .cp-footer-heading {
-    letter-spacing: 0.08em; /* 8% letter spacing */
+    letter-spacing: 0.08em;
+    /* 8% letter spacing */
 }
 
 .cp-footer-col-3 {
@@ -518,7 +526,8 @@ body {
 }
 
 .cp-footer-col-3 .cp-footer-heading {
-    letter-spacing: 0.08em; /* 8% letter spacing per spec */
+    letter-spacing: 0.08em;
+    /* 8% letter spacing per spec */
 }
 
 .cp-footer-nav-header-inline {
@@ -538,26 +547,32 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 16px; /* Exact Frame 1204 Gap */
+    gap: 16px;
+    /* Exact Frame 1204 Gap */
 }
 
 .cp-footer-col-3 .cp-footer-list a {
-    width: 171px; /* Exact width from spec */
+    width: 171px;
+    /* Exact width from spec */
 }
 
 .cp-footer-list li {
-    margin-bottom: 0; /* Handled by flex gap */
+    margin-bottom: 0;
+    /* Handled by flex gap */
 }
 
 .cp-footer-list a {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
-    font-size: 10px; /* Exact spec size for list items */
+    font-size: 10px;
+    /* Exact spec size for list items */
     line-height: normal;
-    font-weight: 400; /* Regular */
+    font-weight: 400;
+    /* Regular */
     transition: color 0.2s ease;
     display: block;
-    width: 207px; /* Match frame width */
+    width: 207px;
+    /* Match frame width */
 }
 
 .cp-footer-list a:hover {
@@ -571,7 +586,8 @@ body {
     width: 100%;
     height: 126px;
     display: flex;
-    justify-content: flex-start; /* Pinned to left */
+    justify-content: flex-start;
+    /* Pinned to left */
     align-items: center;
     box-sizing: border-box;
 }
@@ -600,7 +616,7 @@ body {
     gap: 8px;
 }
 
-.cp-footer-legal a, 
+.cp-footer-legal a,
 .cp-footer-legal p {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -623,5 +639,577 @@ body {
 @media (max-width: 1440px) {
     .cd-section-container {
         width: 100%;
+    }
+}
+
+/* ==========================================================================
+   Mobile Responsive Adjustments (768px and below)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* Base Global Layout Consistency (Fluid up to 768px) */
+    .cp-page-wrapper {
+        width: 100% !important;
+        margin: 0 auto !important;
+        overflow-x: hidden !important;
+    }
+
+    .cd-section-container {
+        width: 335px !important;
+        max-width: 335px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    /* Header & Navbar - Matching catalog.css snippet */
+    .cp-header {
+        height: auto !important;
+        padding-top: 27px !important;
+        background-color: #FFFFFF !important;
+    }
+
+    .cp-navbar {
+        height: auto !important;
+        padding: 0 24px !important;
+    }
+
+    .cp-logo {
+        width: 80px;
+        font-size: 20px;
+    }
+
+    /* Hero Section - Edge to Edge Image Growth */
+    .cd-hero-section {
+        height: auto;
+        background-color: #FFFFFF;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .cd-header-content {
+        padding: 40px 24px 30px 24px !important;
+        /* MATCHES cp-navbar side padding */
+        background: #FFFFFF;
+        width: 100%;
+    }
+
+    /* Remove centering mismatch from title */
+    .cd-header-content .cd-section-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .cd-page-title {
+        font-size: 40px !important;
+        line-height: 1.2 !important;
+        letter-spacing: 0.1px;
+        font-weight: 500;
+        color: #353535;
+        margin-bottom: 20px;
+        text-align: left;
+        max-width: 300px;
+        /* Constrain text wrap but keep left aligned */
+    }
+
+    .cd-hero-image {
+        position: static !important;
+        width: 100% !important;
+        height: 220px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .cd-hero-image img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+
+    /* 2. Unified Breadcrumb & Filter Layout (Group 256: Spans Full Width) */
+    .cd-nav-area-wrap {
+        position: relative;
+        height: 109px !important;
+        width: 100% !important;
+        /* Full span up to 768px */
+        background-color: transparent;
+        overflow: hidden;
+    }
+
+    .cd-breadcrumb-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 85px !important;
+        background-color: #F8F8F8;
+        /* Rect 25 background */
+        clip-path: inset(0 0 29px 0);
+        /* Ensure background only covers top 56px */
+        display: flex;
+        align-items: flex-start;
+        padding-top: 12px;
+        /* Frame 30 top offset */
+        padding-left: 10px;
+        /* Frame 30 left offset (9.74px) */
+        box-sizing: border-box;
+    }
+
+    .cd-nav-breadcrumb {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px !important;
+        /* EXACT Figma Spec */
+        font-weight: 400;
+        color: #353535;
+        line-height: 1.2;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        /* Frame 30 vertical/horizontal gap */
+        width: 355px;
+        /* Frame 30 fixed width */
+    }
+
+    .cd-nav-breadcrumb a {
+        color: #353535;
+        text-decoration: none;
+    }
+
+    /* Specifically underline the HOME link as shown in Screen 13 */
+    .cd-nav-breadcrumb a:first-child {
+        text-decoration: underline;
+    }
+
+    .cd-filter-bar {
+        position: absolute;
+        top: 55px;
+        /* Group 254 Top */
+        left: 0;
+        width: 100%;
+        height: 54px !important;
+        padding: 0 10px;
+        /* Aligns with 285px left leading to 10px right */
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        /* centering in the 54px bar puts it at approx (54-30)/2 = 12px offset */
+        box-sizing: border-box;
+    }
+
+    .cd-filter-btn {
+        width: 80px !important;
+        /* EXACT Figma Spec */
+        height: 30px !important;
+        /* EXACT Figma Spec */
+        font-size: 12px;
+        border: 1px solid #353535;
+        border-radius: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 0;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    /* 2. Product List Section - Background Spans Full Width */
+    .cd-products-section {
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 100px !important;
+        box-sizing: border-box;
+    }
+
+    /* Scoped Product Grid Container (Prevents collision with Hero Title) */
+    .cd-products-section .cd-section-container {
+        width: 335px !important;
+        height: 1198px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        overflow: visible;
+    }
+
+    .cd-product-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        /* Forces removal of the 120px 90px desktop padding */
+        gap: 40px 19px !important;
+        /* 40px vertical, 19px horizontal */
+    }
+
+    .cd-product-card {
+        width: 158px !important;
+        min-width: 158px !important;
+        max-width: 158px !important;
+        height: 343px !important;
+        min-height: 343px !important;
+        max-height: 343px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background: transparent;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .cd-product-image {
+        width: 100% !important;
+        height: 100px !important;
+        min-height: 100px !important;
+        max-height: 100px !important;
+        margin-bottom: 16px !important;
+        object-fit: cover;
+    }
+
+    .cd-product-info {
+        height: 227px !important;
+        /* EXACT height from Screen 19 */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 16px !important;
+        /* EXACT Gap from Screen 19 */
+    }
+
+    .cd-product-name-desc-part {
+        height: 73px !important;
+        /* (227 - 154) math */
+        overflow: hidden;
+    }
+
+    .cd-product-name {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 4px;
+        line-height: 1.2;
+    }
+
+    .cd-product-desc {
+        font-size: 10px;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Price + Buttons Area (Frame 2289) */
+    .cd-product-actions-wrap {
+        height: 138px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 12px !important; /* Spacing between price and buttons */
+    }
+
+    .cd-product-price {
+        font-size: 12px;
+        text-align: right;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    .cd-product-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end; /* Pin buttons to the right */
+        gap: 16px !important; /* Button vertical gap */
+        height: 96px; /* (40 + 40 + 16) math */
+    }
+
+    .cd-btn {
+        width: 138px !important; /* EXACT Figma Width */
+        height: 40px !important; /* EXACT Figma Height */
+        font-size: 12px !important;
+        border-radius: 30px !important; /* Exact radius from Screenshot 2 */
+        border: 1px solid #353535;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    /* LOAD MORE Button (Frame 2316: 317px x 49px) */
+    .cd-load-more-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        height: 49px;
+        /* EXACT height from Screen 29 */
+        margin-top: 0 !important;
+        /* Let the parent flex-gap (40px) handle this */
+    }
+
+    .cd-load-more-btn {
+        width: 317px !important;
+        /* EXACT width from Screen 29 */
+        height: 49px !important;
+        /* EXACT height from Screen 29 */
+        border: 1px solid #353535;
+        border-radius: 30px;
+        /* EXACT radius from Screen 29 */
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #353535;
+        background: transparent;
+        cursor: pointer;
+        padding: 0 16px;
+        /* Padding from Screen 29 */
+        letter-spacing: 0.1em;
+    }
+
+    /* Contact Section - Exact 240px x 40px spec from snippet */
+    .cp-contact-section {
+        height: 240px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .cp-contact-btn {
+        width: 240px !important;
+        height: 40px !important;
+        background: linear-gradient(90deg, #D469BE 0%, #DC6061 100%) !important;
+        border-radius: 30px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: #FFFFFF !important;
+        text-decoration: none !important;
+        letter-spacing: 0.08em !important;
+        text-transform: uppercase !important;
+    }
+
+    /* 4. Footer Mobile Adjustments - Dark #262626 Bottom Bar */
+    .cp-footer-mobile {
+        background-color: #262626 !important; /* FIXED: Targeting the correct mobile container */
+        padding: 40px 20px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .cp-footer-mobile-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* LEFT ALIGNED PER REQUEST */
+        text-align: left;
+        gap: 24px;
+    }
+
+    .cp-footer-bottom-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Ensure everything here is left-aligned */
+        gap: 12px;
+    }
+
+    .cp-footer-privacy,
+    .cp-footer-copyright {
+        color: rgba(255, 255, 255, 0.7) !important;
+        font-size: 10px !important;
+        text-decoration: none;
+        display: block;
+        margin: 0; /* Reset margins for left align */
+    }
+
+    .cp-footer-logo-mob {
+        color: #FFFFFF !important;
+        font-weight: bold;
+    }
+
+    .cp-footer-divider {
+        width: 100%;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .cp-footer-bottom {
+        background-color: #262626 !important; /* DARK BACKGROUND PER REQUEST */
+        height: 120px !important;
+        padding: 0 20px !important;
+        border-top: none !important;
+    }
+
+    .cp-footer-bottom-inner {
+        width: 100% !important;
+        padding: 0 20px !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+
+    .cp-copyright,
+    .cp-footer-bottom-links a {
+        color: rgba(255, 255, 255, 0.7) !important; /* LIGHT TEXT FOR DARK BG */
+        font-size: 10px !important;
+    }
+
+    /* Footer - Exact specs from snippet */
+    .cd-footer-section .cd-section-container {
+        padding: 40px 20px !important;
+        height: auto !important;
+    }
+}
+
+/* ==========================================================================
+   Ultra-Wide Desktop Responsiveness (1440px to 1920px+)
+   ========================================================================== */
+@media (min-width: 1440px) {
+    /* Header Centering - White background spans 100%, content (Navbar) uses 1200px centered */
+    .cp-header {
+        width: 100% !important;
+        max-width: none !important;
+        background-color: #FFFFFF !important;
+        height: 81px !important;
+        padding-top: 33px !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .cp-navbar {
+        width: 1200px !important; 
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+
+    /* Hero Section Centering */
+    .cd-hero-section {
+        width: 100% !important;
+        background-color: #FFFFFF !important;
+        height: 716px !important;
+    }
+
+    /* Page Title (Group 215) - Aligned to Logo (120px from Left) */
+    .cd-header-content {
+        padding: 0 !important;
+        width: 1440px !important;
+        margin: 100px auto 60px auto !important;
+    }
+
+    .cd-page-title {
+        width: 1200px !important;
+        margin: 0 0 0 120px !important; /* Start where logo starts */
+        text-align: left;
+    }
+
+    /* Hero Image - 1320px wide, starts at 120px (logo axis), ends at 1440px edge */
+    .cd-hero-image {
+        padding: 0 !important;
+        width: 1440px !important;
+        max-width: 1440px !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        justify-content: flex-end !important; /* Sticks to the right edge of 1440 shell */
+    }
+
+    .cd-hero-image img {
+        width: 1320px !important; /* 1440 - 120 = 1320 */
+        height: 400px !important;
+        object-fit: cover;
+    }
+
+    /* Breadcrumb Bar (Upper) - Light Grey Background spans 100% viewport */
+    .cd-breadcrumb-bar {
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        background-color: #F8F8F8 !important; /* Upper Bar HAS Background */
+        border-bottom: 1px solid #EDEDED;
+    }
+
+    /* Filter Bar (Lower) - Pure White Background spans 100% viewport */
+    .cd-filter-bar {
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        background-color: #FFFFFF !important; /* Lower Bar is WHITE */
+        border-bottom: 1px solid #EDEDED;
+    }
+
+    /* Standard 1200px inner-frame logic for these bars */
+    .cd-nav-breadcrumb {
+        width: 1200px !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        align-items: center !important;
+        height: 50px !important; /* EXACT Figma Height from 'search' frame */
+        padding-left: 0 !important;
+    }
+
+    /* Wrap the filter button in a 1200px frame to pin it to the far right */
+    .cd-filter-bar {
+        height: 60px !important; /* EXACT Figma Height from 'Group 254' */
+    }
+
+    .cd-filter-btn {
+        width: 120px !important;
+        height: 48px !important;
+        margin: 0 !important;
+        background: transparent;
+        border: 1px solid #353535;
+        border-radius: 4px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        cursor: pointer;
+    }
+    
+    /* Force the button to the right side of the 1200px inner zone */
+    .cd-filter-bar {
+        display: flex !important;
+    }
+    
+    .cd-filter-btn {
+        margin-right: calc((100% - 1440px) / 2 + 120px) !important;
+        margin-left: auto !important;
+    }
+    
+    .cd-nav-breadcrumb {
+        margin-left: calc((100% - 1440px) / 2 + 120px) !important;
+        margin-right: auto !important;
+    }
+
+    .cp-footer-top,
+    .cp-footer-bottom {
+        justify-content: center !important;
+    }
+
+    .cp-footer-inner,
+    .cp-footer-bottom-inner {
+        margin: 0 auto !important;
+    }
+
+    /* Hide LOAD MORE button on Desktop (1440-1920) per request */
+    .cd-load-more-wrap {
+        display: none !important;
     }
 }

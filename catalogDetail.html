@@ -48,141 +48,163 @@
             </div>
         </header>
 
+        <!-- Mobile Menu Overlay -->
+        <div class="cp-mobile-overlay" id="cp-mobile-overlay">
+            <button class="cp-mobile-close" id="cp-mobile-close">&#x2715;</button>
+            <ul class="cp-mobile-links">
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="service.html">SERVICE</a></li>
+                <li><a href="catalog.html">PRODUCT CATALOG</a></li>
+                <li><a href="index.html#how">HOW IT WORKS</a></li>
+                <li><a href="index.html#case">CASE STUDY</a></li>
+                <li><a href="index.html#about">ABOUT</a></li>
+            </ul>
+        </div>
+
         <!-- 1. Hero Section (1440x716) -->
         <div class="cd-hero-section">
-            <div class="cd-section-container">
-                <div class="cd-header-content">
+            <div class="cd-header-content">
+                <div class="cd-section-container">
                     <h1 class="cd-page-title">PRODUCT CATALOGS</h1>
                 </div>
-                <div class="cd-hero-image">
-                    <img src="images/catalog/catalogMain.jpg" alt="Catalog Detail Section">
-                </div>
+            </div>
+            <div class="cd-hero-image">
+                <img src="images/catalog/catalogMain.jpg" alt="Catalog Detail Section">
             </div>
         </div>
 
-        <!-- 2. Product List Section (1440x1680) -->
+        <!-- 2. Product List Section -->
         <div class="cd-products-section">
-            <div class="cd-section-container">
-                <!-- Sub-Header Block (108px) -->
+            <!-- 2.1 Navigation Area (Group 256: 375x109) -->
+            <div class="cd-nav-area-wrap">
                 <div class="cd-breadcrumb-bar">
-                    <div class="cd-nav-breadcrumb">
-                        <a href="index.html">HOME</a> <span>&gt;</span>
-                        <a href="catalog.html">Restaurant Supplies</a> <span>&gt;</span>
-                        Tableware &amp; Dinnerware
-                    </div>
+                    <nav class="cd-nav-breadcrumb">
+                        <a href="index.html">HOME</a> &gt; <a href="catalog.html">Restaurant Supplies</a> &gt; Tableware
+                        &amp; Dinnerware
+                    </nav>
                 </div>
                 <div class="cd-filter-bar">
-                    <button class="cd-filter-btn">
+                    <button class="cd-filter-btn" type="button">
                         <i class="fas fa-sliders-h"></i> filter
                     </button>
                 </div>
+            </div>
 
-                <!-- 3-Column Product Grid (6 Items Total) -->
+            <!-- 2.2 Product Grid Container (Frame 2304: 335px x 1198px) -->
+            <div class="cd-section-container">
                 <div class="cd-product-grid">
                     <!-- Product Card 1 -->
                     <div class="cd-product-card">
-                        <div class="cd-product-image"><img src="images/catalog/catalog1.png" alt="Product"></div>
+                        <img src="images/catalog/catalog1.png" alt="Product" class="cd-product-image">
                         <div class="cd-product-info">
-                            <div class="cd-product-text-frame">
+                            <div class="cd-product-name-desc-part">
                                 <h3 class="cd-product-name">Product Name</h3>
-                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text
-                                </p>
+                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text </p>
                             </div>
-                            <div class="cd-product-footer-frame">
-                                <div class="cd-product-price">¥5,264 <span class="cd-tax-label">(tax)</span></div>
-                                <div class="cd-product-actions">
-                                    <a href="#" class="cd-btn">VIEW CATALOG</a>
-                                    <a href="#" class="cd-btn">CONTACT</a>
+                            <div class="cd-product-actions-wrap">
+                                <p class="cd-product-price">¥5,264 (tax)</p>
+                                <div class="cd-product-buttons">
+                                    <a href="#" class="cd-btn">View Catalog</a>
+                                    <a href="#" class="cd-btn">Contact</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Product Card 2 (Repeated for 6 cards with alternating images) -->
+
+                    <!-- Product Card 2 -->
                     <div class="cd-product-card">
-                        <div class="cd-product-image"><img src="images/catalog/catalog4.jpg" alt="Product"></div>
+                        <img src="images/catalog/catalog4.jpg" alt="Product" class="cd-product-image">
                         <div class="cd-product-info">
-                            <div class="cd-product-text-frame">
+                            <div class="cd-product-name-desc-part">
                                 <h3 class="cd-product-name">Product Name</h3>
-                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text
-                                </p>
+                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
                             </div>
-                            <div class="cd-product-footer-frame">
-                                <div class="cd-product-price">¥5,264 <span class="cd-tax-label">(tax)</span></div>
-                                <div class="cd-product-actions">
-                                    <a href="#" class="cd-btn">VIEW CATALOG</a>
-                                    <a href="#" class="cd-btn">CONTACT</a>
+                            <div class="cd-product-actions-wrap">
+                                <p class="cd-product-price">¥5,264 (tax)</p>
+                                <div class="cd-product-buttons">
+                                    <a href="#" class="cd-btn">View Catalog</a>
+                                    <a href="#" class="cd-btn">Contact</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Product Card 3 -->
                     <div class="cd-product-card">
-                        <div class="cd-product-image"><img src="images/catalog/catalog1.png" alt="Product"></div>
+                        <img src="images/catalog/catalog1.png" alt="Product" class="cd-product-image">
                         <div class="cd-product-info">
-                            <div class="cd-product-text-frame">
+                            <div class="cd-product-name-desc-part">
                                 <h3 class="cd-product-name">Product Name</h3>
-                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text
-                                </p>
+                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
                             </div>
-                            <div class="cd-product-footer-frame">
-                                <div class="cd-product-price">¥5,264 <span class="cd-tax-label">(tax)</span></div>
-                                <div class="cd-product-actions">
-                                    <a href="#" class="cd-btn">VIEW CATALOG</a>
-                                    <a href="#" class="cd-btn">CONTACT</a>
+                            <div class="cd-product-actions-wrap">
+                                <p class="cd-product-price">¥5,264 (tax)</p>
+                                <div class="cd-product-buttons">
+                                    <a href="#" class="cd-btn">View Catalog</a>
+                                    <a href="#" class="cd-btn">Contact</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Product Card 4 -->
                     <div class="cd-product-card">
-                        <div class="cd-product-image"><img src="images/catalog/catalog4.jpg" alt="Product"></div>
+                        <img src="images/catalog/catalog4.jpg" alt="Product" class="cd-product-image">
                         <div class="cd-product-info">
-                            <div class="cd-product-text-frame">
+                            <div class="cd-product-name-desc-part">
                                 <h3 class="cd-product-name">Product Name</h3>
-                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text
-                                </p>
+                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
                             </div>
-                            <div class="cd-product-footer-frame">
-                                <div class="cd-product-price">¥5,264 <span class="cd-tax-label">(tax)</span></div>
-                                <div class="cd-product-actions">
-                                    <a href="#" class="cd-btn">VIEW CATALOG</a>
-                                    <a href="#" class="cd-btn">CONTACT</a>
+                            <div class="cd-product-actions-wrap">
+                                <p class="cd-product-price">¥5,264 (tax)</p>
+                                <div class="cd-product-buttons">
+                                    <a href="#" class="cd-btn">View Catalog</a>
+                                    <a href="#" class="cd-btn">Contact</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Product Card 5 -->
                     <div class="cd-product-card">
-                        <div class="cd-product-image"><img src="images/catalog/catalog1.png" alt="Product"></div>
+                        <img src="images/catalog/catalog1.png" alt="Product" class="cd-product-image">
                         <div class="cd-product-info">
-                            <div class="cd-product-text-frame">
+                            <div class="cd-product-name-desc-part">
                                 <h3 class="cd-product-name">Product Name</h3>
-                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text
-                                </p>
+                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
                             </div>
-                            <div class="cd-product-footer-frame">
-                                <div class="cd-product-price">¥5,264 <span class="cd-tax-label">(tax)</span></div>
-                                <div class="cd-product-actions">
-                                    <a href="#" class="cd-btn">VIEW CATALOG</a>
-                                    <a href="#" class="cd-btn">CONTACT</a>
+                            <div class="cd-product-actions-wrap">
+                                <p class="cd-product-price">¥5,264 (tax)</p>
+                                <div class="cd-product-buttons">
+                                    <a href="#" class="cd-btn">View Catalog</a>
+                                    <a href="#" class="cd-btn">Contact</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Product Card 6 -->
                     <div class="cd-product-card">
-                        <div class="cd-product-image"><img src="images/catalog/catalog4.jpg" alt="Product"></div>
+                        <img src="images/catalog/catalog4.jpg" alt="Product" class="cd-product-image">
                         <div class="cd-product-info">
-                            <div class="cd-product-text-frame">
+                            <div class="cd-product-name-desc-part">
                                 <h3 class="cd-product-name">Product Name</h3>
-                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text
-                                </p>
+                                <p class="cd-product-desc">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
                             </div>
-                            <div class="cd-product-footer-frame">
-                                <div class="cd-product-price">¥5,264 <span class="cd-tax-label">(tax)</span></div>
-                                <div class="cd-product-actions">
-                                    <a href="#" class="cd-btn">VIEW CATALOG</a>
-                                    <a href="#" class="cd-btn">CONTACT</a>
+                            <div class="cd-product-actions-wrap">
+                                <p class="cd-product-price">¥5,264 (tax)</p>
+                                <div class="cd-product-buttons">
+                                    <a href="#" class="cd-btn">View Catalog</a>
+                                    <a href="#" class="cd-btn">Contact</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Load More Wrap (Part of 1198px frame) -->
+                <div class="cd-load-more-wrap">
+                    <button class="cd-load-more-btn" type="button">LOAD MORE</button>
                 </div>
             </div>
         </div>
@@ -261,6 +283,18 @@
                             <a href="#">Privacy Policy</a>
                             <p>©2026 ONE STOP Restaurant Supply All Rights Reserved.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Footer (Figma Spec) -->
+            <div class="cp-footer-mobile">
+                <div class="cp-footer-mobile-inner">
+                    <div class="cp-footer-logo-mob">LOGO</div>
+                    <div class="cp-footer-divider"></div>
+                    <div class="cp-footer-bottom-info">
+                        <a href="#" class="cp-footer-privacy">Privacy Policy</a>
+                        <p class="cp-footer-copyright">©2026 ONE STOP Restaurant Supply All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
