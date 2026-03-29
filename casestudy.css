@@ -1,0 +1,566 @@
+/* =============================================
+   1. GLOBAL / MASTER CONTAINER
+   Figma Master Width: 1440px
+   ============================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background-color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    color: #353535;
+    -webkit-font-smoothing: antialiased;
+}
+
+.cp-page-wrapper {
+    width: 1440px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+
+
+/* =============================================
+   2. HEADER (Site-Wide Sync: catalog/howitwork)
+   ============================================= */
+.cp-header {
+    width: 100%;
+    padding-top: 33px;
+    background: #FFFFFF;
+}
+
+.cp-navbar {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+}
+
+.cp-logo {
+    font-size: 24px;
+    color: #353535;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.cp-nav {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+}
+
+.cp-nav-link {
+    font-size: 18px;
+    color: #353535;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.cp-nav div:first-child .cp-nav-link {
+    margin-left: 68px; /* Shift links right away from logo */
+}
+
+.cp-nav-link.active {
+    opacity: 1;
+}
+
+.cp-btn-contact {
+    width: 141px;
+    height: 48px;
+    border: 1px solid #353535;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #353535;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+}
+
+/* Hamburger (Mobile) */
+.cp-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.cp-hamburger span {
+    width: 24px;
+    height: 2px;
+    background: #353535;
+}
+
+/* 1.5. Mobile Overlay (Hidden by Default) */
+.cp-mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    z-index: 9999;
+    display: none;
+    /* Hidden on Desktop */
+    flex-direction: column;
+    padding: 40px 24px;
+}
+
+.cp-mobile-overlay.active {
+    display: flex;
+}
+
+.cp-mobile-close {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #353535;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.cp-mobile-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cp-mobile-links li a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #353535;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* =============================================
+   3. HERO SECTION (Image 40: 1440x716)
+   ============================================= */
+.cs-hero-section {
+    width: 100%;
+    height: 716px;
+    background-color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+}
+
+.cs-title-wrap {
+    width: 100%;
+    margin-top: 99px;
+    /* Top: 180px (81 + 99) */
+    padding: 0 120px;
+}
+
+.cs-page-title {
+    font-size: 80px;
+    font-weight: 500;
+    line-height: 56px;
+    /* Box Height: 56px */
+    letter-spacing: 0.04em;
+    color: #353535;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.cs-hero-image-wrap {
+    width: 100%;
+    height: 400px;
+    margin-top: 80px;
+    /* Top: 316px (180+56+80) */
+    display: flex;
+    justify-content: flex-end;
+    /* Sticks to right edge */
+}
+
+.cs-hero-img {
+    width: 1320px;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* =============================================
+   4. PROJECTS GRID (Image 41: 1440xHug)
+   ============================================= */
+.cs-grid-section {
+    width: 100%;
+    padding: 120px 110px; /* Figma: Top/Bottom 120px, Left/Right 110px */
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+.cs-grid-container {
+    width: 1200px; /* Figma: Frame 2281 (1200px Width) */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Figma: 60px vertical gap */
+}
+
+.cs-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px; /* Figma: Frame 2278/2279 Gap */
+    row-gap: 60px;    /* Figma: Frame 2280/2281 Gap */
+}
+
+.cs-project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    cursor: pointer;
+}
+
+.cs-card-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: #F5F5F5;
+    overflow: hidden;
+}
+
+.cs-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.cs-project-card:hover .cs-card-img img {
+    transform: scale(1.05);
+}
+
+.cs-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cs-card-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #353535;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.cs-card-sub {
+    font-size: 10px;
+    font-weight: 400;
+    color: rgba(53, 53, 53, 0.6);
+}
+
+/* Pagination */
+.cs-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.cs-pag-arrow {
+    background: none;
+    border: 1px solid rgba(53, 53, 53, 0.2);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    color: #353535;
+}
+
+.cs-pag-numbers {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cs-pag-num {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(53, 53, 53, 0.4);
+    cursor: pointer;
+}
+
+.cs-pag-num.active {
+    color: #353535;
+    font-weight: 600;
+}
+
+.cs-pag-dots {
+    color: rgba(53, 53, 53, 0.4);
+}
+
+/* =============================================
+   5. CONTACT SECTION (CTA) - SITE-WIDE SYNC
+   ============================================= */
+.cp-contact-section {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    background: url('images/4483db7316da99989ee5a995421e03781f54b0ef.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cp-contact-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.cp-contact-btn-wrap {
+    position: relative;
+    z-index: 1;
+}
+
+.cp-contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 461px;
+    height: 80px;
+    background: linear-gradient(90deg, #AC60C3 0%, #DC6061 100%);
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 60px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: transform 0.3s ease;
+    text-transform: uppercase;
+}
+
+.cp-contact-btn:hover {
+    transform: scale(1.05);
+}
+
+/* =============================================
+   6. FOOTER - SITE-WIDE SYNC
+   ============================================= */
+.cp-footer {
+    width: 100%;
+    background-color: #262626;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cp-footer-top {
+    width: 100%;
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.cp-footer-inner {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 120px;
+}
+
+.cp-footer-col-1 {
+    flex: 1;
+}
+
+.cp-footer-heading {
+    font-size: 14px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.cp-footer-heading a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.cp-footer-desc {
+    font-size: 13px;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 24px;
+}
+
+.cp-social-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cp-follow-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cp-follow-text {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.cp-social-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.cp-social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.cp-social-icons a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.cp-footer-nav-matrix {
+    flex: 3;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+}
+
+.cp-footer-nav-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.cp-footer-list {
+    list-style: none;
+}
+
+.cp-footer-list li {
+    margin-bottom: 10px;
+}
+
+.cp-footer-list a {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.cp-footer-bottom {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+}
+
+.cp-footer-bottom-inner {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cp-footer-logo {
+    font-size: 20px;
+    font-weight: 400;
+    color: #353535;
+}
+
+.cp-footer-legal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.cp-footer-legal a,
+.cp-footer-legal p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #353535;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    line-height: 100%;
+}
+
+/* Mobile Footer Fixes */
+@media (max-width: 768px) {
+    .cp-footer-desktop {
+        display: none;
+    }
+
+    .cp-footer-mobile {
+        display: block;
+        background: #FFFFFF;
+        padding: 40px 20px;
+    }
+
+    .cp-footer-mobile-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .cp-footer-logo-mob {
+        font-size: 18px;
+        font-weight: 500;
+        color: #353535;
+    }
+
+    .cp-footer-divider {
+        width: 100%;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    .cp-footer-bottom-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .cp-footer-privacy {
+        font-size: 12px;
+        color: #353535;
+        text-decoration: none;
+    }
+
+    .cp-footer-copyright {
+        font-size: 12px;
+        color: #353535;
+        opacity: 0.6;
+    }
+}
+
+@media (min-width: 769px) {
+    .cp-footer-mobile {
+        display: none;
+    }
+}

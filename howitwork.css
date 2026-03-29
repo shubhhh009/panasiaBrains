@@ -34,6 +34,7 @@
 
 .hw-container-1440 {
     max-width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
     width: 100%;
     display: flex;
@@ -49,7 +50,7 @@
 }
 
 .hw-navbar {
-    max-width: 1200px;
+    width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -75,9 +76,12 @@
     color: #353535;
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     opacity: 0.6;
     transition: opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+
 }
 
 .hw-nav-link.active {
@@ -371,7 +375,8 @@
    FOOTER - SITE-WIDE SYNC (MATCH CATALOG/TOP)
    ============================================= */
 .cp-footer {
-    width: 100%; /* Spans 100% to fill viewport */
+    width: 100%;
+    /* Spans 100% to fill viewport */
     background-color: #262626;
     color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
@@ -390,12 +395,13 @@
 
 /* Inner content area (Standard 1440px centered shell) */
 .cp-footer-inner {
-    max-width: 1440px; 
+    max-width: 1440px;
     width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding: 0 120px; /* SITE-STANDARD 120px PADDING */
+    padding: 0 120px;
+    /* SITE-STANDARD 120px PADDING */
     box-sizing: border-box;
 }
 
@@ -407,19 +413,25 @@
 }
 
 .cp-footer-heading {
-    font-size: 14px; 
-    font-weight: 600; /* SITE-STANDARD SEMIBOLD */
+    font-size: 14px;
+    font-weight: 600;
+    /* SITE-STANDARD SEMIBOLD */
     color: #FFFFFF;
-    margin-bottom: 20px; /* SITE-STANDARD MARGIN */
+    margin-bottom: 20px;
+    /* SITE-STANDARD MARGIN */
     text-transform: uppercase;
     white-space: nowrap;
 }
 
-.cp-footer-heading a { color: #FFFFFF; text-decoration: none; }
+.cp-footer-heading a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
 
 .cp-footer-desc {
-    font-size: 13px; /* SITE-STANDARD SIZE */
-    font-weight: 400; 
+    font-size: 13px;
+    /* SITE-STANDARD SIZE */
+    font-weight: 400;
     line-height: 22px;
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 24px;
@@ -432,16 +444,42 @@
     gap: 12px;
 }
 
-.cp-follow-wrap { display: flex; align-items: center; gap: 12px; }
-.cp-follow-text { font-size: 12px; color: rgba(255, 255, 255, 0.5); }
-.cp-social-line { flex: 1; height: 1px; background: rgba(255, 255, 255, 0.2); }
-.cp-social-icons { display: flex; gap: 16px; }
-.cp-social-icons a { color: rgba(255, 255, 255, 0.7); font-size: 16px; transition: color 0.2s ease; }
-.cp-social-icons a:hover { color: #FFFFFF; }
+.cp-follow-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cp-follow-text {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.cp-social-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.cp-social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.cp-social-icons a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.cp-social-icons a:hover {
+    color: #FFFFFF;
+}
 
 /* 2. Navigation Matrix (SITE-STANDARD) */
 .cp-footer-nav-matrix {
-    flex: 3; /* Matches catalog.css distribution */
+    flex: 3;
+    /* Matches catalog.css distribution */
     display: flex;
     justify-content: space-between;
     margin-left: 40px;
@@ -459,29 +497,34 @@
 }
 
 .cp-footer-list li {
-    margin-bottom: 10px; /* SITE-STANDARD LI GAP */
+    margin-bottom: 10px;
+    /* SITE-STANDARD LI GAP */
 }
 
 .cp-footer-list a {
-    font-size: 13px; /* SITE-STANDARD LINK SIZE */
+    font-size: 13px;
+    /* SITE-STANDARD LINK SIZE */
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     line-height: 20px;
     transition: color 0.2s ease;
 }
 
-.cp-footer-list a:hover { color: #FFFFFF; }
+.cp-footer-list a:hover {
+    color: #FFFFFF;
+}
 
 /* 3. Footer Bottom (White 24px Area) */
 .cp-footer-bottom {
     width: 100%;
     background-color: #FFFFFF;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 24px 0; /* SITE-STANDARD PADDING */
+    padding: 24px 0;
+    /* SITE-STANDARD PADDING */
 }
 
 .cp-footer-bottom-inner {
-    max-width: 1440px; 
+    max-width: 1440px;
     width: 100%;
     margin: 0 auto;
     padding: 0 120px;
@@ -491,16 +534,62 @@
     box-sizing: border-box;
 }
 
-.cp-footer-logo { font-size: 20px; font-weight: 400; color: #353535; }
-.cp-footer-legal { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
-.cp-footer-legal a { font-size: 14px; color: #353535; text-decoration: none; font-weight: 500; letter-spacing: 0.08em; line-height: 100%; }
-.cp-footer-legal p { font-size: 14px; color: #353535; margin: 0; font-weight: 500; letter-spacing: 0.08em; line-height: 100%; }
+.cp-footer-logo {
+    font-size: 20px;
+    font-weight: 400;
+    color: #353535;
+}
+
+.cp-footer-legal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.cp-footer-legal a {
+    font-size: 14px;
+    color: #353535;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    line-height: 100%;
+}
+
+.cp-footer-legal p {
+    font-size: 14px;
+    color: #353535;
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    line-height: 100%;
+}
 
 /* 4. Mobile Responsiveness (MATCH CATALOG.CSS MEDIA QUERIES) */
 @media (max-width: 1024px) {
-    .cp-footer-top { padding: 40px 20px; }
-    .cp-footer-inner { flex-direction: column; gap: 32px; padding: 0; }
-    .cp-footer-nav-matrix { flex-wrap: wrap; gap: 24px; margin-left: 0; }
-    .cp-footer-bottom { padding: 20px; }
-    .cp-footer-bottom-inner { flex-direction: column; gap: 15px; padding: 0; }
+    .cp-footer-top {
+        padding: 40px 20px;
+    }
+
+    .cp-footer-inner {
+        flex-direction: column;
+        gap: 32px;
+        padding: 0;
+    }
+
+    .cp-footer-nav-matrix {
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-left: 0;
+    }
+
+    .cp-footer-bottom {
+        padding: 20px;
+    }
+
+    .cp-footer-bottom-inner {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+    }
 }

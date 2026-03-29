@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study - One Stop Restaurant Supply</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="casestudy.css">
+</head>
+
+<body>
+    <div class="cp-page-wrapper">
+        <!-- 1. Header Section (Same as How It Works) -->
+        <header class="cp-header">
+            <div class="cp-navbar">
+                <a href="index.html" class="cp-logo">LOGO</a>
+
+                <nav class="cp-nav">
+                    <div class="cp-nav-item">
+                        <a href="service.html" class="cp-nav-link">SERVICES <span class="cp-caret">▼</span></a>
+                    </div>
+                    <div class="cp-nav-item">
+                        <a href="catalog.html" class="cp-nav-link">PRODUCT CATALOGS <span class="cp-caret">▼</span></a>
+                    </div>
+                    <a href="howitwork.html" class="cp-nav-link">HOW IT WORKS</a>
+                    <a href="casestudy.html" class="cp-nav-link active">CASE STUDIES</a>
+                    <a href="index.html#about" class="cp-nav-link">ABOUT</a>
+                </nav>
+
+                <a href="index.html#contact" class="cp-btn-contact">CONTACT</a>
+
+                <!-- Hamburger (mobile only) -->
+                <div class="cp-hamburger" id="cp-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="cp-mobile-overlay" id="cp-mobile-overlay">
+            <button class="cp-mobile-close" id="cp-mobile-close">&#x2715;</button>
+            <ul class="cp-mobile-links">
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="service.html">SERVICE</a></li>
+                <li><a href="catalog.html">PRODUCT CATALOG</a></li>
+                <li><a href="howitwork.html">HOW IT WORKS</a></li>
+                <li><a href="casestudy.html">CASE STUDY</a></li>
+                <li><a href="index.html#about">ABOUT</a></li>
+            </ul>
+        </div>
+
+        <!-- 2. Hero Section (Image 40: 1440x716) -->
+        <section class="cs-hero-section">
+            <div class="cs-title-wrap">
+                <h1 class="cs-page-title">CASE STUDY</h1>
+            </div>
+            <div class="cs-hero-image-wrap">
+                <img src="images/case study/casestudymain.jpg" alt="Case Study Hero" class="cs-hero-img">
+            </div>
+        </section>
+
+        <!-- 3. Projects Grid (Image 41: 1440xHug) -->
+        <section class="cs-grid-section">
+            <div class="cs-grid-container">
+                <div class="cs-projects-grid">
+                    <!-- Row 1 -->
+                    <div class="cs-project-card">
+                        <div class="cs-card-img"><img src="images/case study/casestudy1.jpg" alt="Case Study 1"></div>
+                        <div class="cs-card-info">
+                            <h3 class="cs-card-title">Case Study</h3>
+                            <p class="cs-card-sub">Case Study #001</p>
+                        </div>
+                    </div>
+                    <div class="cs-project-card">
+                        <div class="cs-card-img"><img src="images/case study/casestudy2.jpg" alt="Case Study 2"></div>
+                        <div class="cs-card-info">
+                            <h3 class="cs-card-title">Case Study</h3>
+                            <p class="cs-card-sub">Case Study #001</p>
+                        </div>
+                    </div>
+                    <div class="cs-project-card">
+                        <div class="cs-card-img"><img src="images/case study/casestudy3.jpg" alt="Case Study 3"></div>
+                        <div class="cs-card-info">
+                            <h3 class="cs-card-title">Case Study</h3>
+                            <p class="cs-card-sub">Case Study #001</p>
+                        </div>
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="cs-project-card">
+                        <div class="cs-card-img"><img src="images/case study/casestudy4.jpg" alt="Case Study 4"></div>
+                        <div class="cs-card-info">
+                            <h3 class="cs-card-title">Case Study</h3>
+                            <p class="cs-card-sub">Case Study #001</p>
+                        </div>
+                    </div>
+                    <div class="cs-project-card">
+                        <div class="cs-card-img"><img src="images/case study/casestudy5.jpg" alt="Case Study 5"></div>
+                        <div class="cs-card-info">
+                            <h3 class="cs-card-title">Case Study</h3>
+                            <p class="cs-card-sub">Case Study #001</p>
+                        </div>
+                    </div>
+                    <div class="cs-project-card">
+                        <div class="cs-card-img"><img src="images/case study/casestudy1.jpg" alt="Case Study 6"></div>
+                        <div class="cs-card-info">
+                            <h3 class="cs-card-title">Case Study</h3>
+                            <p class="cs-card-sub">Case Study #001</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination (Figma Spec) -->
+                <div class="cs-pagination">
+                    <button class="cs-pag-arrow"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="cs-pag-numbers">
+                        <span class="cs-pag-num active">1</span>
+                        <span class="cs-pag-num">2</span>
+                        <span class="cs-pag-num">3</span>
+                        <span class="cs-pag-dots">...</span>
+                        <span class="cs-pag-num">7</span>
+                    </div>
+                    <button class="cs-pag-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. CTA Section (Same as How It Works) -->
+        <section class="cp-contact-section" id="contact">
+            <div class="cp-contact-overlay"></div>
+            <div class="cp-contact-btn-wrap">
+                <a href="index.html#contact" class="cp-contact-btn">CONTACT</a>
+            </div>
+        </section>
+
+        <!-- 5. Footer (Same as How It Works) -->
+        <footer class="cp-footer">
+            <!-- Desktop Footer -->
+            <div class="cp-footer-desktop">
+                <div class="cp-footer-top">
+                    <!-- Master Inner Block (Group 224: 1194px) -->
+                    <div class="cp-footer-inner">
+                        <!-- COL 1: Branding & SNS (Exact width 274px) -->
+                        <div class="cp-footer-col-1">
+                            <div class="cp-footer-company-block">
+                                <h5 class="cp-footer-heading">TEXT</h5>
+                                <p class="cp-footer-desc">TEXT TEXT TEXT<br>TEXT TEXT TEXT<br>TEXT TEXT TEXT</p>
+                            </div>
+                            <div class="cp-social-block">
+                                <div class="cp-follow-wrap">
+                                    <span class="cp-follow-text">Follow me</span>
+                                    <div class="cp-social-line"></div>
+                                </div>
+                                <div class="cp-social-icons">
+                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT NAV MATRIX (834px Group) -->
+                        <div class="cp-footer-nav-matrix">
+                            <div class="cp-footer-nav-col cp-col-services">
+                                <h5 class="cp-footer-heading">SERVICES</h5>
+                                <ul class="cp-footer-list">
+                                    <li><a href="#">Full Export Management</a></li>
+                                    <li><a href="#">Product Sourcing &amp; Procurement Agency</a></li>
+                                    <li><a href="#">Export Documentation &amp; Compliance</a></li>
+                                    <li><a href="#">Logistics &amp; International Shipping</a></li>
+                                    <li><a href="#">Labeling &amp; Packaging Solutions</a></li>
+                                    <li><a href="#">Market Research &amp; Consulting</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="cp-footer-nav-col cp-col-catalogs">
+                                <h5 class="cp-footer-heading"><a href="catalog.html">PRODUCT CATALOGS</a></h5>
+                                <ul class="cp-footer-list">
+                                    <li><a href="#">Restaurant Supplies</a></li>
+                                    <li><a href="#">Food &amp; Beverage</a></li>
+                                    <li><a href="#">Featured Collections</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="cp-footer-nav-col">
+                                <h5 class="cp-footer-heading"><a href="howitwork.html">HOW IT WORKS</a></h5>
+                            </div>
+                            <div class="cp-footer-nav-col">
+                                <h5 class="cp-footer-heading"><a href="casestudy.html">CASE STUDIES</a></h5>
+                            </div>
+                            <div class="cp-footer-nav-col">
+                                <h5 class="cp-footer-heading"><a href="index.html#about">ABOUT</a></h5>
+                            </div>
+                            <div class="cp-footer-nav-col">
+                                <h5 class="cp-footer-heading"><a href="index.html#contact">CONTACT</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom (White 126px Area) -->
+                <div class="cp-footer-bottom">
+                    <div class="cp-footer-bottom-inner">
+                        <div class="cp-footer-logo">LOGO</div>
+                        <div class="cp-footer-legal">
+                            <a href="#">Privacy Policy</a>
+                            <p>©2026 ONE STOP Restaurant Supply All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Footer (Figma Mobile Match) -->
+            <div class="cp-footer-mobile">
+                <div class="cp-footer-mobile-inner">
+                    <div class="cp-footer-logo-mob">LOGO</div>
+                    <div class="cp-footer-divider"></div>
+                    <div class="cp-footer-bottom-info">
+                        <a href="#" class="cp-footer-privacy">Privacy Policy</a>
+                        <p class="cp-footer-copyright">©2026 ONE STOP Restaurant Supply All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- Script Re-use -->
+    <script src="script.js"></script>
+</body>
+
+</html>
