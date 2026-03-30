@@ -4,37 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Study - One Stop Restaurant Supply</title>
-    <!-- Fonts -->
+    <title>Contact - One Stop Restaurant Supply</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Styles -->
-    <link rel="stylesheet" href="casestudy.css">
+    <link rel="stylesheet" href="contact.css">
 </head>
 
 <body>
     <div class="cp-page-wrapper">
-        <!-- 1. Header Section (Same as How It Works) -->
         <header class="cp-header">
             <div class="cp-navbar">
                 <a href="index.html" class="cp-logo">LOGO</a>
 
                 <nav class="cp-nav">
                     <div class="cp-nav-item">
-                        <a href="service.html" class="cp-nav-link">SERVICES <span class="cp-caret">▼</span></a>
+                        <a href="service.html" class="cp-nav-link">SERVICES <span class="cp-caret"></span></a>
                     </div>
                     <div class="cp-nav-item">
-                        <a href="catalog.html" class="cp-nav-link">PRODUCT CATALOGS <span class="cp-caret">▼</span></a>
+                        <a href="catalog.html" class="cp-nav-link">PRODUCT CATALOGS <span class="cp-caret"></span></a>
                     </div>
                     <a href="howitwork.html" class="cp-nav-link">HOW IT WORKS</a>
-                    <a href="casestudy.html" class="cp-nav-link active">CASE STUDIES</a>
+                    <a href="casestudy.html" class="cp-nav-link">CASE STUDIES</a>
                     <a href="about.html" class="cp-nav-link">ABOUT</a>
+                    <a href="contact.html" class="cp-btn-contact">CONTACT</a>
                 </nav>
 
-                <a href="contact.html" class="cp-btn-contact">CONTACT</a>
-
-                <!-- Hamburger (mobile only) -->
                 <div class="cp-hamburger" id="cp-hamburger">
                     <span></span>
                     <span></span>
@@ -43,7 +37,6 @@
             </div>
         </header>
 
-        <!-- Mobile Menu Overlay -->
         <div class="cp-mobile-overlay" id="cp-mobile-overlay">
             <button class="cp-mobile-close" id="cp-mobile-close">&#x2715;</button>
             <ul class="cp-mobile-links">
@@ -52,100 +45,100 @@
                 <li><a href="howitwork.html">HOW IT WORKS</a></li>
                 <li><a href="casestudy.html">CASE STUDY</a></li>
                 <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </div>
 
-        <!-- 2. Hero Section (Image 40: 1440x716) -->
-        <section class="cs-hero-section">
-            <div class="cs-title-wrap">
-                <h1 class="cs-page-title">CASE STUDY</h1>
+        <section class="ct-hero-section">
+            <div class="ct-title-wrap">
+                <h1 class="ct-page-title">CONTACT</h1>
             </div>
-            <div class="cs-hero-image-wrap">
-                <img src="images/case study/casestudymain.jpg" alt="Case Study Hero" class="cs-hero-img">
-            </div>
-        </section>
-
-        <!-- 3. Projects Grid (Image 41: 1440xHug) -->
-        <section class="cs-grid-section">
-            <div class="cs-grid-container">
-                <div class="cs-projects-grid">
-                    <!-- Row 1 -->
-                    <div class="cs-project-card">
-                        <div class="cs-card-img"><img src="images/case study/casestudy1.jpg" alt="Case Study 1"></div>
-                        <div class="cs-card-info">
-                            <h3 class="cs-card-title">Case Study</h3>
-                            <p class="cs-card-sub">Case Study #001</p>
-                        </div>
-                    </div>
-                    <div class="cs-project-card">
-                        <div class="cs-card-img"><img src="images/case study/casestudy2.jpg" alt="Case Study 2"></div>
-                        <div class="cs-card-info">
-                            <h3 class="cs-card-title">Case Study</h3>
-                            <p class="cs-card-sub">Case Study #001</p>
-                        </div>
-                    </div>
-                    <div class="cs-project-card">
-                        <div class="cs-card-img"><img src="images/case study/casestudy3.jpg" alt="Case Study 3"></div>
-                        <div class="cs-card-info">
-                            <h3 class="cs-card-title">Case Study</h3>
-                            <p class="cs-card-sub">Case Study #001</p>
-                        </div>
-                    </div>
-                    <!-- Row 2 -->
-                    <div class="cs-project-card">
-                        <div class="cs-card-img"><img src="images/case study/casestudy4.jpg" alt="Case Study 4"></div>
-                        <div class="cs-card-info">
-                            <h3 class="cs-card-title">Case Study</h3>
-                            <p class="cs-card-sub">Case Study #001</p>
-                        </div>
-                    </div>
-                    <div class="cs-project-card">
-                        <div class="cs-card-img"><img src="images/case study/casestudy5.jpg" alt="Case Study 5"></div>
-                        <div class="cs-card-info">
-                            <h3 class="cs-card-title">Case Study</h3>
-                            <p class="cs-card-sub">Case Study #001</p>
-                        </div>
-                    </div>
-                    <div class="cs-project-card">
-                        <div class="cs-card-img"><img src="images/case study/casestudy1.jpg" alt="Case Study 6"></div>
-                        <div class="cs-card-info">
-                            <h3 class="cs-card-title">Case Study</h3>
-                            <p class="cs-card-sub">Case Study #001</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pagination (Figma Spec) -->
-                <div class="cs-pagination">
-                    <button class="cs-pag-arrow"><i class="fa-solid fa-chevron-left"></i></button>
-                    <div class="cs-pag-numbers">
-                        <span class="cs-pag-num active">1</span>
-                        <span class="cs-pag-num">2</span>
-                        <span class="cs-pag-num">3</span>
-                        <span class="cs-pag-dots">...</span>
-                        <span class="cs-pag-num">7</span>
-                    </div>
-                    <button class="cs-pag-arrow"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
+            <div class="ct-hero-image-wrap">
+                <img src="images/contactmain.jpg" alt="Contact Hero" class="ct-hero-img">
             </div>
         </section>
 
-        <!-- 4. CTA Section (Same as How It Works) -->
+        <section class="ct-form-section">
+            <div class="ct-container">
+                <div class="ct-form-column">
+                    <div class="ct-contact-copy">
+                        <h2 class="ct-copy-title">Contact Us by Email</h2>
+                        <a href="mailto:email@gmail.com" class="ct-copy-email">email@gmail.com</a>
+                    </div>
+
+                    <p class="ct-form-intro">
+                        Please fill out the form below. Our representative will contact you after reviewing your inquiry.
+                        Items marked with an asterisk ( * ) are required.
+                    </p>
+
+                    <div class="ct-form-stack">
+                        <form class="ct-form" id="contact-form" action="#" method="post">
+                            <div class="ct-field ct-field-short">
+                                <label for="inquiry-type">Inquiry Type <span>*</span></label>
+                                <div class="ct-select-wrap">
+                                    <select id="inquiry-type" name="inquiry_type">
+                                        <option value=""></option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="catalog">Catalog Request</option>
+                                        <option value="partnership">Partnership</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="ct-field">
+                                <label for="company-name">Company Name <span>*</span></label>
+                                <input id="company-name" name="company_name" type="text">
+                            </div>
+
+                            <div class="ct-field">
+                                <label for="full-name">Full Name <span>*</span></label>
+                                <input id="full-name" name="full_name" type="text">
+                            </div>
+
+                            <div class="ct-field">
+                                <label for="phone-number">Phone Number <span>*</span></label>
+                                <input id="phone-number" name="phone_number" type="tel">
+                            </div>
+
+                            <div class="ct-field">
+                                <label for="email-address">Email Address <span>*</span></label>
+                                <input id="email-address" name="email_address" type="email">
+                            </div>
+
+                            <div class="ct-field">
+                                <label for="inquiry-details">Inquiry Details <span>*</span></label>
+                                <textarea id="inquiry-details" name="inquiry_details"></textarea>
+                            </div>
+
+                            <div class="ct-form-footer">
+                                <div class="ct-privacy-wrap">
+                                    <label class="ct-privacy-check">
+                                        <input type="checkbox" name="privacy">
+                                        <span>Privacy Policy</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="ct-submit-wrap">
+                            <button type="submit" form="contact-form" class="ct-submit-btn">SUBMIT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="cp-contact-section" id="contact">
             <div class="cp-contact-overlay"></div>
             <div class="cp-contact-btn-wrap">
-                <a href="index.html#contact" class="cp-contact-btn">CONTACT</a>
+                <a href="contact.html" class="cp-contact-btn">CONTACT</a>
             </div>
         </section>
 
-        <!-- 5. Footer (Same as How It Works) -->
         <footer class="cp-footer">
-            <!-- Desktop Footer -->
             <div class="cp-footer-desktop">
                 <div class="cp-footer-top">
-                    <!-- Master Inner Block (Group 224: 1194px) -->
                     <div class="cp-footer-inner">
-                        <!-- COL 1: Branding & SNS (Exact width 274px) -->
                         <div class="cp-footer-col-1">
                             <div class="cp-footer-company-block">
                                 <h5 class="cp-footer-heading">TEXT</h5>
@@ -163,8 +156,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- RIGHT NAV MATRIX (834px Group) -->
                         <div class="cp-footer-nav-matrix">
                             <div class="cp-footer-nav-col cp-col-services">
                                 <h5 class="cp-footer-heading">SERVICES</h5>
@@ -177,7 +168,6 @@
                                     <li><a href="#">Market Research &amp; Consulting</a></li>
                                 </ul>
                             </div>
-
                             <div class="cp-footer-nav-col cp-col-catalogs">
                                 <h5 class="cp-footer-heading"><a href="catalog.html">PRODUCT CATALOGS</a></h5>
                                 <ul class="cp-footer-list">
@@ -186,7 +176,6 @@
                                     <li><a href="#">Featured Collections</a></li>
                                 </ul>
                             </div>
-
                             <div class="cp-footer-nav-col">
                                 <h5 class="cp-footer-heading"><a href="howitwork.html">HOW IT WORKS</a></h5>
                             </div>
@@ -197,13 +186,11 @@
                                 <h5 class="cp-footer-heading"><a href="about.html">ABOUT</a></h5>
                             </div>
                             <div class="cp-footer-nav-col">
-                                <h5 class="cp-footer-heading"><a href="index.html#contact">CONTACT</a></h5>
+                                <h5 class="cp-footer-heading"><a href="contact.html">CONTACT</a></h5>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Footer Bottom (White 126px Area) -->
                 <div class="cp-footer-bottom">
                     <div class="cp-footer-bottom-inner">
                         <div class="cp-footer-logo">LOGO</div>
@@ -215,7 +202,6 @@
                 </div>
             </div>
 
-            <!-- Mobile Footer (Figma Mobile Match) -->
             <div class="cp-footer-mobile">
                 <div class="cp-footer-mobile-inner">
                     <div class="cp-footer-logo-mob">LOGO</div>
@@ -228,7 +214,7 @@
             </div>
         </footer>
     </div>
-    <!-- Shared mobile menu logic -->
+
     <script src="catalog.js"></script>
 </body>
 

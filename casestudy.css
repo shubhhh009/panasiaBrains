@@ -567,3 +567,227 @@ body {
         display: none;
     }
 }
+
+@media (min-width: 1441px) {
+    .cp-contact-section,
+    .cp-footer,
+    .cp-footer-top,
+    .cp-footer-bottom {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+}
+
+@media (max-width: 768px) {
+    .cp-page-wrapper {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .cp-header {
+        padding-top: 27px;
+    }
+
+    .cp-navbar {
+        width: 100%;
+        height: auto;
+        padding: 0 24px;
+    }
+
+    .cp-logo {
+        font-size: 20px;
+    }
+
+    .cp-nav,
+    .cp-btn-contact {
+        display: none;
+    }
+
+    .cp-hamburger {
+        display: flex;
+    }
+
+    .cp-mobile-overlay {
+        left: 0;
+        right: 0;
+        width: 100vw;
+        padding: 22px 42px 56px;
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow-y: auto;
+        box-shadow: none;
+    }
+
+    .cp-mobile-close {
+        top: 18px;
+        right: 26px;
+        font-size: 28px;
+        line-height: 1;
+    }
+
+    .cp-mobile-links {
+        width: 100%;
+        margin-top: 78px;
+        text-align: left;
+    }
+
+    .cp-mobile-links li {
+        margin: 0 0 28px;
+    }
+
+    .cp-mobile-links li a {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        line-height: 1.25;
+    }
+
+    .cs-hero-section {
+        height: auto;
+    }
+
+    .cs-title-wrap {
+        margin-top: 44px;
+        padding: 0 24px;
+    }
+
+    .cs-page-title {
+        font-size: 28px;
+        line-height: 1.08;
+        letter-spacing: 0.02em;
+    }
+
+    .cs-hero-image-wrap {
+        height: auto;
+        margin-top: 36px;
+        justify-content: flex-start;
+    }
+
+    .cs-hero-img {
+        width: 100%;
+        height: 214px;
+    }
+
+    .cs-grid-section {
+        padding: 44px 0 60px;
+    }
+
+    .cs-grid-container {
+        width: 100%;
+        padding: 0 20px;
+        gap: 40px;
+    }
+
+    .cs-projects-grid {
+        width: 335px;
+        margin: 0 auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 12px;
+        row-gap: 28px;
+    }
+
+    .cs-project-card {
+        gap: 10px;
+    }
+
+    .cs-card-img {
+        height: 152px;
+        aspect-ratio: auto;
+    }
+
+    .cs-card-info {
+        gap: 4px;
+    }
+
+    .cs-card-title {
+        font-size: 12px;
+        letter-spacing: 0.04em;
+    }
+
+    .cs-card-sub {
+        font-size: 10px;
+        line-height: 1.2;
+    }
+
+    .cs-pagination {
+        width: 317px;
+        height: 49px;
+        margin: 4px auto 0;
+        border: 1px solid #353535;
+        border-radius: 30px;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .cs-pagination::before {
+        content: "LOAD MORE";
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        color: #353535;
+    }
+
+    .cs-pag-arrow,
+    .cs-pag-numbers {
+        display: none;
+    }
+
+    .cp-contact-section {
+        height: 240px;
+    }
+
+    .cp-contact-btn {
+        width: 240px;
+        height: 40px;
+        font-size: 14px;
+        border-radius: 30px;
+        letter-spacing: 0.08em;
+    }
+
+    .cp-footer {
+        background: #262626;
+    }
+
+    .cp-footer-mobile {
+        background: #262626;
+        padding: 0;
+    }
+
+    .cp-footer-mobile-inner {
+        width: 100%;
+        max-width: 375px;
+        min-height: 235px;
+        margin: 0 auto;
+        padding: 38px 32px 30px;
+        align-items: flex-start;
+    }
+
+    .cp-footer-logo-mob {
+        font-size: 24px;
+        font-weight: 400;
+        color: #FFFFFF;
+    }
+
+    .cp-footer-divider {
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+    .cp-footer-bottom-info {
+        width: 100%;
+        margin-top: auto;
+        align-items: flex-end;
+    }
+
+    .cp-footer-privacy,
+    .cp-footer-copyright {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.72);
+        letter-spacing: 0.04em;
+    }
+
+    .cp-footer-copyright {
+        opacity: 1;
+        text-align: right;
+    }
+}

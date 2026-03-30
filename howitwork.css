@@ -637,7 +637,7 @@
     .hw-frame-1211 {
         width: 335px !important;
         margin: 0 auto !important;
-        gap: 30px !important;
+        gap: 0 !important; /* Removed large gap */
     }
 
     .hw-step-card {
@@ -737,7 +737,7 @@
         height: 45px !important;
         font-size: 24px !important;
         color: rgba(53, 53, 53, 0.3) !important;
-        margin: 10px auto !important;
+        margin: 0 auto !important; /* Removed vertical margins */
     }
 
     /* --- 5. Contact Section (CTA) --- */
