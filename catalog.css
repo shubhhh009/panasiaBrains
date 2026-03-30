@@ -475,24 +475,26 @@ body {
 
 /* Figma tab colors */
 .cp-tab-purple {
-    height: 120px;
-    /* Figma: Tab 1 Height 120px */
     background-color: #AC60C3;
 }
 
 /* Tab 1: Purple #AC60C3 */
 .cp-tab-gold {
-    height: 80px;
-    /* Figma: Tab 2 Height 80px */
     background-color: #ECCF82;
     color: #353535;
 }
 
 /* Tab 2: Gold #ECCF82 */
 .cp-tab-teal {
-    height: 80px;
-    /* Figma: Tab 3 Height 80px */
     background-color: #5EAFB2;
+}
+
+.cp-tab {
+    height: 80px; /* Default height */
+}
+
+.cp-tab.active {
+    height: 120px; /* Active height */
 }
 
 /* Tab 3: Teal #5EAFB2 */
@@ -515,9 +517,10 @@ body {
     width: 100%;
     padding: 80px 170px;
     /* Figma Frame 2294 Padding */
-    border: 2px solid #AC60C3;
+    border: 2px solid var(--grid-border-color, #AC60C3);
     /* Figma Frame 2294 Border */
     box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
 
 .cp-products-grid {
@@ -1732,7 +1735,7 @@ body {
     }
 
     /* Frame 2304 — desc + form, 295px fixed, 40px gap */
-    .cp-sourcing-desc {
+    .cp-inquiry-intro {
         width: 295px !important;
         font-family: 'Montserrat', sans-serif !important;
         font-size: 10px !important;
@@ -1742,6 +1745,7 @@ body {
         color: #353535 !important;
         text-align: left !important;
         margin-bottom: 0 !important;
+        display: block !important;
     }
 
     .cp-inquiry-form-wrap {
@@ -1750,11 +1754,6 @@ body {
         flex-direction: column !important;
         gap: 40px !important;
         margin-top: 40px !important;
-    }
-
-    .cp-inquiry-intro {
-        display: none !important;
-        /* Unified into .cp-sourcing-desc in HTML */
     }
 
     .cp-form-row {
@@ -1923,33 +1922,38 @@ body {
 
     .cp-footer-mobile {
         display: block !important;
-        background-color: #FFFFFF !important;
-        padding: 40px 20px !important;
-        height: auto !important;
+        background-color: #1A1A1A !important;
+        padding: 50px 24px 30px !important;
+        height: 235px !important;
         width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     .cp-footer-mobile-inner {
         width: 100% !important;
-        max-width: 335px !important;
+        max-width: 327px !important;
+        height: 100% !important;
         margin: 0 auto !important;
         display: flex !important;
         flex-direction: column !important;
+        justify-content: flex-start !important;
     }
 
     .cp-footer-logo-mob {
         font-family: 'Montserrat', sans-serif !important;
-        font-size: 24px !important;
+        font-size: 36px !important; /* Larger as per screenshot */
         font-weight: 400 !important;
         color: #FFFFFF !important;
-        margin-bottom: 20px !important;
+        margin-bottom: 24px !important;
         text-align: left !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.08em !important;
     }
 
     .cp-footer-divider {
         width: 100% !important;
         height: 1px !important;
-        background-color: rgba(255, 255, 255, 0.1) !important;
+        background-color: rgba(255, 255, 255, 0.2) !important;
         margin-bottom: 30px !important;
     }
 
@@ -1957,24 +1961,26 @@ body {
         display: flex !important;
         flex-direction: column !important;
         align-items: flex-end !important;
-        gap: 8px !important;
+        gap: 12px !important;
+        margin-top: auto !important; /* Push to bottom */
+        padding-bottom: 10px !important;
     }
 
     .cp-footer-privacy {
         font-family: 'Montserrat', sans-serif !important;
-        font-size: 12px !important;
+        font-size: 14px !important;
         font-weight: 500 !important;
-        color: #999999 !important;
+        color: rgba(255, 255, 255, 0.6) !important;
         text-decoration: none !important;
-        letter-spacing: 0.08em !important;
+        letter-spacing: 0.04em !important;
     }
 
     .cp-footer-copyright {
         font-family: 'Montserrat', sans-serif !important;
-        font-size: 12px !important;
+        font-size: 14px !important;
         font-weight: 500 !important;
-        color: #999999 !important;
-        letter-spacing: 0.08em !important;
+        color: rgba(255, 255, 255, 0.6) !important;
+        letter-spacing: 0.04em !important;
         text-align: right !important;
         margin: 0 !important;
     }

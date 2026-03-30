@@ -50,15 +50,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Tab Switching Logic
     const categoryTabs = document.querySelectorAll('.cp-tab');
+    const catalogGridWrap = document.getElementById('cp-products-grid-wrap');
+    
+    // Map categories to their corresponding theme colors
+    const categoryColors = {
+        'restaurant': '#AC60C3',
+        'food': '#ECCF82',
+        'custom': '#5EAFB2'
+    };
+
     categoryTabs.forEach(tab => {
         tab.addEventListener('click', () => {
+            const category = tab.dataset.category;
+            
+            // Toggle active class for tabs
             categoryTabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            renderProducts(tab.dataset.category);
+            
+            // Update grid border color to match active tab
+            if (catalogGridWrap) {
+                catalogGridWrap.style.setProperty('--grid-border-color', categoryColors[category]);
+            }
+            
+            renderProducts(category);
         });
     });
 
     // Initial render
     renderProducts('restaurant');
+    if (catalogGridWrap) {
+        catalogGridWrap.style.setProperty('--grid-border-color', categoryColors['restaurant']);
+    }
 
 });
