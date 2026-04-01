@@ -1255,7 +1255,6 @@ a:active {
     margin-bottom: 24px;
     text-transform: uppercase;
     white-space: nowrap !important;
-    /* Forces single line */
 }
 
 .footer-desc {
@@ -1277,6 +1276,7 @@ a:active {
     opacity: 0.8;
     display: flex;
     align-items: center;
+    white-space: nowrap !important;
 }
 
 .footer-list li::before {
@@ -1293,8 +1293,8 @@ a:active {
 /* Horizontal Nav Row from Figma Step 350 */
 .footer-nav-row {
     display: flex;
-    gap: 30px;
-    /* Precise horizontal gap between headers */
+    justify-content: space-between;
+    gap: 20px;
     align-items: flex-start;
 }
 
@@ -1313,18 +1313,17 @@ a:active {
 .follow-wrapper {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px !important;
 }
 
 .follow-text {
     font-size: 14px;
     opacity: 0.8;
-    white-space: nowrap;
+    white-space: nowrap !important;
 }
 
 .social-line {
-    width: 80px;
-    /* Literal line next to label */
+    width: 30px !important;
     height: 1px;
     background: #FFFFFF;
     opacity: 0.5;
@@ -1385,9 +1384,21 @@ a:active {
 @media (max-width: 1440px) {
     /* Nav resizing removed for 1440px to respect primary 18px Figma bounds */
 
-    .footer-heading {
-        font-size: 14px !important;
-        /* Smaller size for one-line fit on laptop */
+    .footer-nav-row {
+        gap: 15px !important;
+        justify-content: space-between !important;
+    }
+
+    .footer-heading,
+    .footer-heading a,
+    .footer-list li,
+    .footer-list a {
+        font-size: 12px !important;
+        white-space: nowrap !important;
+    }
+
+    .footer-desc {
+        white-space: normal !important;
     }
 
     .container-services,
@@ -1426,27 +1437,13 @@ a:active {
     }
 
     .footer-heading {
-        font-size: 13px !important;
+        font-size: 12px !important;
     }
 
     .catalogs-grid,
     .proof-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        /* Switch both grids to 2 cols for balance */
         gap: 30px !important;
-    }
-
-    .footer-container {
-        flex-wrap: wrap !important;
-        gap: 50px !important;
-        justify-content: center !important;
-    }
-
-    .footer-col-1,
-    .footer-col-2,
-    .footer-col-3 {
-        flex: 1 1 300px !important;
-        text-align: center !important;
     }
 }
 
@@ -2196,7 +2193,9 @@ a:active {
         margin: 0 auto !important;
         background: linear-gradient(90deg, #AC60C3 0%, #DC6061 100%) !important;
     }
+}
 
+@media (max-width: 1024px) {
     /* --- MOBILE FOOTER SP --- */
     .footer-section {
         background-color: #262626 !important;
@@ -2223,10 +2222,11 @@ a:active {
 
     .footer-bottom-container {
         width: 100% !important;
-        max-width: 327px !important;
+        max-width: 100% !important;
         height: 100% !important;
         margin: 0 auto !important;
-        padding: 0 !important;
+        padding: 0 24px !important;
+        box-sizing: border-box !important;
         display: block !important;
     }
 

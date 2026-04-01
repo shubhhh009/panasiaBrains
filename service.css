@@ -556,12 +556,18 @@ body {
     }
 
     .footer-desc,
-    .footer-list li,
     .footer-legal a,
     .footer-legal p {
         font-size: 11px !important;
         line-height: 18px !important;
         white-space: normal !important;
+    }
+
+    .footer-list li,
+    .footer-list a {
+        font-size: 12px !important;
+        line-height: 18px !important;
+        white-space: nowrap !important;
     }
 
     .social-icons {
@@ -571,6 +577,66 @@ body {
     .social-icons a i {
         font-size: 14px !important;
     }
+
+    .follow-wrapper {
+        gap: 10px !important;
+    }
+
+    .follow-text {
+        white-space: nowrap !important;
+    }
+
+    .social-line {
+        width: 30px !important;
+    }
+
+    /* Fix sp-specific footer columns */
+    .sp-footer-col-3 {
+        flex: 3 !important;
+        padding-left: 20px !important;
+    }
+
+    .sp-nav-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .sp-footer-heading, 
+    .sp-footer-heading a {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px !important;
+        font-weight: 600;
+        margin-bottom: 24px !important;
+        letter-spacing: 0.1em;
+        color: #FFFFFF !important;
+        text-transform: uppercase;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+    }
+
+    .sp-footer-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .sp-footer-list li,
+    .sp-footer-list a {
+        font-size: 12px !important;
+        line-height: 24px !important;
+        color: #FFFFFF !important;
+        text-decoration: none !important;
+        margin-bottom: 12px !important;
+        opacity: 0.7;
+        white-space: nowrap !important;
+    }
+}
+
+.sp-footer-mobile {
+    display: none;
 }
 
 @media (max-width: 1024px) {
@@ -900,6 +966,67 @@ body {
         margin: 0 !important;
     }
 
+    .footer-section {
+        display: none !important;
+    }
+
+    .sp-footer-mobile {
+        display: block !important;
+        background-color: #262626 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    .sp-footer-mobile-inner {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 235px !important;
+        margin: 0 auto !important;
+        padding: 38px 24px 30px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 24px !important;
+    }
+
+    .sp-footer-logo-mob {
+        color: #FFFFFF !important;
+        font-size: 24px !important;
+        font-weight: 400 !important;
+        font-family: 'Montserrat', sans-serif !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+    }
+
+    .sp-footer-divider {
+        width: 100% !important;
+        height: 1px !important;
+        background: rgba(255, 255, 255, 0.12) !important;
+    }
+
+    .sp-footer-bottom-info {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        width: 100% !important;
+        gap: 14px !important;
+    }
+
+    .sp-footer-privacy,
+    .sp-footer-copyright {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        text-decoration: none !important;
+        margin: 0 !important;
+    }
+
+    .sp-footer-copyright {
+        max-width: 220px !important;
+        text-align: right !important;
+    }
+
 
     .footer-legal p {
         color: #CCCCCC !important;
@@ -1020,6 +1147,47 @@ body {
 
 .footer-col-3 {
     flex: 3;
+}
+
+/* Global SP Footer 3 Styling for >1440px Desktop */
+.sp-footer-col-3 {
+    flex: 3;
+}
+
+.sp-nav-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.sp-footer-heading,
+.sp-footer-heading a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
+
+.sp-footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.sp-footer-list li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.sp-footer-list a {
+    color: #fff;
+    text-decoration: none;
 }
 
 .footer-heading,
